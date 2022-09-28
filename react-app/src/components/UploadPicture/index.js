@@ -11,7 +11,7 @@ const UploadPicture = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         const formData = new FormData();
-        formData.append("image", image);  // THIS IS WHERE WE NEED TO BE CAREFUL WITH OUR NAME IN THE BACKEND
+        formData.append("tut", image);  // THIS IS WHERE WE NEED TO BE CAREFUL WITH OUR NAME IN THE BACKEND  AWS-todo
 
         // aws uploads can be a bit slow—displaying
         // some sort of loading message is a good idea

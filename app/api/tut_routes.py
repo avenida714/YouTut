@@ -13,7 +13,7 @@ def upload_tut():
     if "tut" not in request.files:
         return {"errors": "Video File Required"}, 400
 
-    tut = request.files["tut"]
+    tut = request.files["tut"]  # this name is what needs to match from the component in the frontend  AWS-todo
 
     if not allowed_file(tut.filename):
         return {"errors": "This file type is not permitted (MP4 works best for videos; use jpeg, pdf, jpg, or gif for images)."}, 400
