@@ -4,23 +4,23 @@ from flask_login import current_user, login_required
 from app.api.aws  import (
     upload_file_to_s3, allowed_file, get_unique_filename)
 
-image_routes = Blueprint("images", __name__)
+tut_routes = Blueprint("tuts", __name__)
 
 
-@image_routes.route("", methods=["POST"])
+@tut_routes.route("", methods=["POST"])
 @login_required
-def upload_image():
-    if "image" not in request.files:
-        return {"errors": "image required"}, 400
+def upload_tut():
+    if "tut" not in request.files:
+        return {"errors": "Video File Required"}, 400
 
-    image = request.files["image"]
+    tut = request.files["tut"]
 
-    if not allowed_file(image.filename):
-        return {"errors": "file type not permitted"}, 400
+    if not allowed_file(tut.filename):
+        return {"errors": "This file type is not permitted (MP4 works best for videos; use jpeg, pdf, jpg, or gif for images)."}, 400
 
-    image.filename = get_unique_filename(image.filename)
+    tut.filename = get_unique_filename(tut.filename)
 
-    upload = upload_file_to_s3(image)
+    upload = upload_file_to_s3(tut)
 
     if "url" not in upload:
         # if the dictionary doesn't have a url key

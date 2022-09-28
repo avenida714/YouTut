@@ -4,7 +4,7 @@ import os
 import uuid
 
 #define which extensions are allowed
-ALLOWED_EXTENSIONS = {"pdf", "png", "jpg", "jpeg", "gif"}
+ALLOWED_EXTENSIONS = {"pdf", "png", "jpg", "jpeg", "gif", "mp4"}
 
 #get s3 name from the os environment; should be youtut
 BUCKET_NAME = os.environ.get("S3_BUCKET")
