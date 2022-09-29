@@ -28,3 +28,8 @@ class User(db.Model, UserMixin):
             'username': self.username,
             'email': self.email
         }
+
+
+#relationships
+# liked_tuts = db.relationship('Tut', secondary=likes, back_populates='likes')  todo-Likes
+# disliked_tuts = db.relationship('Tut', secondary=dislikes, back_populates='dislikes')
