@@ -29,12 +29,11 @@ class User(db.Model, UserMixin):
             'email': self.email
         }
 
+    #relationships
 
-#relationships
+    tuts = db.relationship('Tut', back_populates="user", cascade="all, delete-orphan")
 
-tuts = db.relationship('Tut', back_populates="user", cascade="all, delete-orphan")
+    # comments relationship here
 
-# comments relationship here
-
-# liked_tuts = db.relationship('Tut', secondary=likes, back_populates='likes')  todo-Likes
-# disliked_tuts = db.relationship('Tut', secondary=dislikes, back_populates='dislikes')
+    # liked_tuts = db.relationship('Tut', secondary=likes, back_populates='likes')  todo-Likes
+    # disliked_tuts = db.relationship('Tut', secondary=dislikes, back_populates='dislikes')

@@ -20,7 +20,7 @@ class Tut(db.Model):
   #todo - should views be part of the videos?!?  likes? dislikes?
 
   #relationships
-  creator = db.relationship("User", back_populates="Tuts")
+  user = db.relationship("User", back_populates="tuts")
 
   # comments = db.relationship("Comment", back_populates="Tuts", cascade="all, delete-orphan") #Comments-todo
 
