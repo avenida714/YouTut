@@ -49,7 +49,7 @@ class Tut(db.Model):
       'updated_at': self.updated_at,
       'thumbnail_pic': self.thumbnail_pic,
       'tut_data': self.tut_data,
-      # "likes": [user.id for user in self.likes],
-      # "dislikes": [user.id for user in self.dislikes],
-      # "comments": [c.to_dict() for c in self.comments]
+      "likes": [user.id for user in self.likes],
+      "dislikes": [user.id for user in self.dislikes],
+      "comments": [c.to_dict() for c in self.comments]
     }
