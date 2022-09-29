@@ -15,7 +15,7 @@ class Tut(db.Model):
   created_at = db.Column(db.DateTime, nullable=False, default=(datetime.now()))  # import datetime for this
   updated_at = db.Column(db.DateTime, nullable=False)
   thumbnail_pic = (db.Column(db.Text, nullable=True))  #need to add a default photo so there won't be broken images
-  tut_data = db.Column(db.Text, nullable=False)
+  tut_video = db.Column(db.Text, nullable=False)
 
   #todo - should views be part of the videos?!?  likes? dislikes?
 
