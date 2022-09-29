@@ -1,3 +1,4 @@
+from ssl import create_default_context
 from .db import db
 from datetime import datetime
 
@@ -16,12 +17,39 @@ class Tut(db.Model):
   thumbnail_pic = (db.Column(db.Text, nullable=True))  #need to add a default photo so there won't be broken images
   tut_data = db.Column(db.Text, nullable=False)
 
-#todo - should views be part of the videos?!?  likes? dislikes?
+  #todo - should views be part of the videos?!?  likes? dislikes?
 
-#relationships
-creator = db.relationship("User", back_populates="Tuts")
+  #relationships
+  creator = db.relationship("User", back_populates="Tuts")
 
-# comments = db.relationship("Comment", back_populates="Tuts", cascade="all, delete-orphan") #Comments-todo
+  # comments = db.relationship("Comment", back_populates="Tuts", cascade="all, delete-orphan") #Comments-todo
 
-# likes = db.relationship("User", secondary=likes, back_populates='liked_tuts')  #Likes-todo
-# dislikes = db.relationship("User", secondary=dislikes, back_populates='disliked_tuts')
+  # likes = db.relationship("User", secondary=likes, back_populates='liked_tuts')  #Likes-todo
+  # dislikes = db.relationship("User", secondary=dislikes, back_populates='disliked_tuts')
+
+
+
+  # return
+
+  #for likes and dislikes later    todo-likes
+  #TO-DO: likes method
+  def tut_likes_count(self):
+    return len(self.likes)
+  def tut_dislikes_count(self):
+    return len(self.dislikes)
+
+
+  def to_dict(self):
+    return {
+      'id': self.id,
+      'user_id': self.user_id,
+      "tut_title": self.tut_title,
+      'tut_description': self.tut_description,
+      'created_at': self.created_at,
+      'updated_at': self.updated_at,
+      'thumbnail_pic': self.thumbnail_pic,
+      'tut_data': self.tut_data,
+      # "likes": [user.id for user in self.likes],
+      # "dislikes": [user.id for user in self.dislikes],
+      # "comments": [c.to_dict() for c in self.comments]
+    }
