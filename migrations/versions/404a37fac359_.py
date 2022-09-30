@@ -1,8 +1,8 @@
 """empty message
 
-Revision ID: a15dcb1e6951
+Revision ID: 404a37fac359
 Revises: 
-Create Date: 2022-09-29 13:55:07.101116
+Create Date: 2022-09-29 21:43:29.573446
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = 'a15dcb1e6951'
+revision = '404a37fac359'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -23,6 +23,8 @@ def upgrade():
     sa.Column('username', sa.String(length=40), nullable=False),
     sa.Column('email', sa.String(length=255), nullable=False),
     sa.Column('hashed_password', sa.String(length=255), nullable=False),
+    sa.Column('about', sa.Text(), nullable=True),
+    sa.Column('profile_img', sa.String(length=255), nullable=True),
     sa.PrimaryKeyConstraint('id'),
     sa.UniqueConstraint('email'),
     sa.UniqueConstraint('username')
@@ -32,8 +34,8 @@ def upgrade():
     sa.Column('user_id', sa.Integer(), nullable=False),
     sa.Column('tut_title', sa.String(length=100), nullable=False),
     sa.Column('tut_description', sa.Text(), nullable=False),
-    sa.Column('created_at', sa.DateTime(), nullable=False),
-    sa.Column('updated_at', sa.DateTime(), nullable=False),
+    sa.Column('created_at', sa.DateTime(), server_default=sa.text('(CURRENT_TIMESTAMP)'), nullable=False),
+    sa.Column('updated_at', sa.DateTime(), nullable=True),
     sa.Column('thumbnail_pic', sa.Text(), nullable=True),
     sa.Column('tut_video', sa.Text(), nullable=False),
     sa.ForeignKeyConstraint(['user_id'], ['users.id'], ),

@@ -8,7 +8,7 @@ def seed_tuts():
         tut_description="Join us as we begin at the beginning, and learn all of the SQL essentials.",
         tut_title="Learn SQL with Socratica",
         user_id=18,
-        tut_video="https://www.youtube.com/watch?v=nWyyDHhTxYU&list=PLi01XoE8jYojRqM4qGBF1U90Ee1Ecb5tt&index=1 "
+        tut_video="https://www.youtube.com/watch?v=nWyyDHhTxYU&list=PLi01XoE8jYojRqM4qGBF1U90Ee1Ecb5tt&index=1"
     )
     tut2 = Tut(
         thumbnail_pic="https://media-exp1.licdn.com/dms/image/C5603AQECaeulDgv6KQ/profile-displayphoto-shrink_200_200/0/1659374183810?e=1669852800&v=beta&t=fDIm4R8RMsBqcfAOC-ZJaPl0M0ylITfuu1pOEW3sX1Y",
@@ -62,7 +62,7 @@ def seed_tuts():
         tut_description="This short video explains what Git is and why it's a critical skill for every software & DevOps engineer. ",
         tut_title="What is Git? Explained in 2 Minutes!",
         user_id=8,
-        tut_video="https://www.youtube.com/watch?v=2ReR1YJrNOM "
+        tut_video="https://www.youtube.com/watch?v=2ReR1YJrNOM"
     )
 
     tut9 = Tut(
