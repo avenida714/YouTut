@@ -2,10 +2,10 @@
 
 import React from 'react'
 
-function index() {
+function MainFeed() {
   return (
-    <div>index</div>
+    <div>MainFeed</div>
   )
 }
 
-export default index
+export default MainFeed
