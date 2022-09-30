@@ -57,7 +57,7 @@ def seed_users():
         password="password",
         about="Jonas Schmedtmann makes amazing content on youtube. Please check them out here: https://www.youtube.com/c/JonasSchmedtmann/about",
         profile_img="https://yt3.ggpht.com/ytc/AMLnZu__R2Na9E4qF_rxND7ifcqyocm3di8bV9Qbc1y5ow=s88-c-k-c0x00ffffff-no-rj"
-    )# 6
+    )# 7
 
     mosh = User(
         username='Mosh_Hamedani',
