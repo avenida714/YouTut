@@ -50,11 +50,11 @@ def seed_tuts():
     )
 
     tut7 = Tut(
-        thumbnail_pic="",
-        tut_description="Charcuterie, anyone?",
-        tut_title="USA",
-        user_id=4,
-        tut_video=""
+        thumbnail_pic="https://i.ytimg.com/an_webp/vDQ9GZsJkms/mqdefault_6s.webp?du=3000&sqp=CM3K2ZkG&rs=AOn4CLAt04GF9O9DjLuc7deZBCUSjhPVaw",
+        tut_description="Preview of the upcoming update of my complete JavaScript course on Udemy. Will be ready around October 21st!",
+        tut_title=" I'm updating my JavaScript course! Here is a preview!",
+        user_id=7,
+        tut_video="https://www.youtube.com/watch?v=vDQ9GZsJkms"
     )
 
     tut8 = Tut(
