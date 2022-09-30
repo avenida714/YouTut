@@ -10,6 +10,8 @@ class User(db.Model, UserMixin):
     username = db.Column(db.String(40), nullable=False, unique=True)
     email = db.Column(db.String(255), nullable=False, unique=True)
     hashed_password = db.Column(db.String(255), nullable=False)
+    about = db.Column(db.Text)
+    profile_img = db.Column(db.String(255), default='https://youtut.s3.us-west-1.amazonaws.com/bobo.jpeg')
 
     @property
     def password(self):
