@@ -4,18 +4,18 @@ from app.models import db, Tut
 # Adds demo posts, you can add other posts here if you want
 def seed_tuts():
     tut1 = Tut(
-        thumbnail_pic="https://pbs.twimg.com/media/Efyxgr7XYAEHO18.jpg",
-        tut_description="Do not touch my donuts!",
-        tut_title="USA",
-        user_id=1,
-        tut_video=""
+        thumbnail_pic="https://i.ytimg.com/vi/nWyyDHhTxYU/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDrG89KBDtt4TiIJoTYDwdUwNnqBA",
+        tut_description="Join us as we begin at the beginning, and learn all of the SQL essentials.",
+        tut_title="Learn SQL with Socratica",
+        user_id=18,
+        tut_video="https://www.youtube.com/watch?v=nWyyDHhTxYU&list=PLi01XoE8jYojRqM4qGBF1U90Ee1Ecb5tt&index=1 "
     )
     tut2 = Tut(
-        thumbnail_pic="https://c2.staticflickr.com/6/5241/5255943248_665bd55501_b.jpg",
-        tut_description="Winner Winner Chicken Dinner!",
-        tut_title="USA",
-        user_id=1,
-        tut_video=""
+        thumbnail_pic="https://i.vimeocdn.com/video/657698376-fdbd7b4977502566109a288074b02e48e32ced0189eec0a4fe796390ec7a0a1c-d_130x73",
+        tut_description="Alvin walks us through the code multiples problem",
+        tut_title="Code Multiples with Alvin",
+        user_id=3,
+        tut_video="https://vimeo.com/235784157"
     )
     tut3 = Tut(
         thumbnail_pic="https://thumbor.thedailymeal.com/eChHs6UmjIXEmt_uLgTcVIEtH8g=/840x565/https://www.thedailymeal.com/sites/default/files/2018/06/20/20_Not_finished_food_on_plate_istock_edit.jpg",
