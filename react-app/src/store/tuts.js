@@ -7,8 +7,26 @@ const READ_ALL_TUTS = "tuts/getAllTuts"
 //~~~~~~~~~~~ACTION CREATORS~~~~~~~~~~~~~~~~
 
 
+//Read ONE
+const actionReadTut = (tut) => {
+  return {
+    type: READ_ONE_TUT,
+    tut,
+  }
+}
+
+//Read All
+const actionReadAllTuts = (tuts) => {
+  return {
+    type: READ_ALL_TUTS,
+    tuts
+  }
+}
+
 
 //~~~~~~~~~~~THUNKS~~~~~~~~~~~~~~~~
+
+
 
 
 
