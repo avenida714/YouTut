@@ -42,11 +42,11 @@ def seed_tuts():
     )
 
     tut6 = Tut(
-        thumbnail_pic="",
-        tut_description="Seconds?",
-        tut_title="USA",
-        user_id=3,
-        tut_video=""
+        thumbnail_pic="https://i.ytimg.com/vi/HLcR7qKtu_M/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLB9amYBIGa21B0Zw6ZQrmnjUoHgdw",
+        tut_description="Ania talks about the ! symbol",
+        tut_title="Bang ! Explained",
+        user_id=6,
+        tut_video="https://www.youtube.com/watch?v=HLcR7qKtu_M"
     )
 
     tut7 = Tut(
