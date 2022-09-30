@@ -39,7 +39,6 @@ export const getOneTutById = (tutId) => async (dispatch) => {
 }
 
 //READ/FETCH ALL TUTS ON YOUTUT
-
 export const getAllTutsOnYouTut = () => async (dispatch) => {
   const response = await fetch(`/api/tuts/all`);
   if (response.ok) {
@@ -50,6 +49,27 @@ export const getAllTutsOnYouTut = () => async (dispatch) => {
   return response;
 };
 
+
+//READ/FETCH ALL TUTS OF THE CURRENT USER (1st person)
+export const getCurrentUserTuts = () => async (dispatch) => {
+  const response = await fetch(`/api/tuts/current`, {});
+  if (response.ok) {
+    const data = await response.json();
+    dispatch(actionReadAllTuts(data.current_tuts));
+    return data;
+  }
+  return response;
+};
+
+//READ/FETCH ALL TUTS OF ONE USER (3rd person)
+export const getAllTutsOfAnotherUser = (id) => async (dispatch) => {
+  const response = await fetch(`/api/tuts/user/${id}`);
+  if (response.ok) {
+    const data = await response.json();
+    dispatch(actionReadAllTuts(data.tuts));
+    return data;
+  }
+};
 
 
 //~~~~~~~~~~~REDUCER~~~~~~~~~~~~~~~~
