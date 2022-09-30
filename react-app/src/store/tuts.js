@@ -5,6 +5,8 @@ const READ_ONE_TUT = "tuts/getOneTut"
 
 const READ_ALL_TUTS = "tuts/getAllTuts"
 
+const CREATE_TUT = "tuts/addATut"
+
 
 //~~~~~~~~~~~ACTION CREATORS~~~~~~~~~~~~~~~~
 
@@ -22,6 +24,15 @@ const actionReadAllTuts = (tuts) => {
   return {
     type: READ_ALL_TUTS,
     tuts
+  }
+}
+
+//Create/upload a tut
+
+const addATut = (tut) => {
+  return {
+    type: CREATE_TUT,
+    tut
   }
 }
 
@@ -73,6 +84,23 @@ export const getAllTutsOfAnotherUser = (id) => async (dispatch) => {
   }
 };
 
+//CREATE A TUT AWS
+
+export const uploadTut = (tut) => async (dispatch) => {
+  const response = await fetch('/api/tuts/upload-tut', {
+    method:'POST',
+    body: tut
+  })
+  const data = await response.json()
+  if (response.ok) {
+    dispatch(addATut(data.tut))
+    return data
+  } else {
+    return data.errors
+  }
+
+}
+
 
 //~~~~~~~~~~~REDUCER~~~~~~~~~~~~~~~~
 
@@ -94,6 +122,11 @@ const tutsReducer = (state = initialState, action) => {
         newState[tut.id] = tut;
       });
       return newState;
+    }
+    case CREATE_TUT: {
+      const newState = {...state}
+      newState[action.tut.id] = action.tut
+      return newState
     }
 
 

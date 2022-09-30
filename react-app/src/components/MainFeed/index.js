@@ -40,7 +40,6 @@ function MainFeed() {
     <div className="outer-most-wrapper">
       <div className='main-feed-display'>
         {displayTuts}
-        test
       </div>
     </div>
     )

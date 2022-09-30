@@ -27,7 +27,7 @@ def get_all_tuts():
 # ADDING A TUT
 @tut_routes.route("/", methods=["POST"])
 @login_required
-def upload_tut():
+def add_tut():
     form = TutForm()
     form['csrf_token'].data = request.cookies['csrf_token']
 
@@ -61,6 +61,7 @@ def upload_tut():
         return {"errors": "Video File Required"}, 400
 
     tut = request.files["tut"]  # this name is what needs to match from the component in the frontend  AWS-todo
+    #from flask api : Each key in files is the name from the <input type="file" name="">. Each value in files is a Werkzeug FileStorage object.
 
     if not allowed_file(tut.filename):
         return {"errors": "This file type is not permitted (MP4 works best for videos; use jpeg, pdf, jpg, or gif for images)."}, 400
