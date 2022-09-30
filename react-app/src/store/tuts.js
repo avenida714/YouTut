@@ -27,6 +27,28 @@ const actionReadAllTuts = (tuts) => {
 //~~~~~~~~~~~THUNKS~~~~~~~~~~~~~~~~
 
 
+//READ/FETCH ONE TUT BY ID
+export const getOneTutById = (tutId) => async (dispatch) => {
+  const response = await fetch(`/api/tuts/${tutId}`)
+  if (response.ok) {
+    const tutById = await response.json();
+    dispatch(actionReadTut(tutById))
+    return tutById;
+  }
+  return response
+}
+
+//READ/FETCH ALL TUTS ON YOUTUT
+
+export const getAllTutsOnYouTut = () => async (dispatch) => {
+  const response = await fetch(`/api/tuts/all`);
+  if (response.ok) {
+    const data = await response.json();
+    dispatch(actionReadAllTuts(data.tuts));
+    return data;
+  }
+  return response;
+};
 
 
 
