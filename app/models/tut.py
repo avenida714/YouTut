@@ -7,7 +7,7 @@ from sqlalchemy.sql import func
 #from .dislikes import dislikes
 
 class Tut(db.Model):
-  __tablename__ = 'Tuts'
+  __tablename__ = 'tuts'
 
   id = db.Column(db.Integer, primary_key=True)
   user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
