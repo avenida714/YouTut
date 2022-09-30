@@ -11,4 +11,4 @@ class TutForm(FlaskForm):
   tut_title = StringField('Title', validators)
   tut_video = TextAreaField("Video", validators)
   tut_description = TextAreaField('Description')
-  thumbnail_pic = TextAreaField('Thumbnail')   #these names must match the keys in the dispatch from frontend form
+  thumbnail_pic = TextAreaField('Thumbnail', validators)   #these names must match the keys in the dispatch from frontend form
