@@ -66,11 +66,11 @@ def seed_tuts():
     )
 
     tut9 = Tut(
-        thumbnail_pic="",
-        tut_description="Fried Potato Slices",
-        tut_title="USA",
+        thumbnail_pic="https://i.ytimg.com/an_webp/OCg4DJyVGk0/mqdefault_6s.webp?du=3000&sqp=CM3F2ZkG&rs=AOn4CLDSTgee7SxRZtJJGo4IT2svkerHZA",
+        tut_description="We dump the data file and instead learn how to load the Pokemon data via a web request using React's useEffect hook and fetch.",
+        tut_title=" Introduction to React #6 | Asynchronous Requests",
         user_id=9,
-        tut_video=""
+        tut_video="https://www.youtube.com/watch?v=OCg4DJyVGk0"
     )
 
     tut10 = Tut(
