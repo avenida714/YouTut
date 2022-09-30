@@ -20,7 +20,7 @@ def seed_users():
     alvin = User(
         username='Alvin',
         email='bobbie@aa.io',
-        password='password'
+        password='password',
         about=" 'Alvin is one of those remarkable people who really gives his all into everything he does. Add in the fact that he is incredibly intelligent, clever, creative, and fun and you have yourself a genuinely amazing person to be around. Alvin was always willing to help out his team mates and go above and beyond the call of duty. So if you want someone who will work his hardest to make your product and team better - Alvin is your guy.' -Rose"
     )# 3
 
