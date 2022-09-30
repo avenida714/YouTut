@@ -78,7 +78,7 @@ export const getAllTutsOfAnotherUser = (id) => async (dispatch) => {
 const initialState = {};
 
 //Reducer:
-const postsReducer = (state = initialState, action) => {
+const tutsReducer = (state = initialState, action) => {
   let newState = {};
   switch (action.type) {
 
@@ -100,4 +100,4 @@ const postsReducer = (state = initialState, action) => {
   }
 };
 
-export default postsReducer;
+export default tutsReducer;
