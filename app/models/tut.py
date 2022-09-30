@@ -34,10 +34,10 @@ class Tut(db.Model):
 
   #for likes and dislikes later    todo-likes
   #TO-DO: likes method
-  def tut_likes_count(self):
-    return len(self.likes)
-  def tut_dislikes_count(self):
-    return len(self.dislikes)
+  # def tut_likes_count(self):
+  #   return len(self.likes)
+  # def tut_dislikes_count(self):
+  #   return len(self.dislikes)
 
 
   def to_dict(self):
@@ -49,8 +49,8 @@ class Tut(db.Model):
       'created_at': self.created_at,
       'updated_at': self.updated_at,
       'thumbnail_pic': self.thumbnail_pic,
-      'tut_data': self.tut_data,
-      "likes": [user.id for user in self.likes],
-      "dislikes": [user.id for user in self.dislikes],
-      "comments": [c.to_dict() for c in self.comments]
+      'tut_video': self.tut_video,
+      # "likes": [user.id for user in self.likes],
+      # "dislikes": [user.id for user in self.dislikes],
+      # "comments": [c.to_dict() for c in self.comments]
     }

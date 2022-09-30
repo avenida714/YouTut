@@ -11,6 +11,18 @@ from app.api.aws  import (
 tut_routes = Blueprint("tuts", __name__)
 
 
+#Get ALL Tuts
+@tut_routes.route("/all")
+@login_required
+def get_all_tuts():
+    if current_user:
+        all_tuts = Tut.query.order_by(Tut.created_at.desc()).all()
+        all_tuts_json = [tut.to_dict() for tut in all_tuts]
+        return {"tuts": all_tuts_json}
+    else:
+        return {'message': 'Unauthorized user', "statusCode": 403}
+
+
 
 # UPLOAD A TUT  (CREATE)
 @tut_routes.route("/", methods=["POST"])
