@@ -58,18 +58,18 @@ def seed_tuts():
     )
 
     tut8 = Tut(
-        thumbnail_pic="",
-        tut_description="Flap Jacks",
-        tut_title="iHop",
-        user_id=4,
-        tut_video=""
+        thumbnail_pic="https://i.ytimg.com/an_webp/2ReR1YJrNOM/mqdefault_6s.webp?du=3000&sqp=CK3R2ZkG&rs=AOn4CLDtIn6LmDtESU4sXfGWLcuTbkDl_w",
+        tut_description="This short video explains what Git is and why it's a critical skill for every software & DevOps engineer. ",
+        tut_title="What is Git? Explained in 2 Minutes!",
+        user_id=8,
+        tut_video="https://www.youtube.com/watch?v=2ReR1YJrNOM "
     )
 
     tut9 = Tut(
         thumbnail_pic="",
         tut_description="Fried Potato Slices",
         tut_title="USA",
-        user_id=5,
+        user_id=9,
         tut_video=""
     )
 
