@@ -81,85 +81,85 @@ def seed_tuts():
         tut_video="https://www.youtube.com/watch?v=8mvNzU7DpO4"
     )
 
-    tut11 = Tut(
-        thumbnail_pic="",
-        tut_description="Borgir",
-        tut_title="USA",
-        user_id=6,
-        tut_video=""
-    )
+    # tut11 = Tut(
+    #     thumbnail_pic="",
+    #     tut_description="Borgir",
+    #     tut_title="USA",
+    #     user_id=6,
+    #     tut_video=""
+    # )
 
-    tut12 = Tut(
-        thumbnail_pic="",
-        tut_description="Wing Wednesdays!",
-        tut_title="Wing Stop",
-        user_id=6,
-        tut_video=""
-    )
+    # tut12 = Tut(
+    #     thumbnail_pic="",
+    #     tut_description="Wing Wednesdays!",
+    #     tut_title="Wing Stop",
+    #     user_id=6,
+    #     tut_video=""
+    # )
 
-    tut13 = Tut(
-        thumbnail_pic="",
-        tut_description="Cakin'",
-        tut_title="USA",
-        user_id=7,
-        tut_video=""
-    )
+    # tut13 = Tut(
+    #     thumbnail_pic="",
+    #     tut_description="Cakin'",
+    #     tut_title="USA",
+    #     user_id=7,
+    #     tut_video=""
+    # )
 
-    tut14 = Tut(
-        thumbnail_pic="",
-        tut_description="Pizza pizza!",
-        tut_title="USA",
-        user_id=7,
-        tut_video=""
-    )
+    # tut14 = Tut(
+    #     thumbnail_pic="",
+    #     tut_description="Pizza pizza!",
+    #     tut_title="USA",
+    #     user_id=7,
+    #     tut_video=""
+    # )
 
-    tut15 = Tut(
-        thumbnail_pic="",
-        tut_description="useEfork",
-        tut_title="App Academy",
-        user_id=8,
-        tut_video=""
-    )
+    # tut15 = Tut(
+    #     thumbnail_pic="",
+    #     tut_description="useEfork",
+    #     tut_title="App Academy",
+    #     user_id=8,
+    #     tut_video=""
+    # )
 
-    tut16 = Tut(
-        thumbnail_pic="",
-        tut_description="Spammin'",
-        tut_title="USA",
-        user_id=8,
-        tut_video=""
-    )
+    # tut16 = Tut(
+    #     thumbnail_pic="",
+    #     tut_description="Spammin'",
+    #     tut_title="USA",
+    #     user_id=8,
+    #     tut_video=""
+    # )
 
-    tut17 = Tut(
-        thumbnail_pic="",
-        tut_description="Fish Filet",
-        tut_title="USA",
-        user_id=9,
-        tut_video=""
-    )
+    # tut17 = Tut(
+    #     thumbnail_pic="",
+    #     tut_description="Fish Filet",
+    #     tut_title="USA",
+    #     user_id=9,
+    #     tut_video=""
+    # )
 
-    tut18 = Tut(
-        thumbnail_pic="",
-        tut_description="Meeaaattt...",
-        tut_title="USA",
-        user_id=9,
-        tut_video=""
-    )
+    # tut18 = Tut(
+    #     thumbnail_pic="",
+    #     tut_description="Meeaaattt...",
+    #     tut_title="USA",
+    #     user_id=9,
+    #     tut_video=""
+    # )
 
-    tut19 = Tut(
-        thumbnail_pic="",
-        tut_description="Itadakimasu",
-        tut_title="USA",
-        user_id=10,
-        tut_video=""
-    )
+    # tut19 = Tut(
+    #     thumbnail_pic="",
+    #     tut_description="Itadakimasu",
+    #     tut_title="USA",
+    #     user_id=10,
+    #     tut_video=""
+    # )
 
-    tut20 = Tut(
-        thumbnail_pic="",
-        tut_description="Twinning",
-        tut_title="USA",
-        user_id=10,
-        tut_video=""
-    )
+    # tut20 = Tut(
+    #     thumbnail_pic="",
+    #     tut_description="Twinning",
+    #     tut_title="USA",
+    #     user_id=10,
+    #     tut_video=""
+    # )
 
 
     db.session.add(tut1)
@@ -192,35 +192,35 @@ def seed_tuts():
     db.session.add(tut10)
     db.session.commit()
 
-    db.session.add(tut11)
-    db.session.commit()
+    # db.session.add(tut11)
+    # db.session.commit()
 
-    db.session.add(tut12)
-    db.session.commit()
+    # db.session.add(tut12)
+    # db.session.commit()
 
-    db.session.add(tut13)
-    db.session.commit()
+    # db.session.add(tut13)
+    # db.session.commit()
 
-    db.session.add(tut14)
-    db.session.commit()
+    # db.session.add(tut14)
+    # db.session.commit()
 
-    db.session.add(tut15)
-    db.session.commit()
+    # db.session.add(tut15)
+    # db.session.commit()
 
-    db.session.add(tut16)
-    db.session.commit()
+    # db.session.add(tut16)
+    # db.session.commit()
 
-    db.session.add(tut17)
-    db.session.commit()
+    # db.session.add(tut17)
+    # db.session.commit()
 
-    db.session.add(tut18)
-    db.session.commit()
+    # db.session.add(tut18)
+    # db.session.commit()
 
-    db.session.add(tut19)
-    db.session.commit()
+    # db.session.add(tut19)
+    # db.session.commit()
 
-    db.session.add(tut20)
-    db.session.commit()
+    # db.session.add(tut20)
+    # db.session.commit()
 
 
 # Uses a raw SQL query to TRUNCATE the posts table.
