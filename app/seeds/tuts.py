@@ -18,18 +18,18 @@ def seed_tuts():
         tut_video="https://vimeo.com/235784157"
     )
     tut3 = Tut(
-        thumbnail_pic="https://thumbor.thedailymeal.com/eChHs6UmjIXEmt_uLgTcVIEtH8g=/840x565/https://www.thedailymeal.com/sites/default/files/2018/06/20/20_Not_finished_food_on_plate_istock_edit.jpg",
-        tut_description="Mom's Spaghetti, knees weak arms are heavy...",
-        tut_title="USA",
+        thumbnail_pic="https://media-exp1.licdn.com/dms/image/C5603AQECaeulDgv6KQ/profile-displayphoto-shrink_200_200/0/1659374183810?e=1669852800&v=beta&t=fDIm4R8RMsBqcfAOC-ZJaPl0M0ylITfuu1pOEW3sX1Y",
+        tut_description="Rose teaches how to utilize the Apollo Cache with mutations that update data.",
+        tut_title="Update Mutations in Apollo",
         user_id=2,
-        tut_video=""
+        tut_video="https://vimeo.com/334081527"
     )
     tut4 = Tut(
-        thumbnail_pic="https://brghealth.com/brg/wp-content/uploads/2014/08/Dinner-plate-fork-knife-finished-eating.jpg",
-        tut_description="Criss-cross, not apple sauce?",
-        tut_title="USA",
-        user_id=2,
-        tut_video=""
+        thumbnail_pic="https://i.ytimg.com/an_webp/1L6oncFUu10/mqdefault_6s.webp?du=3000&sqp=CNrD2ZkG&rs=AOn4CLBi0jcCnjiBq-dfhnI5N5WEoRYX1Q",
+        tut_description="In this video, Brad will introduce the application we will build which is a CRUD application for recipes built with Node.js and the PostgreSQL relational database. ",
+        tut_title="Recipe App Using Node.js & PostgreSQL - Part 1",
+        user_id=4,
+        tut_video="https://www.youtube.com/watch?v=AFiqctkoVJ4"
     )
     tut5 = Tut(
         thumbnail_pic="http://images.fineartamerica.com/images-medium-large/crumbs-in-white-plate-sami-sarkis.jpg",
