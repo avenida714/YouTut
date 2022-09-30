@@ -20,7 +20,7 @@ def get_all_tuts():
         all_tuts_json = [tut.to_dict() for tut in all_tuts]
         return {"tuts": all_tuts_json}
     else:
-        return {'message': 'Unauthorized user', "statusCode": 403}
+        return {'message': 'Unauthorized user', "statusCode": 403}, 403  # put second 403 to flask will read it as error
 
 
 

@@ -28,11 +28,12 @@ function MainFeed() {
 
 
   useEffect(() => {
-    dispatch(getAllTutsOnYouTut()).then(() => {
-      dispatch(loadUserRequest(userLoggedIn.id))
-      setIsLoaded(true);
-    })
-  }, [dispatch])
+    dispatch(getAllTutsOnYouTut())
+    .then(() =>  dispatch(loadUserRequest(userLoggedIn.id)))
+    .then(() => dispatch(getAllTutsOnYouTut()))
+    .then(() => setIsLoaded(true)
+    )
+  }, [dispatch, userLoggedIn.id])
 
   return (
     isLoaded && (
