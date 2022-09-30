@@ -74,11 +74,11 @@ def seed_tuts():
     )
 
     tut10 = Tut(
-        thumbnail_pic="",
-        tut_description="Peas and Thank you!",
-        tut_title="USA",
-        user_id=5,
-        tut_video=""
+        thumbnail_pic="https://i.ytimg.com/an_webp/8mvNzU7DpO4/mqdefault_6s.webp?du=3000&sqp=CO6k2ZkG&rs=AOn4CLCww9gwwuEyjZhljEQIqAoqEOYEUg",
+        tut_description="Don't short a circuit, learn about short circuiting here.",
+        tut_title="If You Don't Understand Short Circuiting Your App Will Break",
+        user_id=10,
+        tut_video="https://www.youtube.com/watch?v=8mvNzU7DpO4"
     )
 
     tut11 = Tut(
