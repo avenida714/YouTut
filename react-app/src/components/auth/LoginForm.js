@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { login } from '../../store/session';
-import UploadPicture from '../UploadPicture';
+import UploadTut from '../Uploadtut';
+// import UploadPicture from '../UploadPicture';
 
 const LoginForm = () => {
   const [errors, setErrors] = useState([]);
@@ -59,7 +60,7 @@ const LoginForm = () => {
         />
         <button type='submit'>Login</button>
         <div>
-          <UploadPicture />
+          <UploadTut />
         </div>
       </div>
     </form>

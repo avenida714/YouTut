@@ -50,6 +50,7 @@ class Tut(db.Model):
       'updated_at': self.updated_at,
       'thumbnail_pic': self.thumbnail_pic,
       'tut_video': self.tut_video,
+      'user': self.user.to_dict()
       # "likes": [user.id for user in self.likes],
       # "dislikes": [user.id for user in self.dislikes],
       # "comments": [c.to_dict() for c in self.comments]

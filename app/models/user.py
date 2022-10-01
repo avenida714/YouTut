@@ -24,16 +24,24 @@ class User(db.Model, UserMixin):
     def check_password(self, password):
         return check_password_hash(self.password, password)
 
-    def to_dict(self):
-        return {
-            'id': self.id,
-            'username': self.username,
-            'email': self.email
-        }
+
 
     #relationships
 
     tuts = db.relationship('Tut', back_populates="user", cascade="all, delete-orphan")
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'username': self.username,
+            'email': self.email,
+            'about': self.about,
+            'profile_img': self.profile_img,
+            'tuts': self.tuts,
+
+        }
+
+
 
     # comments relationship here
 
