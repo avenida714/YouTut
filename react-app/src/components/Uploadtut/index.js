@@ -60,17 +60,42 @@ const UploadTut = () => {
         }
     }
 
-    const updateImage = (e) => {
+    const updateThumbnail = (e) => {
         const file = e.target.files[0];
-        setImage(file);
+        setThumbnail(file);
+    }
+
+    const updateTutVideo = (e) => {
+        const vidFile = e.target.files[0];
+        setMp4(vidFile)
     }
 
     return (
         <form onSubmit={handleSubmit}>
+            <label>Title of your Tut</label>
+            <input
+                type="text"
+                name="title"
+                onChange={(e) => setTitle(e.target.value)}
+            />
+            <label>Upload your File (mp4 only please)</label>
+            <input
+                required
+                type="file"
+                accept=".mp4"
+                onChange={updateTutVideo}
+            />
+            <label>Title of your Tut</label>
+            <input
+                type="file"
+                accept="image/*"
+                onChange={updateThumbnail}
+            />
+            <label>Title of your Tut</label>
             <input
               type="file"
               accept="image/*"
-              onChange={updateImage}
+              onChange={updateThumbnail}
             />
             <button type="submit">Submit</button>
             {(imageLoading)&& <p>Loading...</p>}
