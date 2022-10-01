@@ -11,11 +11,23 @@ from app.api.aws  import (
 tut_routes = Blueprint("tuts", __name__)
 
 
+#Get ALL Tuts
+@tut_routes.route("/all")
+@login_required
+def get_all_tuts():
+    if current_user:
+        all_tuts = Tut.query.order_by(Tut.created_at.desc()).all()
+        all_tuts_json = [tut.to_dict() for tut in all_tuts]
+        return {"tuts": all_tuts_json}
+    else:
+        return {'message': 'Unauthorized user', "statusCode": 403}, 403  # put second 403 to flask will read it as error
 
-# UPLOAD A TUT  (CREATE)
+
+
+# ADDING A TUT
 @tut_routes.route("/", methods=["POST"])
 @login_required
-def upload_tut():
+def add_tut():
     form = TutForm()
     form['csrf_token'].data = request.cookies['csrf_token']
 
@@ -42,27 +54,31 @@ def upload_tut():
         return jsonify(form.errors)
 
 
-    # if "tut" not in request.files:
-    #     return {"errors": "Video File Required"}, 400
+#UPLOAD TUT TO AWS
+@tut_routes.route('/upload-tut', methods=["POST"])
+def upload_tut():
+    if "tut" not in request.files:
+        return {"errors": "Video File Required"}, 400
 
-    # tut = request.files["tut"]  # this name is what needs to match from the component in the frontend  AWS-todo
+    tut = request.files["tut"]  # this name is what needs to match from the component in the frontend  AWS-todo
+    #from flask api : Each key in files is the name from the <input type="file" name="">. Each value in files is a Werkzeug FileStorage object.
 
-    # if not allowed_file(tut.filename):
-    #     return {"errors": "This file type is not permitted (MP4 works best for videos; use jpeg, pdf, jpg, or gif for images)."}, 400
+    if not allowed_file(tut.filename):
+        return {"errors": "This file type is not permitted (MP4 works best for videos; use jpeg, pdf, jpg, or gif for images)."}, 400
 
-    # tut.filename = get_unique_filename(tut.filename)
+    tut.filename = get_unique_filename(tut.filename)
 
-    # upload = upload_file_to_s3(tut)
+    upload = upload_file_to_s3(tut)
 
-    # if "url" not in upload:
-    #     # if the dictionary doesn't have a url key
-    #     # it means that there was an error when we tried to upload
-    #     # so we send back that error message
-    #     return upload, 400
+    if "url" not in upload:
+        # if the dictionary doesn't have a url key
+        # it means that there was an error when we tried to upload
+        # so we send back that error message
+        return upload, 400
 
-    # url = upload["url"]
-    # # flask_login allows us to get the current user from the request
-    # new_tut = Tut(user=current_user, url=url)
-    # db.session.add(new_tut)
-    # db.session.commit()
-    # return {"url": url}
+    url = upload["url"]
+    # flask_login allows us to get the current user from the request
+    new_tut = Tut(user=current_user, url=url)
+    db.session.add(new_tut)
+    db.session.commit()
+    return {"url": url}

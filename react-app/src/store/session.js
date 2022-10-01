@@ -1,6 +1,8 @@
 // constants
 const SET_USER = 'session/SET_USER';
 const REMOVE_USER = 'session/REMOVE_USER';
+const LOAD_USER = "session/LOAD_USER";
+
 
 const setUser = (user) => ({
   type: SET_USER,
@@ -10,6 +12,11 @@ const setUser = (user) => ({
 const removeUser = () => ({
   type: REMOVE_USER,
 })
+
+const loadUser = (user) => ({
+  type: LOAD_USER,
+  user,
+});
 
 const initialState = { user: null };
 
@@ -24,7 +31,7 @@ export const authenticate = () => async (dispatch) => {
     if (data.errors) {
       return;
     }
-  
+
     dispatch(setUser(data));
   }
 }
@@ -40,8 +47,8 @@ export const login = (email, password) => async (dispatch) => {
       password
     })
   });
-  
-  
+
+
   if (response.ok) {
     const data = await response.json();
     dispatch(setUser(data))
@@ -82,7 +89,7 @@ export const signUp = (username, email, password) => async (dispatch) => {
       password,
     }),
   });
-  
+
   if (response.ok) {
     const data = await response.json();
     dispatch(setUser(data))
@@ -96,6 +103,20 @@ export const signUp = (username, email, password) => async (dispatch) => {
     return ['An error occurred. Please try again.']
   }
 }
+
+
+export const loadUserRequest = (userId) => async (dispatch) => {
+  const res = await fetch(`/api/users/${userId}`, {
+    method: "GET",
+    headers: { "Content-Type": "application/json" },
+  });
+  if (res.ok) {
+    const user = await res.json();
+    console.log("LOADUSER");
+    console.log(user);
+    dispatch(loadUser(user));
+  }
+};
 
 export default function reducer(state = initialState, action) {
   switch (action.type) {
