@@ -57,28 +57,77 @@ def add_tut():
 #UPLOAD TUT TO AWS
 @tut_routes.route('/upload-tut', methods=["POST"])
 def upload_tut():
-    if "tut" not in request.files:
+    print("this is the request.files ***************", request.files)
+    print("this is the request.form ***************~~~~~~~", request.form)
+    if "tut_video" not in request.files:
         return {"errors": "Video File Required"}, 400
 
-    tut = request.files["tut"]  # this name is what needs to match from the component in the frontend  AWS-todo
+    tut_video = request.files["tut_video"]  # this name is what needs to match from the component in the frontend  AWS-todo
     #from flask api : Each key in files is the name from the <input type="file" name="">. Each value in files is a Werkzeug FileStorage object.
 
-    if not allowed_file(tut.filename):
+    if not allowed_file(tut_video.filename):
         return {"errors": "This file type is not permitted (MP4 works best for videos; use jpeg, pdf, jpg, or gif for images)."}, 400
 
-    tut.filename = get_unique_filename(tut.filename)
+    tut_video.filename = get_unique_filename(tut_video.filename)
+    video_upload = upload_file_to_s3(tut_video)
 
-    upload = upload_file_to_s3(tut)
-
-    if "url" not in upload:
+    if "url" not in video_upload:
         # if the dictionary doesn't have a url key
         # it means that there was an error when we tried to upload
         # so we send back that error message
-        return upload, 400
+        return video_upload, 400
 
-    url = upload["url"]
+    tut_video_aws_url = video_upload["url"]
     # flask_login allows us to get the current user from the request
-    new_tut = Tut(user=current_user, url=url)
+
+
+    # validating the thumbnail
+    thumbnail_pic = request.files["thumbnail_pic"]
+
+    if not allowed_file(thumbnail_pic.filename):
+        return {"errors": "This file type is not permitted (Please use pdf, png, jpg, jpeg, or gif)."}, 400
+
+    thumbnail_pic.filename = get_unique_filename(tut_video.filename)
+    video_upload = upload_file_to_s3(tut_video)
+
+    thumbnail_upload = upload_file_to_s3(thumbnail_pic)
+
+    if "url" not in thumbnail_upload:
+        # if the dictionary doesn't have a url key
+        # it means that there was an error when we tried to upload
+        # so we send back that error message
+        return thumbnail_upload, 400
+
+    tut_thumbnail_aws_url = thumbnail_upload["url"]
+
+    new_tut = Tut(
+            user_id=current_user.id,
+            tut_video=tut_video_aws_url,
+            tut_description=request.form.get('tut_description'),
+            tut_title=request.form.get('tut_title'),
+            thumbnail_pic=tut_thumbnail_aws_url,
+            )
+
     db.session.add(new_tut)
     db.session.commit()
-    return {"url": url}
+    return {"tut": new_tut.to_dict()}
+
+
+"""
+tut_title = form.data["tut_title"],
+            tut_video = form.data["tut_video"],
+            tut_description = form.data["description"],
+            thumbnail_pic = form.data["thumbnail_pic"],
+            user_id = current_user.id,
+            updated_at = datetime.now()
+
+request.files *************** ImmutableMultiDict([('tut_video', <FileStorage: 'test-vid2.mp4' ('video/mp4')>), ('thumbnail_pic', <FileStorage: 'ipfs-thumbnail2.jpg' ('image/jpeg')>)])
+this is the request.form ***************~~~~~~~ ImmutableMultiDict([('tut_title', 'test3'), ('tut_description', 'test3')])
+
+tut_video = request.files["tut_video"]
+****** THIS IS THE UPLOAD *******
+upload_file_to_s3(tut_video)
+ {'url': 'http://youtut.s3.amazonaws.com/74d53b40bd9c443e8801c38ba8cb3359.mp4'}
+
+ upload_file_to_s3(thumbnail_pic)        {'url': 'someamazonian url here}
+"""

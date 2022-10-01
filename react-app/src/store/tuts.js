@@ -96,6 +96,7 @@ export const uploadTut = (tut) => async (dispatch) => {
     dispatch(addATut(data.tut))
     return data
   } else {
+    console.log("DID WE MAKE IT HERE??? ****************")
     return data.errors
   }
 
