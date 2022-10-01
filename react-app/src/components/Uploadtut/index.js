@@ -85,13 +85,12 @@ const UploadTut = () => {
                 accept=".mp4"
                 onChange={updateTutVideo}
             />
-            <label>Title of your Tut</label>
+            <label>Description - tell us about this Tut!</label>
             <input
-                type="file"
-                accept="image/*"
-                onChange={updateThumbnail}
+                type="text"
+                onChange={(e) => setDescription(e.target.value)}
             />
-            <label>Title of your Tut</label>
+            <label>Thumbnail</label>
             <input
               type="file"
               accept="image/*"
