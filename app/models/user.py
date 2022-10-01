@@ -1,3 +1,4 @@
+# from app.models.tut import Tut
 from .db import db
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
@@ -31,16 +32,19 @@ class User(db.Model, UserMixin):
     tuts = db.relationship('Tut', back_populates="user", cascade="all, delete-orphan")
 
     def to_dict(self):
+        # fetched_tuts = Tut.query.filter(Tut.user_id == self.id)
+        # print("************FETCHED******TUTS**********", fetched_tuts.to_dict())
         return {
             'id': self.id,
             'username': self.username,
             'email': self.email,
             'about': self.about,
             'profile_img': self.profile_img,
-            'tuts': self.tuts,
+            # 'tuts': fetched_tuts,
 
         }
 
+    #session.query(MyClass).filter(MyClass.name == 'some name')
 
 
     # comments relationship here
