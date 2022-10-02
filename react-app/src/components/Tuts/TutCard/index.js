@@ -4,6 +4,7 @@ import ReactPlayer from 'react-player';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import DeleteTut from '../DeleteTut';
+import EditTut from '../EditTut';
 
 import "./TutCard.css";
 
@@ -16,7 +17,6 @@ function TutCard({tut}) {
 
   const userLoggedIn = useSelector((state) => state.session.user)
 
-  let id = tut.id
 
   // console.log("*****I am the Tut data being passed into the TUT card ********", tut.tut_video)
 
@@ -39,6 +39,7 @@ function TutCard({tut}) {
         <img src={tut.thumbnail_pic} alt="tut-thumbnail"/>
       </div>
       <DeleteTut tutId={tut.id} />
+      <EditTut tutId={tut.id} oldTitle={tut.title} oldDescription={tut.description}/>
     </div>
     :
     null
