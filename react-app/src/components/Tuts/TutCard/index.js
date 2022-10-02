@@ -32,6 +32,7 @@ function TutCard({tut}) {
       {/* <div className="user-profile-icon" onClick={usersProfilePage}>
         <img alt="profile-icon" className="img circle" src={tut.user.profile_img}></img>
       </div> */}
+      <h3 className='tut-title'>{tut.tut_title}</h3>
       <ReactPlayer url={tut.tut_video} controls/>
       <div>{tut.tut_description}</div>
       <div>
