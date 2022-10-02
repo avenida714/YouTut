@@ -5,7 +5,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import { loadUserRequest } from '../../store/session';
 import { getAllTutsOnYouTut } from '../../store/tuts';
 import TutCard from '../Tuts/TutCard';
-import UploadTut from '../Uploadtut';
+import UploadTut from '../Tuts/UploadTut';
+// import UploadTut from '../Uploadtut';
 
 function MainFeed() {
 
@@ -16,7 +17,7 @@ function MainFeed() {
 
   const tuts = Object.values(tutsObj)
 
-  // tuts.reverse()  will put in reverse chron order, newest first
+  tuts.reverse() //will put in reverse chron order, newest first
 
   const userLoggedIn = useSelector((state) => {
     return state.session.user;
