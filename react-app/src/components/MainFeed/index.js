@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { loadUserRequest } from '../../store/session';
 import { getAllTutsOnYouTut } from '../../store/tuts';
+import DeleteTut from '../Tuts/DeleteTut';
 import TutCard from '../Tuts/TutCard';
 import UploadTut from '../Tuts/UploadTut';
 // import UploadTut from '../Uploadtut';
@@ -25,7 +26,11 @@ function MainFeed() {
 
 
   const displayTuts = tuts.map((tut, i) => (
+    <div>
     <TutCard key={i} tut={tut} />
+    <DeleteTut tutId={tut.id} />
+    </div>
+
   ))
 
 
