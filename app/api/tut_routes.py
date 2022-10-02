@@ -128,3 +128,31 @@ def delete_tut(id):
         return {'message': "The Tut has been sucessfully deleted"}
     else:
         return {'message': "Unauthorized user"}, 403
+
+#UPDATE A TUT
+@tut_routes.route('/<int:tut_id>', methods=['PATCH'])
+@login_required
+def update_tut(id):
+    tut = Tut.query.get(id)
+    form = TutForm()
+    form['csrf_token'].data = request.cookies['csrf_token']
+    if form.validate_on_submit():
+        tut.tut_title = form.data['tut_title']
+        tut.tut_description = form.data['tut_description']
+
+        #space above in case we need to update AWS vid and pic
+        db.session.commit()
+
+        return {'tut': tut.to_dict()}
+    else:
+        return {'message': "Something went wrong! Please check your data and try again. Note that your title cannot exceed 100 characters."}
+
+
+
+"""
+user_id=current_user.id,
+            tut_video=tut_video_aws_url,
+            tut_description=request.form.get('tut_description'),
+            tut_title=request.form.get('tut_title'),
+            thumbnail_pic=tut_thumbnail_aws_url,
+"""
