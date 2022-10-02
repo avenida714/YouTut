@@ -1,6 +1,6 @@
 import React from 'react'
 
-function EditTut() {
+function EditTut({tutId, oldTitle, oldDescription}) {
 
   return (
     <div>EditTut</div>

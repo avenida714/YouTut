@@ -129,16 +129,52 @@ def delete_tut(id):
     else:
         return {'message': "Unauthorized user"}, 403
 
+
+
 #UPDATE A TUT
 @tut_routes.route('/<int:tut_id>', methods=['PATCH'])
 @login_required
 def update_tut(id):
-    tut = Tut.query.get(id)
+    tut = Tut.query.get(id) #get tut already in the database
     form = TutForm()
     form['csrf_token'].data = request.cookies['csrf_token']
+
+    # tut_vid AWS
+    if "tut_video" not in request.files:
+        return {"errors": "Video File Required"}, 400
+    tut_video = request.files["tut_video"]
+    if not allowed_file(tut_video.filename):
+        return {"errors": "This file type is not permitted (MP4 works best for videos; use jpeg, pdf, jpg, or gif for images)."}, 400
+
+    tut_video.filename = get_unique_filename(tut_video.filename)
+    video_upload = upload_file_to_s3(tut_video)
+
+    if "url" not in video_upload:
+        return video_upload, 400
+
+    tut_video_aws_url = video_upload["url"]
+
+    #tumbnail_pic AWS
+    thumbnail_pic = request.files["thumbnail_pic"]
+
+    if not allowed_file(thumbnail_pic.filename):
+        return {"errors": "This file type is not permitted (Please use pdf, png, jpg, jpeg, or gif)."}, 400
+
+    thumbnail_pic.filename = get_unique_filename(thumbnail_pic.filename)
+    thumbnail_upload = upload_file_to_s3(thumbnail_pic)
+
+    if "url" not in thumbnail_upload:
+        return thumbnail_upload, 400
+
+    tut_thumbnail_aws_url = thumbnail_upload["url"]
+
+
+    #make final form
     if form.validate_on_submit():
         tut.tut_title = form.data['tut_title']
         tut.tut_description = form.data['tut_description']
+        tut.tut_video = tut_video_aws_url
+        tut.thumbnail_pic = tut_thumbnail_aws_url
 
         #space above in case we need to update AWS vid and pic
         db.session.commit()
