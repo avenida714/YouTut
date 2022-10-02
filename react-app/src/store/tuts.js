@@ -120,9 +120,11 @@ export const deleteTut = (tutId) => async (dispatch) => {
   })
 
   const data = await response.json()
+  // console.log("THIS IS THE DATA FROM JSON RESPONSE IN deleteTut **********", data)
+  //message: "The Tut has been sucessfully deleted"
   if(response.ok) {
-    dispatch(destroyTutAC(data.tutId))
-    return data.tutId
+    dispatch(destroyTutAC(tutId))
+    return data.message
   } else {
     return data
   }

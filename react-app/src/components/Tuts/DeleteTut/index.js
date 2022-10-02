@@ -1,26 +1,30 @@
 //DeleteTut
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { deleteTut } from '../../../store/tuts';
 
 function DeleteTut({tutId}) {
 
-  console.log("THIS IS THE {tutId} PASSED INTO DELETE TUT COMPONENT ************>", tutId)
+  // console.log("THIS IS THE {tutId} PASSED INTO DELETE TUT COMPONENT ************>", tutId)
 
 
   const dispatch = useDispatch()
-  // const history = useHistory()
+  const history = useHistory()
   // const userLoggedIn = useSelector((state) => state.session.user);
 
 
   const dispatchDeleteTut = async (tutId) => {
     const del = await dispatch(deleteTut(tutId));
-    if (del) alert("Successfully deleted the post, see you later.");
+    if (del) alert("Tut has been deleted sucessfully");
     // history.push(`/profile/${userLoggedIn.id}`);
-    // history.push('/')
+    history.push('/')
 
-  };
+    };
+
+
+
+
   return (
     <div>
         <div className="Button_div">

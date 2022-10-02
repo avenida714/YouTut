@@ -14,10 +14,8 @@ function MainFeed() {
   const dispatch = useDispatch()
   const [isLoaded, setIsLoaded] = useState(false);
 
-  const tutsObj = useSelector((state) => state.tuts); //capitalize?
-
+  const tutsObj = useSelector((state) => state.tuts);
   const tuts = Object.values(tutsObj)
-
   tuts.reverse() //will put in reverse chron order, newest first
 
   const userLoggedIn = useSelector((state) => {
@@ -28,7 +26,6 @@ function MainFeed() {
   const displayTuts = tuts.map((tut, i) => (
     <div>
     <TutCard key={i} tut={tut} />
-    <DeleteTut tutId={tut.id} />
     </div>
 
   ))
@@ -37,7 +34,6 @@ function MainFeed() {
   useEffect(() => {
     dispatch(getAllTutsOnYouTut())
     .then(() =>  dispatch(loadUserRequest(userLoggedIn.id)))
-    .then(() => dispatch(getAllTutsOnYouTut()))
     .then(() => setIsLoaded(true)
     )
   }, [dispatch, userLoggedIn.id])

@@ -13,7 +13,6 @@ const UploadTut = () => {
 
     const [errors, setErrors] = useState([])
 
-    const [image, setImage] = useState(null);
 
     const [imageLoading, setImageLoading] = useState(false);
 
