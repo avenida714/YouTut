@@ -57,8 +57,8 @@ def add_tut():
 #UPLOAD TUT TO AWS
 @tut_routes.route('/upload-tut', methods=["POST"])
 def upload_tut():
-    print("this is the request.files ***************", request.files)
-    print("this is the request.form ***************~~~~~~~", request.form)
+    # print("this is the request.files ***************", request.files)
+    # print("this is the request.form ***************~~~~~~~", request.form)
     if "tut_video" not in request.files:
         return {"errors": "Video File Required"}, 400
 
@@ -112,23 +112,3 @@ def upload_tut():
     db.session.add(new_tut)
     db.session.commit()
     return {"tut": new_tut.to_dict()}
-
-
-"""
-tut_title = form.data["tut_title"],
-            tut_video = form.data["tut_video"],
-            tut_description = form.data["description"],
-            thumbnail_pic = form.data["thumbnail_pic"],
-            user_id = current_user.id,
-            updated_at = datetime.now()
-
-request.files *************** ImmutableMultiDict([('tut_video', <FileStorage: 'test-vid2.mp4' ('video/mp4')>), ('thumbnail_pic', <FileStorage: 'ipfs-thumbnail2.jpg' ('image/jpeg')>)])
-this is the request.form ***************~~~~~~~ ImmutableMultiDict([('tut_title', 'test3'), ('tut_description', 'test3')])
-
-tut_video = request.files["tut_video"]
-****** THIS IS THE UPLOAD *******
-upload_file_to_s3(tut_video)
- {'url': 'http://youtut.s3.amazonaws.com/74d53b40bd9c443e8801c38ba8cb3359.mp4'}
-
- upload_file_to_s3(thumbnail_pic)        {'url': 'someamazonian url here}
-"""

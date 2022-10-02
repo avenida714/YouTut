@@ -112,8 +112,7 @@ export const loadUserRequest = (userId) => async (dispatch) => {
   });
   if (res.ok) {
     const user = await res.json();
-    console.log("LOADUSER");
-    console.log(user);
+
     dispatch(loadUser(user));
   }
 };

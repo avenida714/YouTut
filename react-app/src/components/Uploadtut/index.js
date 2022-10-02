@@ -45,7 +45,7 @@ const UploadTut = () => {
         // });
 
         const response = await dispatch(uploadTut(formData))
-        console.log("this is the response from the upload tut dispatch ******************",response)
+        // console.log("this is the response from the upload tut dispatch ******************",response)
 
         if (response.ok) {
             await response.json();
@@ -68,7 +68,7 @@ const UploadTut = () => {
 
     const updateTutVideo = (e) => {
         const vidFile = e.target.files[0];
-        console.log("THIS IS THE VID FILE ****************", vidFile)
+        // console.log("THIS IS THE VID FILE ****************", vidFile)
 
         // console.log("THESE ARE THE FILESSSSSSSS ************", e.target.files)
         setMp4(vidFile)
