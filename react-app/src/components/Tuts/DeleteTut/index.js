@@ -10,22 +10,22 @@ function DeleteTut({tutId}) {
 
 
   const dispatch = useDispatch()
-  const history = useHistory()
+  // const history = useHistory()
   // const userLoggedIn = useSelector((state) => state.session.user);
 
 
-  const deleteTut = async (tutId) => {
+  const dispatchDeleteTut = async (tutId) => {
     const del = await dispatch(deleteTut(tutId));
     if (del) alert("Successfully deleted the post, see you later.");
     // history.push(`/profile/${userLoggedIn.id}`);
-    history.push('/')
+    // history.push('/')
 
   };
   return (
     <div>
         <div className="Button_div">
 
-          <button className="delete_Btn" onClick={() => deleteTut(tutId)}>
+          <button className="delete_Btn" onClick={() => dispatchDeleteTut(tutId)}>
             <i className="fa-solid fa-trash-can"></i> Delete
           </button>
 
