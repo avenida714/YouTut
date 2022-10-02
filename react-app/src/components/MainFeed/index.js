@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { loadUserRequest } from '../../store/session';
 import { getAllTutsOnYouTut } from '../../store/tuts';
 import TutCard from '../Tuts/TutCard';
+import UploadTut from '../Uploadtut';
 
 function MainFeed() {
 
@@ -39,6 +40,7 @@ function MainFeed() {
     isLoaded && (
     <div className="outer-most-wrapper">
       <div className='main-feed-display'>
+        <UploadTut />
         {displayTuts}
       </div>
     </div>

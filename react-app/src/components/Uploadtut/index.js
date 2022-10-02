@@ -45,7 +45,7 @@ const UploadTut = () => {
         // });
 
         const response = await dispatch(uploadTut(formData))
-        console.log("this is the response from the upload tut dispatch ******************",response)
+        // console.log("this is the response from the upload tut dispatch ******************",response)
 
         if (response.ok) {
             await response.json();
@@ -60,17 +60,45 @@ const UploadTut = () => {
         }
     }
 
-    const updateImage = (e) => {
-        const file = e.target.files[0];
-        setImage(file);
+    const updateThumbnail = (e) => {
+        const thumbFile = e.target.files[0];
+        // console.log("THIS IS THE THUMB FILE ************",thumbFile)
+        setThumbnail(thumbFile);
+    }
+
+    const updateTutVideo = (e) => {
+        const vidFile = e.target.files[0];
+        // console.log("THIS IS THE VID FILE ****************", vidFile)
+
+        // console.log("THESE ARE THE FILESSSSSSSS ************", e.target.files)
+        setMp4(vidFile)
     }
 
     return (
         <form onSubmit={handleSubmit}>
+            <label>Title of your Tut</label>
+            <input
+                type="text"
+                name="title"
+                onChange={(e) => setTitle(e.target.value)}
+            />
+            <label>Upload your File (mp4 only please)</label>
+            <input
+                required
+                type="file"
+                accept=".mp4"
+                onChange={updateTutVideo}
+            />
+            <label>Description - tell us about this Tut!</label>
+            <input
+                type="text"
+                onChange={(e) => setDescription(e.target.value)}
+            />
+            <label>Thumbnail</label>
             <input
               type="file"
               accept="image/*"
-              onChange={updateImage}
+              onChange={updateThumbnail}
             />
             <button type="submit">Submit</button>
             {(imageLoading)&& <p>Loading...</p>}
