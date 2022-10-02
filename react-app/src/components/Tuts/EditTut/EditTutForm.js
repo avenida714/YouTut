@@ -1,6 +1,6 @@
 import React from 'react'
 
-function EditTutForm() {
+function EditTutForm({tutId, oldTitle, oldDescription}) {
   return (
     <div>EditTutForm</div>
   )

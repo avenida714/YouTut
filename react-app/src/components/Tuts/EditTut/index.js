@@ -18,7 +18,7 @@ function EditTut({tutId, oldTitle, oldDescription}) {
 
       <button onClick={buttonClick}>EditTut</button>
       {showForm && (
-        <EditTutForm />
+        <EditTutForm tutId={tutId} oldTitle={oldTitle} oldDescription={oldDescription} />
       )}
     </div>
 
