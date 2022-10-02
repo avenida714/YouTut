@@ -61,12 +61,16 @@ const UploadTut = () => {
     }
 
     const updateThumbnail = (e) => {
-        const file = e.target.files[0];
-        setThumbnail(file);
+        const thumbFile = e.target.files[0];
+        // console.log("THIS IS THE THUMB FILE ************",thumbFile)
+        setThumbnail(thumbFile);
     }
 
     const updateTutVideo = (e) => {
         const vidFile = e.target.files[0];
+        console.log("THIS IS THE VID FILE ****************", vidFile)
+
+        // console.log("THESE ARE THE FILESSSSSSSS ************", e.target.files)
         setMp4(vidFile)
     }
 

@@ -90,7 +90,8 @@ def upload_tut():
     thumbnail_pic.filename = get_unique_filename(thumbnail_pic.filename)
     thumbnail_upload = upload_file_to_s3(thumbnail_pic)
 
-    thumbnail_upload = upload_file_to_s3(thumbnail_pic)
+
+
 
     if "url" not in thumbnail_upload:
         # if the dictionary doesn't have a url key
@@ -107,7 +108,7 @@ def upload_tut():
             tut_title=request.form.get('tut_title'),
             thumbnail_pic=tut_thumbnail_aws_url,
             )
-
+    print("this isthe new tut ***********", new_tut)
     db.session.add(new_tut)
     db.session.commit()
     return {"tut": new_tut.to_dict()}
