@@ -112,3 +112,19 @@ def upload_tut():
     db.session.add(new_tut)
     db.session.commit()
     return {"tut": new_tut.to_dict()}
+
+
+
+#DELETE A TUT
+@tut_routes.delete('/<int:id>')
+@login_required
+def delete_tut(id):
+
+    tut = Tut.query.get(id)
+
+    if current_user.id == tut.user_id:
+        db.session.delete(tut)
+        db.session.commit()
+        return {'message': "The Tut has been sucessfully deleted"}
+    else:
+        return {'message': "Unauthorized user"}, 403

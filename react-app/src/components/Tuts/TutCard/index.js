@@ -3,6 +3,7 @@ import React from 'react'
 import ReactPlayer from 'react-player';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+import DeleteTut from '../DeleteTut';
 
 import "./TutCard.css";
 
@@ -34,8 +35,9 @@ function TutCard({tut}) {
       <ReactPlayer url={tut.tut_video} controls/>
       <div>{tut.tut_description}</div>
       <div>
-        <img src={tut.thumbnail_pic} alt="user-profile"/>
+        <img src={tut.thumbnail_pic} alt="tut-thumbnail"/>
       </div>
+      <DeleteTut tutId={tut.id} />
     </div>
     :
     null

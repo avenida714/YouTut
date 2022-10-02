@@ -7,6 +7,8 @@ const READ_ALL_TUTS = "tuts/getAllTuts"
 
 const CREATE_TUT = "tuts/addATut"
 
+const DELETE_TUT = "tuts/deleteATut"
+
 
 //~~~~~~~~~~~ACTION CREATORS~~~~~~~~~~~~~~~~
 
@@ -33,6 +35,14 @@ const addATut = (tut) => {
   return {
     type: CREATE_TUT,
     tut
+  }
+}
+
+//Delete/destroy a tut
+const destroyTutAC = (tutId) => {
+  return {
+    type: DELETE_TUT,
+    tutId
   }
 }
 
@@ -102,6 +112,25 @@ export const uploadTut = (tut) => async (dispatch) => {
 
 }
 
+//DELETE A TUT
+
+export const deleteTut = (tutId) => async (dispatch) => {
+  const response = await fetch(`/api/tuts/${tutId}`, {
+    method: 'DELETE'
+  })
+
+  const data = await response.json()
+  // console.log("THIS IS THE DATA FROM JSON RESPONSE IN deleteTut **********", data)
+  //message: "The Tut has been sucessfully deleted"
+  if(response.ok) {
+    dispatch(destroyTutAC(tutId))
+    return data.message
+  } else {
+    return data
+  }
+
+}
+
 
 //~~~~~~~~~~~REDUCER~~~~~~~~~~~~~~~~
 
@@ -127,6 +156,11 @@ const tutsReducer = (state = initialState, action) => {
     case CREATE_TUT: {
       const newState = {...state}
       newState[action.tut.id] = action.tut
+      return newState
+    }
+    case DELETE_TUT: {
+      const newState = {...state}
+      delete newState[action.tutId]
       return newState
     }
 

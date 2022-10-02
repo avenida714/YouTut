@@ -3,7 +3,7 @@
 import React, {useState} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
-import { uploadTut } from "../../store/tuts";
+import { uploadTut } from "../../../store/tuts";
 
 
 const UploadTut = () => {
@@ -13,7 +13,6 @@ const UploadTut = () => {
 
     const [errors, setErrors] = useState([])
 
-    const [image, setImage] = useState(null);
 
     const [imageLoading, setImageLoading] = useState(false);
 
