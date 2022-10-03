@@ -10,6 +10,7 @@ const CREATE_TUT = "tuts/addATut"
 const DELETE_TUT = "tuts/deleteATut"
 
 
+
 //~~~~~~~~~~~ACTION CREATORS~~~~~~~~~~~~~~~~
 
 
@@ -45,6 +46,8 @@ const destroyTutAC = (tutId) => {
     tutId
   }
 }
+
+
 
 
 //~~~~~~~~~~~THUNKS~~~~~~~~~~~~~~~~
@@ -110,6 +113,25 @@ export const uploadTut = (tut) => async (dispatch) => {
     return data.errors
   }
 
+}
+
+//UPDATE A TUT
+export const editTut = (tutId, tut) => async (dispatch) => {
+
+  console.log("*****this is the tut (form data) coming from the submit form *********", tut)
+
+  const response = await fetch(`/api/tuts/${tutId}/update`, {
+    method: "PATCH",
+    body: tut
+  })
+
+  const data = await response.json()
+  if (response.ok) {
+    dispatch(addATut(data.tut))
+    return data
+  } else {
+    return data.errors
+  }
 }
 
 //DELETE A TUT
