@@ -27,6 +27,13 @@
   /* border: 1px solid red; */
 }
 
+.profile-pic-div{
+  /* border: 2px solid purple; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
 .profile-pic {
   border-radius: 50%;
   /* border: 1px solid blue; */
@@ -34,6 +41,9 @@
   padding:8px;
 }
 
+.titleAndUsername{
+  /* border: 2px solid orange; */
+}
 .profile-title-user-outer {
   display: flex;
   /* border: 1px solid yellow; */

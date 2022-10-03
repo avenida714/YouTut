@@ -84,6 +84,7 @@ def upload_tut():
 
 
     # validating the thumbnail
+    # if xyz not in request.files
     thumbnail_pic = request.files["thumbnail_pic"]
 
     if not allowed_file(thumbnail_pic.filename):
