@@ -1,0 +1,29 @@
+.wrapper-div-TutCard {
+  border: 2px solid red;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  position: relative;
+  justify-content: center;
+  gap: 10px;
+  margin: auto;
+  overflow: auto;
+  width: 400px;
+  border-top: 1px solid rgb(10, 2, 2);
+  background-color: black;
+  color: aliceblue;
+  /* border: 1px solid red; */
+  padding: 8px;
+}
+
+.thumbnail {
+  width: 400px;
+  height:250px;
+  border: 1px solid red;
+}
+
+.profile-pic {
+  border-radius: 50%;
+  border: 1px solid blue;
+  height: 80px;
+}

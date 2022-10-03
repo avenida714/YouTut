@@ -32,14 +32,19 @@ function TutCard({tut}) {
       {/* <div className="user-profile-icon" onClick={usersProfilePage}>
         <img alt="profile-icon" className="img circle" src={tut.user.profile_img}></img>
       </div> */}
-      <h3 className='tut-title'>{tut.tut_title}</h3>
       {/* <ReactPlayer url={tut.tut_video} controls/> */}
-      <div>{tut.tut_description}</div>
-      <div>
-        <img src={tut.thumbnail_pic} alt="tut-thumbnail"/>
+      {/* <div>{tut.tut_description}</div> */}
+      <div className='tut-thumbnail-div'>
+        <img className="thumbnail"src={tut.thumbnail_pic} alt="tut-thumbnail"/>
       </div>
-      <div>
-        <img src={tut.user.profile_img} alt="profile-thumbnail" />
+      <div className='profile-title-user-outer'>
+        <div className='profile-pic-div'>
+          <img className="profile-pic" src={tut.user.profile_img} alt="profile-thumbnail" />
+        </div>
+        <div className='titleAndUsername'>
+        <h3 className='tut-title'>{tut.tut_title}</h3>
+        <div>{tut.user.username}</div>
+        </div>
       </div>
       <DeleteTut tutId={tut.id} />
       <EditTut tut={tut} tutId={tut.id} oldTitle={tut.title} oldDescription={tut.description}/>
