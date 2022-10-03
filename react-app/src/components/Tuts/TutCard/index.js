@@ -34,16 +34,16 @@ function TutCard({tut}) {
       </div> */}
       {/* <ReactPlayer url={tut.tut_video} controls/> */}
       {/* <div>{tut.tut_description}</div> */}
-      <div className='tut-thumbnail-div'>
+
         <img className="thumbnail"src={tut.thumbnail_pic} alt="tut-thumbnail"/>
-      </div>
+
       <div className='profile-title-user-outer'>
         <div className='profile-pic-div'>
           <img className="profile-pic" src={tut.user.profile_img} alt="profile-thumbnail" />
         </div>
         <div className='titleAndUsername'>
         <h3 className='tut-title'>{tut.tut_title}</h3>
-        <div>{tut.user.username}</div>
+        <div className='tut-username'>{tut.user.username}</div>
         </div>
       </div>
       {/* <DeleteTut tutId={tut.id} />
