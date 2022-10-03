@@ -42,7 +42,7 @@ function TutCard({tut}) {
           <img className="profile-pic" src={tut.user.profile_img} alt="profile-thumbnail" />
         </div>
         <div className='titleAndUsername'>
-        <h3 className='tut-title'>{tut.tut_title}</h3>
+        <div className='tut-title'>{tut.tut_title}</div>
         <div className='tut-username'>{tut.user.username}</div>
         </div>
       </div>

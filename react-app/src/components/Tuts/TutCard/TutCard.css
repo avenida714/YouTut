@@ -31,7 +31,7 @@
   border: 2px solid purple;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
 
 }
 .profile-pic {
@@ -52,8 +52,9 @@
 .titleAndUsername{
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
   border: 2px solid orange;
-  height: fit-content;
+  /* height: fit-content; */
 
 }
 
