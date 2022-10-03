@@ -19,6 +19,8 @@
   /* background-color: black; */
   /* color: aliceblue; */
   padding: 8px;
+  cursor: pointer;
+
 }
 
 .thumbnail {

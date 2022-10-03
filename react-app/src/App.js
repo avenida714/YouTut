@@ -45,6 +45,9 @@ function App() {
         <ProtectedRoute path='/' exact={true} >
           <MainFeed />
         </ProtectedRoute>
+        <ProtectedRoute exact path="/tuts/:tutId">
+          <WatchTut />
+        </ProtectedRoute>
       </Switch>
     </BrowserRouter>
   );

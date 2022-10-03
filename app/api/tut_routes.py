@@ -22,6 +22,16 @@ def get_all_tuts():
     else:
         return {'message': 'Unauthorized user', "statusCode": 403}, 403  # put second 403 to flask will read it as error
 
+#Get ONE TUT
+@tut_routes.route('/<int:id>')
+@login_required
+def get_one_tut(id):
+    # if current_user:
+        one_tut_by_id = Tut.query.get(id)
+        one_tut_by_id_json = one_tut_by_id.to_dict()
+        return {"tuts": one_tut_by_id_json}
+    # else:
+    #     return {'message': 'Unauthorized user'}
 
 
 # ADDING A TUT
