@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import EditTutForm from './EditTutForm'
 
-function EditTut({tutId, oldTitle, oldDescription}) {
+function EditTut({tut, tutId, oldTitle, oldDescription}) {
 
   const [showForm, setShowForm] = useState(false)
 
@@ -18,7 +18,7 @@ function EditTut({tutId, oldTitle, oldDescription}) {
 
       <button onClick={buttonClick}>EditTut</button>
       {showForm && (
-        <EditTutForm tutId={tutId} oldTitle={oldTitle} oldDescription={oldDescription} />
+        <EditTutForm tut={tut} tutId={tutId} oldTitle={oldTitle} oldDescription={oldDescription} />
       )}
     </div>
 

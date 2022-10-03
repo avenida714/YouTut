@@ -39,7 +39,7 @@ function TutCard({tut}) {
         <img src={tut.thumbnail_pic} alt="tut-thumbnail"/>
       </div>
       <DeleteTut tutId={tut.id} />
-      <EditTut tutId={tut.id} oldTitle={tut.title} oldDescription={tut.description}/>
+      <EditTut tut={tut} tutId={tut.id} oldTitle={tut.title} oldDescription={tut.description}/>
     </div>
     :
     null

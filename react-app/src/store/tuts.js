@@ -117,12 +117,12 @@ export const uploadTut = (tut) => async (dispatch) => {
 
 //UPDATE A TUT
 export const editTut = (tutId, tut) => async (dispatch) => {
-  const response = await fetch(`/api/tuts/${tutId}`, {
+
+  console.log("*****this is the tut (form data) coming from the submit form *********", tut)
+
+  const response = await fetch(`/api/tuts/${tutId}/update`, {
     method: "PATCH",
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(tut),
+    body: tut
   })
 
   const data = await response.json()
