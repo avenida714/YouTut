@@ -46,8 +46,8 @@ function TutCard({tut}) {
         <div>{tut.user.username}</div>
         </div>
       </div>
-      <DeleteTut tutId={tut.id} />
-      <EditTut tut={tut} tutId={tut.id} oldTitle={tut.title} oldDescription={tut.description}/>
+      {/* <DeleteTut tutId={tut.id} />
+      <EditTut tut={tut} tutId={tut.id} oldTitle={tut.title} oldDescription={tut.description}/> */}
     </div>
     :
     null
