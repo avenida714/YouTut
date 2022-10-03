@@ -28,7 +28,7 @@
 }
 
 .profile-pic-div{
-  /* border: 2px solid purple; */
+  border: 2px solid purple;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -40,18 +40,30 @@
   height: 45px;
   padding:8px;
 }
-
-.titleAndUsername{
-  /* border: 2px solid orange; */
-}
 .profile-title-user-outer {
   display: flex;
-  /* border: 1px solid yellow; */
+  border: 2px solid greenyellow;
   width: 340px;
-  height: 75px;
+  height: fit-content;
   padding:5px;
 }
 
+
+.titleAndUsername{
+  display: flex;
+  flex-direction: column;
+  border: 2px solid orange;
+  height: fit-content;
+
+}
+
+
+.tut-title{
+  border: 2px solid sienna;
+  padding-top: 0px;
+}
+
 .tut-username {
+  border: 2px solid royalblue;
   color:rgb(68, 68, 68)
 }
