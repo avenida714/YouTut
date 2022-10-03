@@ -6,6 +6,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import tutsReducer, { getOneTutById } from '../../../store/tuts'
 
+import "./WatchTut.css"
+
 
 function WatchTut() {
 
@@ -29,9 +31,26 @@ function WatchTut() {
 
   return (
     tutUrl ?
-    <div>
-      <ReactPlayer url={tutUrl.tut_video} controls/>
+    <div className='outer-wrapper-watchTut'>
+      <div className='tut-and-block'>
+        <div className='watch-tut-player'>
+        <ReactPlayer
+        url={tutUrl.tut_video}
+        controls
+        width='100%'
+        height='100%'
+        />
+      </div>
+      <div className='block'>
+        BLOCK OF STUFF
+      </div>
+      </div>
+
+      <div className='comments-div'>
+        COMMENTS GO HERE
+      </div>
     </div>
+
     :
     null
   )

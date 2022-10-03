@@ -1,0 +1,23 @@
+
+.outer-wrapper-watchTut {
+  border: 2px solid yellowgreen;
+  display: flex;
+  flex-direction: column;
+}
+
+.tut-and-block {
+  border: 2px solid blue;
+  display:flex;
+  flex-direction: row;
+}
+
+.watch-tut-player {
+  border: 2px solid red;
+  height: 55vw;
+  width: 75vw;
+}
+
+.comments-div {
+  border:2px solid darkgoldenrod;
+  height:1000px;
+}
