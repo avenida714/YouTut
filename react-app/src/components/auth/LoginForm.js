@@ -6,6 +6,8 @@ import UploadTut from '../Tuts/UploadTut';
 // import UploadTut from '../Uploadtut';
 // import UploadPicture from '../UploadPicture';
 
+import "./LoginForm.css"
+
 const LoginForm = () => {
   const [errors, setErrors] = useState([]);
   const [email, setEmail] = useState('');
@@ -34,7 +36,8 @@ const LoginForm = () => {
   }
 
   return (
-    <form onSubmit={onLogin}>
+    <div className='outer-wrapper-splash'>
+    <form className='login-form' onSubmit={onLogin}>
       <div>
         {errors.map((error, ind) => (
           <div key={ind}>{error}</div>
@@ -65,6 +68,7 @@ const LoginForm = () => {
         </div> */}
       </div>
     </form>
+    </div>
   );
 };
 
