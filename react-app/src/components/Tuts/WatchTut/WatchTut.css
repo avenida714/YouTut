@@ -2,22 +2,38 @@
 .outer-wrapper-watchTut {
   border: 2px solid yellowgreen;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
 }
 
 .tut-and-block {
-  border: 2px solid blue;
+  /* border: 2px solid blue; */
   display:flex;
-  flex-direction: row;
+  flex-direction: column;
 }
 
 .watch-tut-player {
   border: 2px solid red;
   height: 55vw;
-  width: 75vw;
+  width: 73vw;
 }
 
 .comments-div {
   border:2px solid darkgoldenrod;
   height:1000px;
 }
+
+.mini-tut-card-feed {
+  border: 2px solid plum;
+  width: -webkit-fill-available;
+
+}
+
+
+/* useEffect(() => {
+  async function fetchData() {
+    // You can await here
+    const response = await MyAPI.getData(someId);
+    // ...
+  }
+  fetchData();
+}, [someId]); */
