@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import UserFeed from './UserFeed';
 
 function User() {
   const [user, setUser] = useState({});
@@ -21,7 +22,8 @@ function User() {
   }
 
   return (
-    <ul>
+    <div>
+      <ul>
       <li>
         <strong>User Id</strong> {userId}
       </li>
@@ -32,6 +34,9 @@ function User() {
         <strong>Email</strong> {user.email}
       </li>
     </ul>
+    <UserFeed userId={userId}/>
+    </div>
+
   );
 }
 export default User;

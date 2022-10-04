@@ -77,6 +77,7 @@ const UploadTut = () => {
         <form onSubmit={handleSubmit}>
             <label>Title of your Tut</label>
             <input
+                required
                 type="text"
                 name="title"
                 onChange={(e) => setTitle(e.target.value)}
@@ -90,11 +91,13 @@ const UploadTut = () => {
             />
             <label>Description - tell us about this Tut!</label>
             <input
+                required
                 type="text"
                 onChange={(e) => setDescription(e.target.value)}
             />
             <label>Thumbnail</label>
             <input
+              required
               type="file"
               accept="image/*"
               onChange={updateThumbnail}
