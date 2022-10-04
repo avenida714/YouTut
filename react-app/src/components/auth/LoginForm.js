@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Redirect } from 'react-router-dom';
+import { NavLink, Redirect } from 'react-router-dom';
 import { login } from '../../store/session';
 import UploadTut from '../Tuts/UploadTut';
 // import UploadTut from '../Uploadtut';
 // import UploadPicture from '../UploadPicture';
+
+//heroku push
+
+import "./LoginForm.css"
 
 const LoginForm = () => {
   const [errors, setErrors] = useState([]);
@@ -34,7 +38,8 @@ const LoginForm = () => {
   }
 
   return (
-    <form onSubmit={onLogin}>
+    <div className='outer-wrapper-splash'>
+    <form className='login-form' onSubmit={onLogin}>
       <div>
         {errors.map((error, ind) => (
           <div key={ind}>{error}</div>
@@ -60,11 +65,19 @@ const LoginForm = () => {
           onChange={updatePassword}
         />
         <button type='submit'>Login</button>
-        <div>
+        {/* <div>
           <UploadTut />
-        </div>
+        </div> */}
       </div>
+      <div className="register login-text">
+                New to YouTut? Register
+                <NavLink className="login_navlink" to="/sign-up">
+                  {" "}
+                  Here{" "}
+                </NavLink>
+              </div>
     </form>
+    </div>
   );
 };
 

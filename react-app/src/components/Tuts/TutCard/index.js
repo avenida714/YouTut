@@ -17,6 +17,11 @@ function TutCard({tut}) {
 
   const userLoggedIn = useSelector((state) => state.session.user)
 
+  const onClickWatchTut = () => {
+    let path = `/tuts/${tut.id}`
+    history.push(path)
+  }
+
 
   // console.log("*****I am the Tut data being passed into the TUT card ********", tut.tut_video)
 
@@ -28,18 +33,26 @@ function TutCard({tut}) {
 
   return (
     tut ?
-    <div className="wrapper-div-TutCard">
+    <div className="wrapper-div-TutCard" >
       {/* <div className="user-profile-icon" onClick={usersProfilePage}>
         <img alt="profile-icon" className="img circle" src={tut.user.profile_img}></img>
       </div> */}
-      <h3 className='tut-title'>{tut.tut_title}</h3>
-      <ReactPlayer url={tut.tut_video} controls/>
-      <div>{tut.tut_description}</div>
-      <div>
-        <img src={tut.thumbnail_pic} alt="tut-thumbnail"/>
+      {/* <ReactPlayer url={tut.tut_video} controls/> */}
+      {/* <div>{tut.tut_description}</div> */}
+
+        <img className="thumbnail"src={tut.thumbnail_pic} alt="tut-thumbnail" onClick={onClickWatchTut}/>
+
+      <div className='profile-title-user-outer'>
+        <div className='profile-pic-div'>
+          <img className="profile-pic" src={tut.user.profile_img} alt="profile-thumbnail" />
+        </div>
+        <div className='titleAndUsername'>
+        <div className='tut-title'>{tut.tut_title}</div>
+        <div className='tut-username'>{tut.user.username}</div>
+        </div>
       </div>
-      <DeleteTut tutId={tut.id} />
-      <EditTut tut={tut} tutId={tut.id} oldTitle={tut.title} oldDescription={tut.description}/>
+      {/* <DeleteTut tutId={tut.id} />
+      <EditTut tut={tut} tutId={tut.id} oldTitle={tut.title} oldDescription={tut.description}/> */}
     </div>
     :
     null

@@ -1,0 +1,79 @@
+
+
+
+.wrapper-div-TutCard {
+  /* border: 2px solid green; */
+  /* border:1px solid black; */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  position: relative;
+  justify-content: center;
+  align-content: flex-start;
+  /* gap: 10px; */
+  margin: auto;
+  overflow: auto;
+  width: 348px;
+  height: 315px;
+  /* border-top: 1px solid rgb(10, 2, 2); */
+  /* background-color: black; */
+  /* color: aliceblue; */
+  padding: 4px;
+
+
+}
+
+.thumbnail {
+  width: 340px;
+  height:200px;
+  /* border: 1px solid red; */
+  cursor: pointer;
+  image-rendering: optimizeQuality;
+  object-fit: cover;
+
+
+}
+
+.profile-title-user-outer {
+  display: flex;
+  /* border: 2px solid greenyellow; */
+  width: 340px;
+  height: fit-content;
+  padding:5px;
+}
+.profile-pic-div{
+  /* border: 2px solid purple; */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+}
+.profile-pic {
+  border-radius: 50%;
+  /* border: 1px solid blue; */
+  height: 45px;
+  padding:8px;
+}
+
+.titleAndUsername{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  /* border: 2px solid orange; */
+  /* height: fit-content; */
+
+}
+
+.tut-title{
+  /* border: 2px solid sienna; */
+  padding-top: 0px;
+  font-size: large;
+  padding-top: 8px;
+}
+
+.tut-username {
+  /* border: 2px solid royalblue; */
+  color:#969696;
+  font-size:small;
+  padding-top: 8px;
+}

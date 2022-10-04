@@ -59,6 +59,7 @@ export const getOneTutById = (tutId) => async (dispatch) => {
   if (response.ok) {
     const tutById = await response.json();
     dispatch(actionReadTut(tutById))
+    console.log(tutById)
     return tutById;
   }
   return response

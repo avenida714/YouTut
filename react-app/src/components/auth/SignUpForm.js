@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
-import { Redirect } from 'react-router-dom';
+import { NavLink, Redirect } from 'react-router-dom';
 import { signUp } from '../../store/session';
+
+import "./SignupForm.css"
 
 const SignUpForm = () => {
   const [errors, setErrors] = useState([]);
@@ -43,7 +45,10 @@ const SignUpForm = () => {
   }
 
   return (
-    <form onSubmit={onSignUp}>
+    <div className='outer-wrapper-signup'>
+
+    <div className='signup-form'>
+    <form  onSubmit={onSignUp}>
       <div>
         {errors.map((error, ind) => (
           <div key={ind}>{error}</div>
@@ -88,6 +93,16 @@ const SignUpForm = () => {
       </div>
       <button type='submit'>Sign Up</button>
     </form>
+       <div className="register_signup">
+        Already have an account? Log in {" "}
+        <NavLink className="login_navlink" to="/login">
+          Here
+        </NavLink>
+      </div>
+    </div>
+    </div>
+
+
   );
 };
 

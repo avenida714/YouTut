@@ -1,0 +1,86 @@
+
+.outer-wrapper-watchTut {
+  border: 3px solid yellowgreen;
+  display: flex;
+  flex-direction: row;
+  margin: 7px;
+}
+
+.tut-and-block {
+  /* border: 2px solid blue; */
+  display:flex;
+  flex-direction: column;
+}
+
+.watch-tut-player {
+  border: 3px solid red;
+  height: 45vw;
+  width: 73vw;
+}
+
+.comments-div {
+  border:3px solid darkmagenta;
+  height:1000px;
+}
+
+.mini-tut-card-feed {
+  border: 3px solid blue;
+  width: -webkit-fill-available;
+
+}
+
+.title-likes-dislikes-WatchTut {
+  border: 3px solid wheat;
+  height: fit-content;
+  width: -webkit-fill-available;
+}
+
+.tut-title-WatchTut {
+  font-size: x-large;
+
+}
+
+.profile-user-about-outer-WatchTut {
+  display: flex;
+  border: 2px solid greenyellow;
+  width: 340px;
+  height: fit-content;
+  width: -webkit-fill-available;
+  padding:5px;
+}
+.profile-pic-div-WatchTut{
+  /* border: 2px solid purple; */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+}
+.profile-pic-WatchTut {
+  border-radius: 50%;
+  /* border: 1px solid blue; */
+  height: 45px;
+  padding:8px;
+}
+
+.Username-WatchTut{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  /* border: 2px solid orange; */
+  /* height: fit-content; */
+
+}
+
+.tut-username-WatchTut{
+  /* border: 2px solid sienna; */
+  padding-top: 0px;
+  font-size: large;
+  padding-top: 8px;
+}
+
+.tut-about-WatchTut {
+  /* border: 2px solid royalblue; */
+  color:#969696;
+  font-size:small;
+  padding-top: 8px;
+}

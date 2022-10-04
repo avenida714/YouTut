@@ -1,0 +1,24 @@
+/* LoginForm */
+
+.outer-wrapper-signup {
+  background-image: linear-gradient(rgba(0, 0, 0, .20), rgba(0, 0, 0, .20)), url(../../images/background-splash.jpg);
+  height: 100vh;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  /* border: 3px solid red; */
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+}
+
+.signup-form {
+  border: 3px solid green;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, .50);
+  display: flex;
+  /* justify-self: start; */
+  height: 35vw;
+}

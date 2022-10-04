@@ -15,8 +15,8 @@ function DeleteTut({tutId}) {
 
 
   const dispatchDeleteTut = async (tutId) => {
-    const del = await dispatch(deleteTut(tutId));
-    if (del) alert("Tut has been deleted sucessfully");
+    const waitForDelete = await dispatch(deleteTut(tutId));
+    if (waitForDelete) alert("Tut has been deleted sucessfully");
     // history.push(`/profile/${userLoggedIn.id}`);
     history.push('/')
 
