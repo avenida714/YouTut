@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Redirect } from 'react-router-dom';
+import { NavLink, Redirect } from 'react-router-dom';
 import { login } from '../../store/session';
 import UploadTut from '../Tuts/UploadTut';
 // import UploadTut from '../Uploadtut';
@@ -67,6 +67,13 @@ const LoginForm = () => {
           <UploadTut />
         </div> */}
       </div>
+      <div className="register login-text">
+                Don't have an account?
+                <NavLink className="login_link" to="/sign-up">
+                  {" "}
+                  Register{" "}
+                </NavLink>
+              </div>
     </form>
     </div>
   );
