@@ -19,7 +19,7 @@
   /* background-color: black; */
   /* color: aliceblue; */
   padding: 8px;
-  cursor: pointer;
+
 
 }
 
@@ -27,6 +27,7 @@
   width: 340px;
   height:200px;
   /* border: 1px solid red; */
+  cursor: pointer;
 }
 
 .profile-title-user-outer {

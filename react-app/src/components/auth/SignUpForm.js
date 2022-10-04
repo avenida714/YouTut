@@ -94,9 +94,9 @@ const SignUpForm = () => {
       <button type='submit'>Sign Up</button>
     </form>
        <div className="register_signup">
-        Already have an account?{" "}
-        <NavLink className="login_link login-text" to="/login">
-          login
+        Already have an account? Log in {" "}
+        <NavLink className="login_navlink" to="/login">
+          Here
         </NavLink>
       </div>
     </div>

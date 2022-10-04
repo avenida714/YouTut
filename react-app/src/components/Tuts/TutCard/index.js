@@ -33,14 +33,14 @@ function TutCard({tut}) {
 
   return (
     tut ?
-    <div className="wrapper-div-TutCard" onClick={onClickWatchTut}>
+    <div className="wrapper-div-TutCard" >
       {/* <div className="user-profile-icon" onClick={usersProfilePage}>
         <img alt="profile-icon" className="img circle" src={tut.user.profile_img}></img>
       </div> */}
       {/* <ReactPlayer url={tut.tut_video} controls/> */}
       {/* <div>{tut.tut_description}</div> */}
 
-        <img className="thumbnail"src={tut.thumbnail_pic} alt="tut-thumbnail"/>
+        <img className="thumbnail"src={tut.thumbnail_pic} alt="tut-thumbnail" onClick={onClickWatchTut}/>
 
       <div className='profile-title-user-outer'>
         <div className='profile-pic-div'>

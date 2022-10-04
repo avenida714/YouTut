@@ -68,10 +68,10 @@ const LoginForm = () => {
         </div> */}
       </div>
       <div className="register login-text">
-                Don't have an account?
-                <NavLink className="login_link" to="/sign-up">
+                New to YouTut? Register
+                <NavLink className="login_navlink" to="/sign-up">
                   {" "}
-                  Register{" "}
+                  Here{" "}
                 </NavLink>
               </div>
     </form>

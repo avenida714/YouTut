@@ -22,3 +22,11 @@
   /* justify-self: start; */
   height: 35vw;
 }
+
+/* this is on the signup form */
+.login_navlink {
+  text-decoration: none;
+  color: red;
+  font-weight: bold;
+  /* font-family: 'Times New Roman', Times, serif; */
+}
