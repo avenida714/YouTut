@@ -7,7 +7,7 @@ import { loadUserRequest } from '../../store/session';
 import { getAllTutsOnYouTut } from '../../store/tuts';
 import DeleteTut from '../Tuts/DeleteTut';
 import TutCard from '../Tuts/TutCard';
-import UploadTut from '../Tuts/UploadTut';
+// import UploadTut from '../Tuts/UploadTut';
 
 import "./MainFeed.css";
 
@@ -50,7 +50,6 @@ function MainFeed() {
     isLoaded && (
     <div className="outer-most-wrapper">
       <div className='main-feed-display'>
-        <UploadTut />
         <div className='display-Tuts'>
         {displayTuts}
         </div>
