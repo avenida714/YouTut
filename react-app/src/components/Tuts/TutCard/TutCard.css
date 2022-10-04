@@ -29,6 +29,13 @@
   /* border: 1px solid red; */
 }
 
+.profile-title-user-outer {
+  display: flex;
+  /* border: 2px solid greenyellow; */
+  width: 340px;
+  height: fit-content;
+  padding:5px;
+}
 .profile-pic-div{
   /* border: 2px solid purple; */
   display: flex;
@@ -42,14 +49,6 @@
   height: 45px;
   padding:8px;
 }
-.profile-title-user-outer {
-  display: flex;
-  /* border: 2px solid greenyellow; */
-  width: 340px;
-  height: fit-content;
-  padding:5px;
-}
-
 
 .titleAndUsername{
   display: flex;
@@ -59,7 +58,6 @@
   /* height: fit-content; */
 
 }
-
 
 .tut-title{
   /* border: 2px solid sienna; */

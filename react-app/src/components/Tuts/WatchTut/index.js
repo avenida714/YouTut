@@ -39,9 +39,9 @@ function WatchTut() {
 
 
 
-  const tutUrl = useSelector(state => state.tuts[tutId])
+  const tut = useSelector(state => state.tuts[tutId])
 
-  console.log("THIS IS THE TUTURL ****", tutUrl)
+  // console.log("THIS IS THE TUTURL ****", tutUrl)
 
   // const tut = getOneTutById(tutId)
 
@@ -55,17 +55,29 @@ function WatchTut() {
       <div className='tut-and-block'>
         <div className='watch-tut-player'>
         <ReactPlayer
-        url={tutUrl.tut_video}
+        url={tut.tut_video}
         controls
         width='100%'
         height='100%'
         />
       </div>
+      <div className='title-likes-dislikes-WatchTut'>
+        <div className='tut-title-WatchTut'>{tut.tut_title}</div>
+      </div>
+      <div className='profile-user-about-outer-WatchTut'>
+        <div className='profile-pic-div-WatchTut'>
+          <img className="profile-pic-WatchTut" src={tut.user.profile_img} alt="profile-thumbnail-WatchTut" />
+        </div>
+        <div className='Username-WatchTut'>
+        <div className='tut-username-WatchTut'>{tut.user.username}</div>
+        <div className='tut-about-WatchTut'>{tut.user.about}</div>
+        </div>
+      </div>
       <div className='comments-div'>
         COMMENTS GO HERE
       </div>
       </div>
-<div className='tut-card-feed'>
+<div className='mini-tut-card-feed'>
         MINI TUT CARD FEED
       </div>
 
