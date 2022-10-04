@@ -44,7 +44,7 @@ const NavBar = () => {
             className="icon"
           >
             <FontAwesomeIcon icon="fa-solid fa-video" className='movie-icon'/>
-            PROFILE
+            MY PROFILE
           </NavLink>
         <div>
           <LogoutButton />

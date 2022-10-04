@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { useHistory } from 'react-router-dom';
 import { loadUserRequest } from '../../store/session';
 import { getAllTutsOnYouTut } from '../../store/tuts';
 import DeleteTut from '../Tuts/DeleteTut';
@@ -14,6 +15,8 @@ import "./MainFeed.css";
 
 function MainFeed() {
 
+  const history = useHistory()
+
   const dispatch = useDispatch()
   const [isLoaded, setIsLoaded] = useState(false);
 
@@ -24,6 +27,8 @@ function MainFeed() {
   const userLoggedIn = useSelector((state) => {
     return state.session.user;
   })
+
+
 
 
   const displayTuts = tuts.map((tut, i) => (
