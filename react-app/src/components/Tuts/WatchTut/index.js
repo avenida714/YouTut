@@ -80,7 +80,7 @@ const userLoggedIn = useSelector((state) => {
       <div className='title-likes-dislikes-WatchTut'>
         <div className='tut-title-WatchTut'>{tut.tut_title}</div>
       </div>
-      {isLoaded && tut && editAndDelete }
+      {/* {isLoaded && tut && editAndDelete } */}
       <div className='profile-user-about-outer-WatchTut'>
         <div className='profile-pic-div-WatchTut'>
           <img className="profile-pic-WatchTut" src={tut.user.profile_img} alt="profile-thumbnail-WatchTut" />

@@ -28,6 +28,10 @@
   height:200px;
   /* border: 1px solid red; */
   cursor: pointer;
+  image-rendering: optimizeQuality;
+  object-fit: cover;
+
+
 }
 
 .profile-title-user-outer {
