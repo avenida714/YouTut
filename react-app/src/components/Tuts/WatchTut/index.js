@@ -6,11 +6,15 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 
 import { getAllTutsOnYouTut, getOneTutById } from '../../../store/tuts'
+import DeleteTut from '../DeleteTut'
+import EditTut from '../EditTut'
 
 import "./WatchTut.css"
 
 
 function WatchTut() {
+
+
 
   const tutId = useParams().tutId
 
@@ -18,36 +22,48 @@ function WatchTut() {
 
   const [isLoaded, setIsLoaded] = useState(false);
 
-  const userLoggedIn = useSelector((state) => {
+const userLoggedIn = useSelector((state) => {
     return state.session.user;
   })
 
-
   useEffect( () => {
-     dispatch(getAllTutsOnYouTut())
-    .then(() => setIsLoaded(true)
-    )
-  }, [dispatch, userLoggedIn.id])
+    dispatch(getAllTutsOnYouTut())
+   .then(() => setIsLoaded(true)
+   )
+ }, [dispatch, userLoggedIn.id])
 
 
 
   const tuts = useSelector(state => state.tuts)
+
+  const tut = useSelector(state => state.tuts[tutId])
+
 
   const currentlyWatchingThisTut = tuts[tutId]
 
   console.log(currentlyWatchingThisTut)
 
 
-
-  const tut = useSelector(state => state.tuts[tutId])
-
   // console.log("THIS IS THE TUTURL ****", tutUrl)
 
   // const tut = getOneTutById(tutId)
 
-  // console.log(tut)
+  console.log("TUUUUUUUUUT", tut)
 
   // console.log("use params of .tutId", tut)
+
+  let editAndDelete
+
+  if (isLoaded) {
+    if (userLoggedIn.id === tut.user_id) {
+      editAndDelete = (<>
+      <EditTut tut={tut} tutId={tut.id} oldTitle={tut.title} oldDescription={tut.description}/>
+    <DeleteTut tutId={tut.id} />
+    </>)
+    }else {
+    editAndDelete = null
+  }
+  }
 
   return (
     isLoaded &&
@@ -64,6 +80,7 @@ function WatchTut() {
       <div className='title-likes-dislikes-WatchTut'>
         <div className='tut-title-WatchTut'>{tut.tut_title}</div>
       </div>
+      {isLoaded && tut && editAndDelete }
       <div className='profile-user-about-outer-WatchTut'>
         <div className='profile-pic-div-WatchTut'>
           <img className="profile-pic-WatchTut" src={tut.user.profile_img} alt="profile-thumbnail-WatchTut" />
