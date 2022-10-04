@@ -60,9 +60,9 @@ const LoginForm = () => {
           onChange={updatePassword}
         />
         <button type='submit'>Login</button>
-        <div>
+        {/* <div>
           <UploadTut />
-        </div>
+        </div> */}
       </div>
     </form>
   );
