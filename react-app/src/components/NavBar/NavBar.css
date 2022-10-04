@@ -58,7 +58,7 @@
   cursor: pointer;
   /* border: 3px solid blue; */
   /* padding-left: 15px; */
-  width: 100%;
+  width: 10%;
   display: flex;
 }
 
@@ -79,7 +79,7 @@
 
 .icon {
   font-size: 30px;
-  color:black;
+  color:white;
   margin: 5px;
 }
 

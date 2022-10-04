@@ -5,6 +5,9 @@ import { Link, NavLink } from 'react-router-dom';
 import { loadUserRequest } from '../../store/session';
 import LogoutButton from '../auth/LogoutButton';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
+
 import "./NavBar.css"
 
 import playImage from "./youtut-icon.png"
@@ -34,6 +37,15 @@ const NavBar = () => {
             YouTut{" "}
           </Link>
         </div>
+          <NavLink
+            to={`/users/${userLoggedIn.id}`}
+            exact={true}
+            activeClassName="active"
+            className="icon"
+          >
+            <FontAwesomeIcon icon="fa-solid fa-video" className='movie-icon'/>
+            PROFILE
+          </NavLink>
         <div>
           <LogoutButton />
         </div>
