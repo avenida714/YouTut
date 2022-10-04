@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react'
 import ReactPlayer from 'react-player'
 import { useDispatch, useSelector } from 'react-redux'
-import { useParams } from 'react-router-dom'
+import { useHistory, useParams } from 'react-router-dom'
 
 import { getAllTutsOnYouTut, getOneTutById } from '../../../store/tuts'
 import DeleteTut from '../DeleteTut'
@@ -14,7 +14,7 @@ import "./WatchTut.css"
 
 function WatchTut() {
 
-
+  const history = useHistory()
 
   const tutId = useParams().tutId
 
@@ -48,9 +48,14 @@ const userLoggedIn = useSelector((state) => {
 
   // const tut = getOneTutById(tutId)
 
-  console.log("TUUUUUUUUUT", tut)
+  // console.log("TUUUUUUUUUT", tut)
 
   // console.log("use params of .tutId", tut)
+
+  const usersProfilePage = () => {
+    let path = `/users/${tut.user_id}`;
+    history.push(path);
+  };
 
   let editAndDelete
 
@@ -82,7 +87,7 @@ const userLoggedIn = useSelector((state) => {
       </div>
       {/* {isLoaded && tut && editAndDelete } */}
       <div className='profile-user-about-outer-WatchTut'>
-        <div className='profile-pic-div-WatchTut'>
+        <div className='profile-pic-div-WatchTut' onClick={usersProfilePage}>
           <img className="profile-pic-WatchTut" src={tut.user.profile_img} alt="profile-thumbnail-WatchTut" />
         </div>
         <div className='Username-WatchTut'>
