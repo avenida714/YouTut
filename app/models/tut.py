@@ -1,6 +1,7 @@
 from ssl import create_default_context
 
 from app.models.user import User
+from app.models.comment import Comment
 from .db import db
 from datetime import datetime
 from sqlalchemy.sql import func
@@ -49,6 +50,8 @@ class Tut(db.Model):
   def to_dict(self):
     fetched_user = User.query.get(self.user_id).to_dict()  #lazy loading will sometimes mess up, so make an explicit query to reference users in this state
 
+    # fetched_comments = Comment.query.get(self.comments)
+
 
 
     return {
@@ -63,5 +66,5 @@ class Tut(db.Model):
       'user': fetched_user,
       # "likes": [user.id for user in self.likes],
       # "dislikes": [user.id for user in self.dislikes],
-      # "comments": [c.to_dict() for c in self.comments]
+      "comments": [c.to_dict() for c in self.comments]
     }

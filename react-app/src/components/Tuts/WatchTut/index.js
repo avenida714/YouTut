@@ -4,8 +4,10 @@ import React, { useEffect, useState } from 'react'
 import ReactPlayer from 'react-player'
 import { useDispatch, useSelector } from 'react-redux'
 import { useHistory, useParams } from 'react-router-dom'
+import { getTutComments } from '../../../store/comments'
 
 import { getAllTutsOnYouTut, getOneTutById } from '../../../store/tuts'
+import Comments from '../../Comments'
 import DeleteTut from '../DeleteTut'
 import EditTut from '../EditTut'
 
@@ -28,9 +30,10 @@ const userLoggedIn = useSelector((state) => {
 
   useEffect( () => {
     dispatch(getAllTutsOnYouTut())
+    .then(() => getTutComments(tutId))
    .then(() => setIsLoaded(true)
    )
- }, [dispatch, userLoggedIn.id])
+ }, [dispatch, userLoggedIn.id, tutId])
 
 
 
@@ -41,7 +44,7 @@ const userLoggedIn = useSelector((state) => {
 
   const currentlyWatchingThisTut = tuts[tutId]
 
-  console.log(currentlyWatchingThisTut)
+  console.log("CURRENTLY WATCHING THIS TUT", currentlyWatchingThisTut)
 
 
   // console.log("THIS IS THE TUTURL ****", tutUrl)
@@ -96,7 +99,7 @@ const userLoggedIn = useSelector((state) => {
         </div>
       </div>
       <div className='comments-div'>
-        COMMENTS GO HERE
+        <Comments tut={tut} />
       </div>
       </div>
 <div className='mini-tut-card-feed'>

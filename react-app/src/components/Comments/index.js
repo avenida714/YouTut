@@ -4,6 +4,7 @@ import React from "react";
 
 function Comments({ tut }) {
   let loopMe;
+  console.log("TUT IN THE COMMENTS COMPONENT --------", tut)
 
   if (tut.comments) loopMe = true;
   else loopMe = false;
@@ -13,8 +14,8 @@ function Comments({ tut }) {
       <div>
         <div className="caption-comments">
           <div className="comment-display-watchTut">
-            <div className="tut-caption-watchTut">{loopMe.caption}</div>
-            {loopMe.comments.map((comment) => (
+            <div className="tut-caption-watchTut">{tut.caption}</div>
+            {tut.comments.map((comment) => (
               <div className="comment_line" key={comment.id}>
                 <div className="user-icon-watchTut-comment">
                   <img
