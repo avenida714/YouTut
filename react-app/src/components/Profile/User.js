@@ -39,9 +39,9 @@ function User() {
     return null;
   }
 
-  console.log("THIS IS MY PAGE ?????????", thisIsMyPage)
-  console.log("userLoggedInId", userLoggedInId)
-  console.log("userId", userId)
+  // console.log("THIS IS MY PAGE ?????????", thisIsMyPage)
+  // console.log("userLoggedInId", userLoggedInId)
+  // console.log("userId", userId)
   let iCanUpload;
   if (thisIsMyPage) {
     iCanUpload = (<UploadTut />)

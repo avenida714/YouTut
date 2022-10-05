@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { loadUserRequest } from '../../store/session';
 import { getAllTutsOfOneUser, getAllTutsOnYouTut, getCurrentUserTuts } from '../../store/tuts';
 import DeleteTut from '../Tuts/DeleteTut';
+import EditTut from '../Tuts/EditTut';
 import TutCard from '../Tuts/TutCard';
 import UploadTut from '../Tuts/UploadTut';
 
@@ -14,52 +15,73 @@ import UploadTut from '../Tuts/UploadTut';
 
 function UserFeed({userId}) {
 
+
+
   const dispatch = useDispatch()
   const [isLoaded, setIsLoaded] = useState(false);
 
   const [thisIsMyTut, setThisIsMyTut] = useState(false)
 
+  const userLoggedInId = useSelector((state) => {
+    return state.session.user.id;
+  })
+
   const tutsObj = useSelector((state) => state.tuts);
   const tuts = Object.values(tutsObj)
   tuts.reverse() //will put in reverse chron order, newest first
 
-  const userLoggedIn = useSelector((state) => {
-    return state.session.user;
-  })
+
+
+
+
+
+
+  // let thisIsMyTut;
+  // if (userLoggedIn === tut.userId) {
+  //   thisIsMyTut = (<div><DeleteTut tutId={tut.id} /> <EditTut tut={tut} tutId={tut.id} oldTitle={tut.title} oldDescription={tut.description}/> </div> )
+  // } else {
+  //   thisIsMyTut = null;
+  // }
+
+
+  useEffect(() => {
+    dispatch(getAllTutsOfOneUser(userId))
+    .then(() =>  dispatch(loadUserRequest(userLoggedInId)))
+    .then(() => setIsLoaded(true))
+    .then(() => {
+      if (userLoggedInId === userId) setThisIsMyTut(true)
+      console.log(userLoggedInId)
+      console.log(userId)
+      console.log(thisIsMyTut)
+      return
+    })
+
+  }, [dispatch, userLoggedInId, userId, thisIsMyTut])
+
+  // useEffect(() => {
+  //   if (userLoggedIn === userId) {
+  //     setThisIsMyTut(true)
+  //   }
+  // }, [userId, userLoggedIn])
+
+
+
 
 
   const displayTuts = tuts.map((tut, i) => (
     <div>
     <TutCard key={i} tut={tut} />
+    {thisIsMyTut ? (<div><DeleteTut tutId={tut.id} /> <EditTut tut={tut} tutId={tut.id} oldTitle={tut.title} oldDescription={tut.description}/> </div> ) : null}
     </div>
 
   ))
 
 
-
-
-  useEffect(() => {
-    dispatch(getAllTutsOfOneUser(userId))
-    .then(() =>  dispatch(loadUserRequest(userLoggedIn.id)))
-    .then(() => setIsLoaded(true))
-    // .then(() => {
-    //   if (userLoggedIn === userId) {
-    //     setThisIsMyTut(true)
-    //   }
-    // })
-  }, [dispatch, userLoggedIn, userId])
-
-  useEffect(() => {
-    if (userLoggedIn === userId) {
-      setThisIsMyTut(true)
-    }
-  }, [thisIsMyTut, userId, userLoggedIn])
-
   return (
-    isLoaded && userLoggedIn && displayTuts &&(
+    isLoaded && userLoggedInId && displayTuts &&(
     <div className="outer-most-wrapper">
       <div className='main-feed-display'>
-        {thisIsMyTut ? <UploadTut /> : null}
+        {/* {thisIsMyTut ? <UploadTut /> : null} */}
         <div className='display-Tuts'>
         {displayTuts}
         </div>

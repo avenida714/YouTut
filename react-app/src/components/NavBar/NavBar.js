@@ -37,15 +37,17 @@ const NavBar = () => {
             YouTut{" "}
           </Link>
         </div>
-          <NavLink
+        <div className="user-icon-wrapper">
+        <NavLink
             to={`/users/${userLoggedIn.id}`}
             exact={true}
-            activeClassName="active"
-            className="icon"
+            // activeClassName="active"
+            // className="icon"
           >
-            <FontAwesomeIcon icon="fa-solid fa-video" className='movie-icon'/>
-            MY PROFILE
+            <img className="profile-pic-nav" alt="profile-thumbnail" src={userLoggedIn.profile_img} />
           </NavLink>
+        </div>
+
         <div>
           <LogoutButton />
         </div>
