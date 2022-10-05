@@ -89,6 +89,7 @@ function User() {
                           )}
     <UserFeed userId={userId}/> */}
     {iCanUpload}
+    <UserFeed userId={userId}/>
     </div>
     )
 
