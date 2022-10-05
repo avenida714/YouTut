@@ -15,9 +15,9 @@ function EditTutForm({ tut, tutId, oldTitle, oldDescription }) {
   const [imageLoading, setImageLoading] = useState(false);
 
   //inputs for backend
-  const [title, setTitle] = useState(oldTitle); //tut_title
+  const [title, setTitle] = useState(tut.tut_title); //tut_title
   const [mp4, setMp4] = useState(tut.tut_video); //tut_video
-  const [description, setDescription] = useState(oldDescription); //tut_description
+  const [description, setDescription] = useState(tut.tut_description); //tut_description
   const [thumbnail, setThumbnail] = useState(tut.thumbnail_pic); //thumbnail_pic
 
   const [userHasSubmitted, setUserHasSubmitted] = useState(false);
@@ -131,11 +131,11 @@ function EditTutForm({ tut, tutId, oldTitle, oldDescription }) {
           onChange={(e) => setTitle(e.target.value)}
         />
         <label>Upload your File (mp4 only please)</label>
-        <input required type="file" accept=".mp4" value={null} onChange={updateTutVideo} />
+        <input required type="file" accept=".mp4"  onChange={updateTutVideo} />
         <label>Description - tell us about this Tut!</label>
         <input required type="text" value={description} onChange={(e) => setDescription(e.target.value)} />
         <label>Thumbnail</label>
-        <input required type="file" accept="image/*" value={null} onChange={updateThumbnail} />
+        <input required type="file" accept="image/*"  onChange={updateThumbnail} />
         <button type="submit">Submit</button>
         {imageLoading && <p>Loading...</p>}
       </form>
