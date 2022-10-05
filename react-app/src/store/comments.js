@@ -82,6 +82,21 @@ export const updateAComment =
     return response;
   };
 
+// Delete a comment
+export const deleteAComment = (id) => async (dispatch) => {
+  const response = await fetch(`/api/comments/${id}`, {
+    method: "DELETE",
+    headers: { "Content-Type": "application/json" },
+  });
+  // console.log("response*****************", response);
+
+  if (response.ok) {
+    //   const comment = await response.json();
+    dispatch(actionDeleteComment(id));
+  }
+  return response;
+};
+
 
 
 //Initial State:
