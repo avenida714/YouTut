@@ -6,10 +6,11 @@ import UserFeed from './UserFeed';
 
 function User() {
   const [user, setUser] = useState({});
-  const { userId }  = useParams();
+  let { userId }  = useParams();
+  userId = Number(userId)
   const [isLoaded, setIsLoaded] = useState(false);
 
-  const userLoggedIn = useSelector((state) => {
+  const userLoggedInId = useSelector((state) => {
     return state.session.user.id;
   })
 
@@ -28,16 +29,19 @@ function User() {
     })()
     .then(() => setIsLoaded(true))
     .then(() => {
-      if (userLoggedIn === userId) setThisIsMyPage(true)
+      if (userLoggedInId === userId) setThisIsMyPage(true)
+      return
     })
 
-  }, [userId, userLoggedIn]);
+  }, [userId, userLoggedInId]);
 
   if (!user) {
     return null;
   }
 
   console.log("THIS IS MY PAGE ?????????", thisIsMyPage)
+  console.log("userLoggedInId", userLoggedInId)
+  console.log("userId", userId)
   let iCanUpload;
   if (thisIsMyPage) {
     iCanUpload = (<UploadTut />)
@@ -63,7 +67,27 @@ function User() {
         <strong>Email</strong> {user.email}
       </li>
     </ul>
-    <UserFeed userId={userId}/>
+    {/* {userLoggedIn && profile.id === sessionUser.id ? (
+                            <button
+                              className="editProfile"
+                              onClick={(e) => handleEditProfile(e, profile.id)}
+                            >
+                              Edit profile <BiEditAlt />
+                            </button>
+                          ) : (
+                            (
+                              <button
+                                style={hideButton}
+                                className="editProfileButton"
+                                onClick={(e) =>
+                                  handleEditProfile(e, profile.id)
+                                }
+                              >
+                                edit profile
+                              </button>
+                            ) && <ToggleFollow profile={profile} />
+                          )}
+    <UserFeed userId={userId}/> */}
     {iCanUpload}
     </div>
     )
