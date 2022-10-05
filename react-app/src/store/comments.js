@@ -62,3 +62,34 @@ export const createComment = (newCommentData) => async (dispatch) => {
   }
   return response;
 };
+
+
+
+//Initial State:
+const initialState = {};
+
+//Reducer:
+const commentsReducer = (state = initialState, action) => {
+  let newState = {};
+
+  switch (action.type) {
+    case CREATE_COMMENT: {
+      newState = { ...state };
+      newState[action.comment.id] = action.comment;
+      return newState;
+    }
+
+    case READ_COMMENT: {
+      action.comment.forEach((comment) => {
+        newState[comment.id] = comment;
+      });
+      return newState;
+    }
+
+
+    default:
+      return state;
+  }
+};
+
+export default commentsReducer;
