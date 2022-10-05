@@ -213,7 +213,17 @@ def update_tut(id):
     else:
         return {'message': "Something went wrong! Please check your data and try again. Note that your title cannot exceed 100 characters."}
 
+
 # get all comments for a tut by tut_id
+
+@tut_routes.route('/<int:post_id>/all_comments')
+@login_required
+def get_all_comment(tut_id):
+    all_comments = Comment.query.filter(Comment.tut_id == tut_id).all()
+    all_comments_json = [comment.to_dict() for comment in all_comments]
+    return {"comments": all_comments_json}
+
+
 # Create A Comment
 @tut_routes.route("/<int:id>/new_comment", methods = ["POST"])
 @login_required
