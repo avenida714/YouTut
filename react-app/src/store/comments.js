@@ -120,6 +120,19 @@ const commentsReducer = (state = initialState, action) => {
       return newState;
     }
 
+    case UPDATE_COMMENT: {
+      newState = { ...state };
+      console.log("newState before", newState);
+      newState[action.comment.id] = action.comment;
+      console.log("newState after", newState);
+      return newState;
+    }
+
+    case DELETE_COMMENT: {
+      newState = { ...state };
+      delete newState[action.id];
+      return newState;
+    }
 
     default:
       return state;
