@@ -23,3 +23,7 @@ body {
 button {
   background-color: red;
 }
+
+.errors {
+  color:yellow
+}
