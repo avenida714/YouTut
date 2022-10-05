@@ -4,10 +4,16 @@ import React from "react";
 
 function Comments({ tut }) {
   let loopMe;
-  console.log("TUT IN THE COMMENTS COMPONENT --------", tut)
+  console.log("COMMENTS IN THIS TUT --------", tut.comments)
 
   if (tut.comments) loopMe = true;
   else loopMe = false;
+
+  let comments = Object.values(tut.comments)
+
+  let chronologicalComments = comments.reverse()
+
+  console.log("chrono comments ***********", chronologicalComments)
 
   return (
     loopMe && (
@@ -15,7 +21,7 @@ function Comments({ tut }) {
         <div className="caption-comments">
           <div className="comment-display-watchTut">
             <div className="tut-caption-watchTut">{tut.caption}</div>
-            {tut.comments.map((comment) => (
+            {chronologicalComments.map((comment) => (
               <div className="comment_line" key={comment.id}>
                 <div className="user-icon-watchTut-comment">
                   <img
