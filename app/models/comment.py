@@ -1,6 +1,6 @@
 from .db import db
 from sqlalchemy.sql import func
-import datetime, timeago
+import datetime #timeago
 
 from app.models.user import User
 
@@ -22,13 +22,13 @@ class Comment(db.Model):
     #relationships
     user = db.relationship("User", back_populates="comments")
 
-    post = db.relationship('Tut', back_populates="comments")
+    Tuts = db.relationship('Tut', back_populates="comments")
 
 
     #class methods
-    def comment_timeago(self):
-        date = datetime.now()
-        return timeago.format(self.created_at, date)
+    # def comment_timeago(self):
+    #     date = datetime.now()
+    #     return timeago.format(self.created_at, date)
 
 
 

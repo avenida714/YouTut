@@ -25,7 +25,7 @@ class Tut(db.Model):
   #relationships
   user = db.relationship("User", back_populates="tuts")
 
-  # comments = db.relationship("Comment", back_populates="Tuts", cascade="all, delete-orphan") #Comments-todo
+  comments = db.relationship("Comment", back_populates="Tuts", cascade="all, delete-orphan") #Comments-todo
 
   # likes = db.relationship("User", secondary=likes, back_populates='liked_tuts')  #Likes-todo
   # dislikes = db.relationship("User", secondary=dislikes, back_populates='disliked_tuts')
