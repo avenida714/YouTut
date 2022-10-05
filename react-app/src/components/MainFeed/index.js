@@ -2,17 +2,20 @@
 
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { useHistory } from 'react-router-dom';
 import { loadUserRequest } from '../../store/session';
 import { getAllTutsOnYouTut } from '../../store/tuts';
 import DeleteTut from '../Tuts/DeleteTut';
 import TutCard from '../Tuts/TutCard';
-import UploadTut from '../Tuts/UploadTut';
+// import UploadTut from '../Tuts/UploadTut';
 
 import "./MainFeed.css";
 
 // import UploadTut from '../Uploadtut';
 
 function MainFeed() {
+
+  const history = useHistory()
 
   const dispatch = useDispatch()
   const [isLoaded, setIsLoaded] = useState(false);
@@ -24,6 +27,8 @@ function MainFeed() {
   const userLoggedIn = useSelector((state) => {
     return state.session.user;
   })
+
+
 
 
   const displayTuts = tuts.map((tut, i) => (
@@ -45,7 +50,6 @@ function MainFeed() {
     isLoaded && (
     <div className="outer-most-wrapper">
       <div className='main-feed-display'>
-        <UploadTut />
         <div className='display-Tuts'>
         {displayTuts}
         </div>

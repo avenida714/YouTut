@@ -23,6 +23,14 @@ function TutCard({tut}) {
   }
 
 
+  const usersProfilePage = () => {
+    let path = `/users/${tut.user_id}`;
+    history.push(path);
+  };
+
+
+
+
   // console.log("*****I am the Tut data being passed into the TUT card ********", tut.tut_video)
 
   //helper func to take to other user profile when you click; need to get the users based on the id of the video
@@ -43,7 +51,7 @@ function TutCard({tut}) {
         <img className="thumbnail"src={tut.thumbnail_pic} alt="tut-thumbnail" onClick={onClickWatchTut}/>
 
       <div className='profile-title-user-outer'>
-        <div className='profile-pic-div'>
+        <div className='profile-pic-div' onClick={usersProfilePage}>
           <img className="profile-pic" src={tut.user.profile_img} alt="profile-thumbnail" />
         </div>
         <div className='titleAndUsername'>
@@ -51,8 +59,6 @@ function TutCard({tut}) {
         <div className='tut-username'>{tut.user.username}</div>
         </div>
       </div>
-      {/* <DeleteTut tutId={tut.id} />
-      <EditTut tut={tut} tutId={tut.id} oldTitle={tut.title} oldDescription={tut.description}/> */}
     </div>
     :
     null

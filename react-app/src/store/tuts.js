@@ -24,6 +24,7 @@ const actionReadTut = (tut) => {
 
 //Read All
 const actionReadAllTuts = (tuts) => {
+  console.log("ACTION READ ALL TUTS", tuts)
   return {
     type: READ_ALL_TUTS,
     tuts
@@ -88,14 +89,16 @@ export const getCurrentUserTuts = () => async (dispatch) => {
   return response;
 };
 
-//READ/FETCH ALL TUTS OF ONE USER (3rd person)
-export const getAllTutsOfAnotherUser = (id) => async (dispatch) => {
+//READ/FETCH ALL TUTS OF ONE USER (1st or 3rd person)
+export const getAllTutsOfOneUser = (id) => async (dispatch) => {
   const response = await fetch(`/api/tuts/user/${id}`);
   if (response.ok) {
     const data = await response.json();
+    console.log("****** THIS IS THE DATA ******", data)
     dispatch(actionReadAllTuts(data.tuts));
     return data;
   }
+  return response;
 };
 
 //CREATE A TUT AWS
@@ -171,6 +174,7 @@ const tutsReducer = (state = initialState, action) => {
       return newState;
     }
     case READ_ALL_TUTS: {
+      console.log("THIS IS ACTION.TUTS *****", action.tuts)
       action.tuts.forEach((tut) => {
         newState[tut.id] = tut;
       });

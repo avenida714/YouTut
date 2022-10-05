@@ -9,3 +9,17 @@
   color: #ffffff;
   background-color: #181818;
 }
+
+body {
+  padding-top: 60px;
+}
+
+@media (wax-width: 979px) {
+  body {
+    padding-top: 0px
+  }
+}
+
+button {
+  background-color: red;
+}

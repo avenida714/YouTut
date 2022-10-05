@@ -33,6 +33,16 @@ def get_one_tut(id):
     # else:
     #     return {'message': 'Unauthorized user'}
 
+#Get All tuts of One User by User Id
+@tut_routes.route('/user/<int:id>')
+@login_required
+def get_tuts_by_id(id):
+    # print("~~~MADE IT HERE ~~~~")
+    all_tuts_by_id = Tut.query.filter(Tut.user_id == id).order_by(Tut.created_at.desc()).all()
+    all_tuts_by_id_json = [tut.to_dict() for tut in all_tuts_by_id]
+    return {"tuts": all_tuts_by_id_json}
+
+
 
 # ADDING A TUT
 @tut_routes.route("/", methods=["POST"])

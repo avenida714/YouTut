@@ -73,6 +73,7 @@ function EditTutForm({ tut, tutId, oldTitle, oldDescription }) {
       <form onSubmit={handleSubmit}>
         <label>Title of your Tut</label>
         <input
+          required
           type="text"
           name="title"
           onChange={(e) => setTitle(e.target.value)}
@@ -80,9 +81,9 @@ function EditTutForm({ tut, tutId, oldTitle, oldDescription }) {
         <label>Upload your File (mp4 only please)</label>
         <input required type="file" accept=".mp4" onChange={updateTutVideo} />
         <label>Description - tell us about this Tut!</label>
-        <input type="text" onChange={(e) => setDescription(e.target.value)} />
+        <input required type="text" onChange={(e) => setDescription(e.target.value)} />
         <label>Thumbnail</label>
-        <input type="file" accept="image/*" onChange={updateThumbnail} />
+        <input required type="file" accept="image/*" onChange={updateThumbnail} />
         <button type="submit">Submit</button>
         {imageLoading && <p>Loading...</p>}
       </form>
