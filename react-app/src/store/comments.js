@@ -30,3 +30,14 @@ const actionDeleteComment = (id) => {
 };
 
 //THUNKS -------------------
+
+// GET ALL COMMENTS OF A TUT
+export const getTutComments = (tutId) => async (dispatch) => {
+  const response = await fetch(`/api/tuts/${tutId}/all_comments`);
+
+  if (response.ok) {
+    const comments = await response.json();
+    dispatch(actionReadComment(comments.comments));
+  }
+  return response;
+};
