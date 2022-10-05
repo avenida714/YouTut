@@ -99,10 +99,10 @@ export const deleteAComment = (id) => async (dispatch) => {
 
 
 
-//Initial State:
+//Initial State: -------------
 const initialState = {};
 
-//Reducer:
+//REDUCER: ------------------
 const commentsReducer = (state = initialState, action) => {
   let newState = {};
 
