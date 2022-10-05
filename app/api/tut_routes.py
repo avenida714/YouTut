@@ -216,7 +216,7 @@ def update_tut(id):
 
 # get all comments for a tut by tut_id
 
-@tut_routes.route('/<int:post_id>/all_comments')
+@tut_routes.route('/<int:tut_id>/all_comments')
 @login_required
 def get_all_comment(tut_id):
     all_comments = Comment.query.filter(Comment.tut_id == tut_id).all()
