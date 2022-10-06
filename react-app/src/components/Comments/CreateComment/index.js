@@ -39,7 +39,7 @@ function CreateComment({tut}) {
         onChange={(e) => setComment(e.target.value)}
       />
       <button
-        className={errors.length ? 'grey_out' : "button-post-comment-sp"}
+        className={errors.length ? 'gray_out' : "button-post-comment-sp"} // css to hide the button
         disabled={ errors.length > 0 }
       >
         Comment
