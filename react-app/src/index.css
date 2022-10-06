@@ -21,7 +21,7 @@ body {
 }
 
 button {
-  background-color: red;
+  background-color: #f61c0d;
 
 }
 
@@ -33,7 +33,7 @@ button {
 
 button {
   align-items: center;
-  background-color: red;
+  background-color: #f61c0d;
   background-clip: padding-box;
   border-radius: .75rem;
   border: 1px solid transparent;
