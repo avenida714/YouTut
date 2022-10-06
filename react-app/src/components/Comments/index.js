@@ -1,10 +1,11 @@
 //Comments
 
 import React, { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { getOneTutById } from "../../store/tuts";
 import "./CommentFeed.css";
 import CreateComment from "./CreateComment";
+import EditComment from "./EditComment";
 
 
 
@@ -17,6 +18,8 @@ function CommentFeed({ tut }) {
   // console.log("COMMENTS IN THIS TUT --------", tut.comments)
 
   const [isLoaded, setIsLoaded] = useState(false)
+
+  const userLoggedIn = useSelector((state) => state.session.user);
 
 
 
@@ -32,6 +35,8 @@ function CommentFeed({ tut }) {
   let comments = Object.values(tut.comments)
 
   let chronologicalComments = comments.reverse()
+
+
 
   return (
     isLoaded && (
@@ -56,15 +61,15 @@ function CommentFeed({ tut }) {
                 <div className="comment-content"> {comment.comment}</div>
                 </div>
 
-                {/* <div className="comment_content">
-                        {comment.user.id === currUser.id && (
+                <div className="comment_content">
+                        {comment.user.id === userLoggedIn.id && (
                           <EditComment
                             tut={tut}
                             oldComment={comment.comment}
                             commentId={comment.id}
                           />
                         )}
-                      </div> */}
+                      </div>
               </div>
             ))}
           </div>
