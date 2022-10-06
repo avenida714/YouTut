@@ -22,32 +22,38 @@ const UploadTut = () => {
     const [userHasSubmitted, setUserHasSubmitted] = useState(false);
 
 
-    useEffect(() => {
-      let errors = [];
+    // useEffect(() => {
+    //   let errors = [];
 
 
-      if (title.length <= 0 || title.length > 50) {
-        errors.push("Please provide a title no longer than 50 characters.");
-      }
+    //   if (title.length <= 0 || title.length > 50) {
+    //     errors.push("Please provide a title no longer than 50 characters.");
+    //   }
 
-      if (description.length <= 0) {
-        errors.push("Please provide a short description of your Tut.");
-      }
+    //   if (description.length <= 0) {
+    //     errors.push("Please provide a short description of your Tut.");
+    //   }
 
-      // if (!image_url?.includes("jpg") &&) {
-      //   errors.push("Please use jpg, jpeg or png");
-      // }
+    //   // if (!image_url?.includes("jpg") &&) {
+    //   //   errors.push("Please use jpg, jpeg or png");
+    //   // }
 
 
-      setErrors(errors);
-    }, [title, description]);
+    //   setErrors(errors);
+    // }, [title, description]);
+
+
 
     const handleSubmit = async (e) => {
+        setUserHasSubmitted(false)
 
          e.preventDefault();
         setUserHasSubmitted(true)
 
+        const arrOfErrors = [];
+
         if (errors.length > 0) {
+          setUserHasSubmitted(true)
           return alert("Cannot Submit");
         }
 
@@ -64,20 +70,39 @@ const UploadTut = () => {
 
 
         const response = await dispatch(uploadTut(formData))
-        // console.log("this is the response from the upload tut dispatch ******************",response)
+        console.log("this is the response from the upload tut dispatch ******************",response, "<---RES ERRORS->>",response.errors)
 
-        if (response.ok) {
-            await response.json();
+        if (response && response.errors === undefined) {
+            // await response.json();
             setImageLoading(false);
             history.push("/");
         }
-        else {
-            setImageLoading(false);
-            // a real app would probably use more advanced
-            // error handling
-            console.log("error");
-            // setErrors(response) for more advanced error handling later
+        else if (response.errors){
+          arrOfErrors.push(response.errors)
+          setImageLoading(false)
+
         }
+        // else {
+        //     setImageLoading(false);
+        //     // a real app would probably use more advanced
+        //     // error handling
+        //     console.log("error");
+        //     // setErrors(response) for more advanced error handling later
+        // }
+        if (arrOfErrors.length) {
+          setErrors(arrOfErrors)
+          setImageLoading(false)
+
+        }
+        if (response.ok) {
+          await response.json();
+          setImageLoading(false);
+          // history.push("/")
+        }
+    }
+
+    const preventDragHandler = (e) => {
+      e.preventDefault();
     }
 
     const updateThumbnail = (e) => {
@@ -87,15 +112,18 @@ const UploadTut = () => {
     }
 
     const updateTutVideo = (e) => {
+        setUserHasSubmitted(true)
         const vidFile = e.target.files[0];
 
         // console.log("THIS IS THE VID FILE ****************", vidFile)
+        // console.log("THIS IS THE VIDFILE TYPE ******", vidFile.type)
 
-        if (vidFile.size > 30 * 1000 * 1000) {
-            let errors = [];
-            errors.push("Your Tut is too long. Please choose an MP4 smaller than 30MB.")
-            setErrors(errors)
+        if (vidFile?.size > 30 * 1000 * 1000) {
+            setErrors([...errors, "Your Tut is too long. Please choose an MP4 smaller than 30MB."])
             return alert("Cannot Submit")
+        } else if (vidFile?.type !== "video/mp4"){
+          console.log(vidFile?.type, "<----- THIS IS THE VIDFILE.TYPE")
+          setErrors([...errors, "You must only upload an MP4 file, please."])
         } else {
           setMp4(vidFile)
         }
@@ -104,14 +132,14 @@ const UploadTut = () => {
 
     }
 
-
+    console.log("THESE ARE THE ERRORS", errors)
 
     return (
         <div>
          <div>
           <ul className="errors">
             {userHasSubmitted &&
-              errors.map((error) => (
+              errors?.map((error) => (
                 <li className="errors" key={error}>
                   {error}
                 </li>
@@ -134,6 +162,7 @@ const UploadTut = () => {
                 type="file"
                 accept=".mp4"
                 onChange={updateTutVideo}
+                onDragStart={preventDragHandler}
             />
             <label>Description - tell us about this Tut!</label>
             <input
@@ -147,6 +176,7 @@ const UploadTut = () => {
               type="file"
               accept="image/*"
               onChange={updateThumbnail}
+
             />
             <button type="submit">Upload a Tut</button>
             {(imageLoading)&& <p>Loading...</p>}

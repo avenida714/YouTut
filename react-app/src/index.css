@@ -69,3 +69,7 @@ button:active {
   transform: translateY(0);
   box-shadow: rgba(0, 0, 0, .012) 0 2px 4px;
 }
+
+textarea {
+  resize: none;
+}

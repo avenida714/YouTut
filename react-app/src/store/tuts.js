@@ -61,7 +61,7 @@ export const getOneTutById = (tutId) => async (dispatch) => {
   const response = await fetch(`/api/tuts/${tutId}`)
   if (response.ok) {
     const tutById = await response.json();
-    dispatch(actionReadTut(tutById.tuts))
+    dispatch(actionReadTut(tutById.tuts)) //tutById.tuts NOT just tutById
     // console.log("THIS IS THE TUTBY ID IN ONE TUT THUNK",tutById)
     return tutById;
   }
@@ -73,7 +73,7 @@ export const getAllTutsOnYouTut = () => async (dispatch) => {
   const response = await fetch(`/api/tuts/all`);
   if (response.ok) {
     const data = await response.json();
-    dispatch(actionReadAllTuts(data.tuts));
+    dispatch(actionReadAllTuts(data.tuts)); //data.tuts NOT just data
     return data;
   }
   return response;
