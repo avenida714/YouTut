@@ -1,15 +1,15 @@
 //Comments
 
 import React from "react";
-import "./Comments.css";
+import "./CommentFeed.css";
 
 
 
 
 
-function Comments({ tut }) {
+function CommentFeed({ tut }) {
   let loopMe;
-  console.log("COMMENTS IN THIS TUT --------", tut.comments)
+  // console.log("COMMENTS IN THIS TUT --------", tut.comments)
 
   if (tut.comments) loopMe = true;
   else loopMe = false;
@@ -18,7 +18,7 @@ function Comments({ tut }) {
 
   let chronologicalComments = comments.reverse()
 
-  console.log("chrono comments ***********", chronologicalComments)
+  // console.log("chrono comments ***********", chronologicalComments)
 
   return (
     loopMe && (
@@ -45,11 +45,10 @@ function Comments({ tut }) {
 
                 {/* <div className="comment_content">
                         {comment.user.id === currUser.id && (
-                          <EditCommentModal
+                          <EditComment
                             tut={tut}
-                            comment1={comment.comment}
+                            oldComment={comment.comment}
                             commentId={comment.id}
-                            type={type}
                           />
                         )}
                       </div> */}
@@ -62,4 +61,4 @@ function Comments({ tut }) {
   );
 }
 
-export default Comments;
+export default CommentFeed;

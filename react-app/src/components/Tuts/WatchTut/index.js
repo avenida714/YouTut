@@ -7,7 +7,7 @@ import { useHistory, useParams } from 'react-router-dom'
 import { getTutComments } from '../../../store/comments'
 
 import { getAllTutsOnYouTut, getOneTutById } from '../../../store/tuts'
-import Comments from '../../Comments'
+import CommentFeed from '../../Comments'
 import DeleteTut from '../DeleteTut'
 import EditTut from '../EditTut'
 
@@ -99,7 +99,7 @@ const userLoggedIn = useSelector((state) => {
         </div>
       </div>
       <div className='comments-div'>
-        <Comments tut={tut} />
+        <CommentFeed tut={tut} />
       </div>
       </div>
 <div className='mini-tut-card-feed'>
