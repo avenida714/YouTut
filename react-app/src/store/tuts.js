@@ -73,7 +73,7 @@ export const getAllTutsOnYouTut = () => async (dispatch) => {
   const response = await fetch(`/api/tuts/all`);
   if (response.ok) {
     const data = await response.json();
-    dispatch(actionReadAllTuts(data.tuts));
+    dispatch(actionReadAllTuts(data.tuts)); //data.tuts NOT just data
     return data;
   }
   return response;
