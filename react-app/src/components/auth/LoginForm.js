@@ -76,6 +76,17 @@ const LoginForm = () => {
                   Here{" "}
                 </NavLink>
               </div>
+              <button
+                  className="login_button"
+                  type="submit"
+                  onClick={() => {
+                    setEmail("demo@aa.io");
+                    setPassword("password");
+                  }}
+                >
+                  {" "}
+                  Demo{" "}
+                </button>
     </form>
     </div>
   );

@@ -1,6 +1,6 @@
 
 .outer-wrapper-watchTut {
-  border: 3px solid yellowgreen;
+  /* border: 3px solid yellowgreen; */
   display: flex;
   flex-direction: row;
   margin: 7px;
@@ -13,24 +13,24 @@
 }
 
 .watch-tut-player {
-  border: 3px solid red;
+  /* border: 3px solid red; */
   height: 45vw;
   width: 73vw;
 }
 
 .comments-div {
-  border:3px solid darkmagenta;
+  /* border:3px solid darkmagenta; */
   height:1000px;
 }
 
 .mini-tut-card-feed {
-  border: 3px solid blue;
+  /* border: 3px solid blue; */
   width: -webkit-fill-available;
 
 }
 
 .title-likes-dislikes-WatchTut {
-  border: 3px solid wheat;
+  /* border: 3px solid wheat; */
   height: fit-content;
   width: -webkit-fill-available;
 }
@@ -42,7 +42,7 @@
 
 .profile-user-about-outer-WatchTut {
   display: flex;
-  border: 2px solid greenyellow;
+  /* border: 2px solid greenyellow; */
   width: 340px;
   height: fit-content;
   width: -webkit-fill-available;
