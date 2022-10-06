@@ -89,7 +89,7 @@ def upload_tut():
     #from flask api : Each key in files is the name from the <input type="file" name="">. Each value in files is a Werkzeug FileStorage object.
 
     if not allowed_file(tut_video.filename):
-        return {"errors": "This file type is not permitted (MP4 works best for videos; use jpeg, pdf, jpg, or gif for images)."}, 400
+        return {"errors": "This file type is not permitted (MP4 works best for videos; use jpeg, pdf, jpg, or gif for images, use mp4 for videos)."}, 400
 
     tut_video.filename = get_unique_filename(tut_video.filename)
     video_upload = upload_file_to_s3(tut_video)

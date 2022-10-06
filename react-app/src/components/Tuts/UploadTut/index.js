@@ -80,6 +80,10 @@ const UploadTut = () => {
         }
     }
 
+    const preventDragHandler = (e) => {
+      e.preventDefault();
+    }
+
     const updateThumbnail = (e) => {
         const thumbFile = e.target.files[0];
         // console.log("THIS IS THE THUMB FILE ************",thumbFile)
@@ -90,6 +94,7 @@ const UploadTut = () => {
         const vidFile = e.target.files[0];
 
         // console.log("THIS IS THE VID FILE ****************", vidFile)
+        console.log("THIS IS THE VIDFILE TYPE ******", vidFile.type)
 
         if (vidFile.size > 30 * 1000 * 1000) {
             let errors = [];
@@ -134,6 +139,7 @@ const UploadTut = () => {
                 type="file"
                 accept=".mp4"
                 onChange={updateTutVideo}
+                onDragStart={preventDragHandler}
             />
             <label>Description - tell us about this Tut!</label>
             <input
