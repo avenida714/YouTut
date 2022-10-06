@@ -28,12 +28,11 @@ def get_all_tuts():
 @tut_routes.route('/<int:id>')
 @login_required
 def get_one_tut(id):
-    # if current_user:
-        one_tut_by_id = Tut.query.get(id)
-        one_tut_by_id_json = one_tut_by_id.to_dict()
-        return {"tuts": one_tut_by_id_json}
-    # else:
-    #     return {'message': 'Unauthorized user'}
+    # print("~~~MADE IT HERE ~~~~")
+    one_tut_by_id = Tut.query.get(id)
+    one_tut_by_id_json = one_tut_by_id.to_dict()
+    return {"tuts": one_tut_by_id_json}
+
 
 #Get All tuts of One User by User Id
 @tut_routes.route('/user/<int:id>')

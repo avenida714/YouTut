@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { getTutComments } from "../../store/comments";
 import { getOneTutById } from "../../store/tuts";
 import "./CommentFeed.css";
 import CreateComment from "./CreateComment";
@@ -20,11 +21,15 @@ function CommentFeed({ tut }) {
   // console.log("chrono comments ***********", chronologicalComments)
 
   useEffect(() => {
-    if (tut.comments) dispatch(getOneTutById(tut.id))
+    dispatch(getTutComments(tut.id))
+    .then(() => {
+    dispatch(getOneTutById(tut.id))
     .then(() => setIsLoaded(true)
     )
+    })
 
-  }, [dispatch, tut.comments, tut.id]);
+
+  }, [dispatch]);
 
   let comments = Object.values(tut.comments);
 

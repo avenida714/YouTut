@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { createComment } from '../../../store/comments';
+import { createComment, getTutComments } from '../../../store/comments';
 import { getOneTutById } from '../../../store/tuts';
 
 function CreateComment({tut}) {
@@ -43,7 +43,8 @@ function CreateComment({tut}) {
 
       setComment("");
       setDisabled(true)
-      dispatch(getOneTutById(tut.id))
+      // dispatch(getOneTutById(tut.id))
+      dispatch(getTutComments(tutId))
 
 
     }
@@ -53,7 +54,7 @@ function CreateComment({tut}) {
 
 
   return (
-    <div className="leave-comment-sp" /* comment text area */>
+    <div className="leave-comment-watchTut" /* comment text area */>
     <form className="comment-form" onSubmit={handleSubmit}>
       <textarea
         rows='1'

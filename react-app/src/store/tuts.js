@@ -56,11 +56,13 @@ const destroyTutAC = (tutId) => {
 
 //READ/FETCH ONE TUT BY ID
 export const getOneTutById = (tutId) => async (dispatch) => {
+  // console.log("this is the tutID", tutId)
+
   const response = await fetch(`/api/tuts/${tutId}`)
   if (response.ok) {
     const tutById = await response.json();
-    dispatch(actionReadTut(tutById))
-    console.log(tutById)
+    dispatch(actionReadTut(tutById.tuts))
+    // console.log("THIS IS THE TUTBY ID IN ONE TUT THUNK",tutById)
     return tutById;
   }
   return response
@@ -170,11 +172,13 @@ const tutsReducer = (state = initialState, action) => {
 
     case READ_ONE_TUT: {
       newState = { ...state };
+      console.log("this is action.tut *******", action.tut)
+      console.log("this is action.tut.id", action.tut.id)
       newState[action.tut.id] = action.tut;
       return newState;
     }
     case READ_ALL_TUTS: {
-      console.log("THIS IS ACTION.TUTS *****", action.tuts)
+      // console.log("THIS IS ACTION.TUTS *****", action.tuts)
       action.tuts.forEach((tut) => {
         newState[tut.id] = tut;
       });

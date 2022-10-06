@@ -30,10 +30,11 @@ const userLoggedIn = useSelector((state) => {
 
   useEffect( () => {
     dispatch(getAllTutsOnYouTut())
-    .then(() => getTutComments(tutId))
-   .then(() => setIsLoaded(true)
-   )
- }, [dispatch, userLoggedIn.id, tutId])
+    dispatch(getOneTutById(tutId))
+    // .then(() => dispatch(getTutComments(tutId))
+   .then(() => setIsLoaded(true))
+
+ }, [dispatch])
 
 
 
@@ -60,21 +61,21 @@ const userLoggedIn = useSelector((state) => {
     history.push(path);
   };
 
-  let editAndDelete
+  // let editAndDelete
 
-  if (isLoaded) {
-    if (userLoggedIn.id === tut.user_id) {
-      editAndDelete = (<>
-      <EditTut tut={tut} tutId={tut.id} oldTitle={tut.title} oldDescription={tut.description}/>
-    <DeleteTut tutId={tut.id} />
-    </>)
-    }else {
-    editAndDelete = null
-  }
-  }
+  // if (isLoaded) {
+  //   if (userLoggedIn.id === tut.user_id) {
+  //     editAndDelete = (<>
+  //     <EditTut tut={tut} tutId={tut.id} oldTitle={tut.title} oldDescription={tut.description}/>
+  //   <DeleteTut tutId={tut.id} />
+  //   </>)
+  //   }else {
+  //   editAndDelete = null
+  // }
+  // }
 
   return (
-    isLoaded &&
+    isLoaded && tut &&
     (<div className='outer-wrapper-watchTut'>
       <div className='tut-and-block'>
         <div className='watch-tut-player'>
