@@ -47,7 +47,7 @@ class User(db.Model, UserMixin):
     #session.query(MyClass).filter(MyClass.name == 'some name')
 
 
-    # comments relationship here
+    comments = db.relationship("Comment", back_populates="user", cascade="all, delete-orphan")
 
     # liked_tuts = db.relationship('Tut', secondary=likes, back_populates='likes')  todo-Likes
     # disliked_tuts = db.relationship('Tut', secondary=dislikes, back_populates='dislikes')

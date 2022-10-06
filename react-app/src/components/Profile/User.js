@@ -56,17 +56,17 @@ function User() {
   return (
     isLoaded && (
     <div>
-      <ul>
-      <li>
-        <strong>User Id</strong> {userId}
-      </li>
-      <li>
-        <strong>Username</strong> {user.username}
-      </li>
-      <li>
-        <strong>Email</strong> {user.email}
-      </li>
-    </ul>
+      <div>
+        <img alt="profile" className='left-side-comment' src={user.profile_img} />
+      </div>
+      <div>
+        {user.username}
+      </div>
+      <div>
+        {user.about}
+      </div>
+
+
     {/* {userLoggedIn && profile.id === sessionUser.id ? (
                             <button
                               className="editProfile"
@@ -88,6 +88,7 @@ function User() {
                             ) && <ToggleFollow profile={profile} />
                           )}
     <UserFeed userId={userId}/> */}
+    <p>HAVE A TUT TO SHARE? UPLOAD BELOW!</p>
     {iCanUpload}
     <UserFeed userId={userId}/>
     </div>

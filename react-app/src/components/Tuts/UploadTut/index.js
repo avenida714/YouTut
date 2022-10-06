@@ -148,7 +148,7 @@ const UploadTut = () => {
               accept="image/*"
               onChange={updateThumbnail}
             />
-            <button type="submit">Submit</button>
+            <button type="submit">Upload a Tut</button>
             {(imageLoading)&& <p>Loading...</p>}
         </form>
 

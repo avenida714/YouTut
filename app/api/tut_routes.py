@@ -1,9 +1,11 @@
 from datetime import datetime
 from flask import Blueprint, request, jsonify
 from app.forms.tut_form import TutForm
+from app.forms.comment_form import CommentForm
 from app.models import db
 from ..models.tut import Tut
 from ..models.user import User
+from ..models.comment import Comment
 from flask_login import current_user, login_required
 from app.api.aws  import (
     upload_file_to_s3, allowed_file, get_unique_filename)
@@ -211,3 +213,37 @@ def update_tut(id):
         return {'tut': tut.to_dict()}
     else:
         return {'message': "Something went wrong! Please check your data and try again. Note that your title cannot exceed 100 characters."}
+
+
+# get all comments for a tut by tut_id
+
+@tut_routes.route('/<int:tut_id>/all_comments')
+@login_required
+def get_all_comment(tut_id):
+    all_comments = Comment.query.filter(Comment.tut_id == tut_id).all()
+    all_comments_json = [comment.to_dict() for comment in all_comments]
+    return {"comments": all_comments_json}
+
+
+# Create A Comment
+@tut_routes.route("/<int:id>/new_comment", methods = ["POST"])
+@login_required
+def create_comment(id):
+    print("THIS IS THE ID COMING TO THE COMMENT ROUTE", id)
+    form = CommentForm()
+    user_id = current_user.id
+    tut = Tut.query.get_or_404(id)
+    form['csrf_token'].data = request.cookies['csrf_token']
+
+    if form.validate_on_submit():
+        comment = Comment(
+        user_id = user_id,
+        tut_id = tut.id,
+        comment = form.data['comment']
+        )
+
+        db.session.add(comment)
+        db.session.commit()
+        return comment.to_dict()
+    else:
+        raise Exception("Unauthorized user")
