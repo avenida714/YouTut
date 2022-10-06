@@ -33,13 +33,14 @@ function CreateComment({tut}) {
     <form className="comment-form" onSubmit={handleSubmit}>
       <input
         type="text"
-        className="comment-area-sp"
+        className="comment-area-watchTut"
         placeholder="Add a comment..."
         value={comment}
         onChange={(e) => setComment(e.target.value)}
+
       />
       <button
-        className={errors.length ? 'gray_out' : "button-post-comment-sp"} // css to hide the button
+        className={errors.length ? 'gray_out' : "button-post-comment-watchTut"} // css to hide the button
         disabled={ errors.length > 0 }
       >
         Comment

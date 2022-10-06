@@ -2,6 +2,7 @@
 
 import React from "react";
 import "./CommentFeed.css";
+import CreateComment from "./CreateComment";
 
 
 
@@ -26,7 +27,7 @@ function CommentFeed({ tut }) {
         <div className="caption-comments">
           <div className="comment-display-watchTut">
             {<div>
-              CREATE COMMENT HERE
+              <CreateComment tut={tut}/>
             </div>}
 
             {chronologicalComments.map((comment) => (

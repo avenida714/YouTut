@@ -1,6 +1,7 @@
 from datetime import datetime
 from flask import Blueprint, request, jsonify
 from app.forms.tut_form import TutForm
+from app.forms.comment_form import CommentForm
 from app.models import db
 from ..models.tut import Tut
 from ..models.user import User
@@ -228,7 +229,8 @@ def get_all_comment(tut_id):
 @tut_routes.route("/<int:id>/new_comment", methods = ["POST"])
 @login_required
 def create_comment(id):
-    form = TutForm()
+    print("THIS IS THE ID COMING TO THE COMMENT ROUTE", id)
+    form = CommentForm()
     user_id = current_user.id
     tut = Tut.query.get_or_404(id)
     form['csrf_token'].data = request.cookies['csrf_token']
