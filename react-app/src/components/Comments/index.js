@@ -1,6 +1,8 @@
 //Comments
 
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { getOneTutById } from "../../store/tuts";
 import "./CommentFeed.css";
 import CreateComment from "./CreateComment";
 
@@ -9,20 +11,30 @@ import CreateComment from "./CreateComment";
 
 
 function CommentFeed({ tut }) {
+
+  const dispatch = useDispatch()
   let loopMe;
   // console.log("COMMENTS IN THIS TUT --------", tut.comments)
 
-  if (tut.comments) loopMe = true;
-  else loopMe = false;
+  const [isLoaded, setIsLoaded] = useState(false)
+
+
+
+  // console.log("chrono comments ***********", chronologicalComments)
+
+    useEffect ( () => {
+
+  if (tut.comments) setIsLoaded(true)
+
+    dispatch(getOneTutById(tut.id))
+  }, [dispatch, tut.comments, tut.id])
 
   let comments = Object.values(tut.comments)
 
   let chronologicalComments = comments.reverse()
 
-  // console.log("chrono comments ***********", chronologicalComments)
-
   return (
-    loopMe && (
+    isLoaded && (
       <div>
         <div className="caption-comments">
           <div className="comment-display-watchTut">

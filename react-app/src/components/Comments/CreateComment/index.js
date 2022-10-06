@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { createComment } from '../../../store/comments';
+import { getOneTutById } from '../../../store/tuts';
 
 function CreateComment({tut}) {
   const dispatch = useDispatch()
@@ -9,12 +10,25 @@ function CreateComment({tut}) {
 
   const [comment, setComment] = useState("");
   const [errors, setErrors] = useState("");
+  const [disabled, setDisabled] = useState(true)
 
 
   const tutId = tut.id
 
 
-  const handleSubmit = (e) => {
+
+
+  const handleChange = (e) => {
+    setComment(e.target.value)
+
+    if (e.target.value.length === 0) {
+      setDisabled(true);
+    } else {
+      setDisabled(false)
+    }
+  }
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     let newComment = {
@@ -23,25 +37,35 @@ function CreateComment({tut}) {
       tut_id: tutId,
     };
 
-    dispatch(createComment(newComment));
-    setComment("");
+    const waitForThisComment = await dispatch(createComment(newComment));
+
+    if (waitForThisComment) {
+
+      setComment("");
+      setDisabled(true)
+      dispatch(getOneTutById(tut.id))
+
+
+    }
   };
+
+
 
 
   return (
     <div className="leave-comment-sp" /* comment text area */>
     <form className="comment-form" onSubmit={handleSubmit}>
-      <input
-        type="text"
+      <textarea
+        rows='1'
+        required
         className="comment-area-watchTut"
         placeholder="Add a comment..."
         value={comment}
-        onChange={(e) => setComment(e.target.value)}
-
+        onChange={handleChange}
       />
       <button
         className={errors.length ? 'gray_out' : "button-post-comment-watchTut"} // css to hide the button
-        disabled={ errors.length > 0 }
+        disabled={ disabled }
       >
         Comment
       </button>
