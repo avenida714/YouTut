@@ -17,10 +17,11 @@
   /* border: 3px solid green; */
   flex-direction: column;
   justify-content: center;
-  background-color: rgba(0, 0, 0, .50);
+  background-color: rgba(0, 0, 0, .30);
   display: flex;
   /* justify-self: start; */
-  height: 35vw;
+  height: 20vw;
+  align-items: center;
 }
 
 /* this is on the signup form */
