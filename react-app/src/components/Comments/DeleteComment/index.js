@@ -2,15 +2,17 @@
 import React, { useEffect } from 'react'
 import { useDispatch } from 'react-redux';
 import { deleteAComment } from '../../../store/comments';
+import { getOneTutById } from '../../../store/tuts';
 // import { getOneTutById } from '../../../store/tuts';
 
-function DeleteComment({commentId}) {
+function DeleteComment({commentId, tutId}) {
   const dispatch = useDispatch()
 
 
   const deleteComment = async (commentId) => {
     const del = await dispatch(deleteAComment(commentId));
     if (del) alert("Your comment has been deleted");
+    dispatch(getOneTutById(tutId))
 
   };
 

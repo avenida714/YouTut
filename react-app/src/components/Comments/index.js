@@ -68,7 +68,7 @@ function CommentFeed({ tut }) {
                         oldComment={comment.comment}
                         commentId={comment.id}
                       />
-                      <DeleteComment commentId={comment.id}/>
+                      <DeleteComment commentId={comment.id} tutId={tut.id}/>
                     </div>
                   )}
                 </div>
