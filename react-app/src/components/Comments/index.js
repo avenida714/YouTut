@@ -1,6 +1,11 @@
 //Comments
 
 import React from "react";
+import "./Comments.css";
+
+
+
+
 
 function Comments({ tut }) {
   let loopMe;
@@ -20,19 +25,24 @@ function Comments({ tut }) {
       <div>
         <div className="caption-comments">
           <div className="comment-display-watchTut">
-            <div className="tut-caption-watchTut">{tut.caption}</div>
+            {<div>
+              CREATE COMMENT HERE
+            </div>}
+
             {chronologicalComments.map((comment) => (
               <div className="comment_line" key={comment.id}>
                 <div className="user-icon-watchTut-comment">
                   <img
                     alt="profile-pic"
-                    className="img circle comment-img"
+                    className="left-side-comment"
                     src={comment.user.profile_img}
                   />
                 </div>
+                <div className="right-side-comment">
+                  <div className="user-name">{comment.user.username}</div>
+                <div className="comment-content"> {comment.comment}</div>
+                </div>
 
-                <div className="bold">{comment.user.username}:</div>
-                <div className="comment_content"> {comment.comment}</div>
                 {/* <div className="comment_content">
                         {comment.user.id === currUser.id && (
                           <EditCommentModal
