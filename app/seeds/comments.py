@@ -34,12 +34,12 @@ def seed_comments():
         tut_id=1
     )
     comment7 = Comment(
-        comment="This video saved my project! THANK YOU",
-        user_id=1,
+        comment="THANK YOU, I've been looking for a series like this!",
+        user_id=3,
         tut_id=4
     )
     comment8 = Comment(
-        comment="Had to watch this a couple of times, but I understand it now. Thank you!",
+        comment="Love the series, Brad!",
         user_id=2,
         tut_id=4
     )
@@ -74,24 +74,115 @@ def seed_comments():
         tut_id=6
     )
     comment15 = Comment(
-        comment="Amazing video.",
-        user_id=7,
-        tut_id=6
+        comment="As always, great video.",
+        user_id=10,
+        tut_id=5
     )
     comment16 = Comment(
-        comment="I shared this Tut with a friend and now he understands it.",
-        user_id=4,
-        tut_id=7
+        comment="Your tutorials are outstanding. HIGHLY recommend this series!",
+        user_id=9,
+        tut_id=5
     )
     comment17 = Comment(
-        comment="I used this video with a student and it helped them a lot.",
-        user_id=5,
-        tut_id=7
+        comment="Your videos have opened up a world of possiblity for me, thank you, man!",
+        user_id=16,
+        tut_id=13
     )
     comment18 = Comment(
-        comment="Great, great, great, GREAT TUT!",
+        comment="Such a great series!",
+        user_id=17,
+        tut_id=3
+    )
+
+    comment19 = Comment(
+        comment="Pronunciation? I pronounce you the Greatest Of All Time!",
+        user_id=17,
+        tut_id=13
+    )
+    comment20 = Comment(
+        comment="I never knew that before, thank you for your explanation.",
         user_id=6,
-        tut_id=7
+        tut_id=5
+    )
+    comment21 = Comment(
+        comment="The final rose goes to you! Great job!",
+        user_id=12,
+        tut_id=2
+    )
+    comment22 = Comment(
+        comment="I always learn something new watching your videos.",
+        user_id=7,
+        tut_id=12
+    )
+    comment23 = Comment(
+        comment="Absolutely wonderful!",
+        user_id=9,
+        tut_id=12
+    )
+    comment24 = Comment(
+        comment="You're a natural!",
+        user_id=3,
+        tut_id=12
+    )
+    comment25 = Comment(
+        comment="So much customization! But this video helped me in a jam, thank you!",
+        user_id=2,
+        tut_id=15
+    )
+    comment26 = Comment(
+        comment="I gotta catch all your videos, they're great!",
+        user_id=10,
+        tut_id=9
+    )
+    comment27 = Comment(
+        comment="I feel the rhythm!",
+        user_id=11,
+        tut_id=14
+    )
+    comment28 = Comment(
+        comment="I appreciate your teaching style immensely. This course was one of the best I've ever taken.",
+        user_id=14,
+        tut_id=4
+    )
+    comment29 = Comment(
+        comment="I never knew that before, thank you for your explanation.",
+        user_id=6,
+        tut_id=5
+    )
+    comment30 = Comment(
+        comment="Great sound. Great video. Thanks.",
+        user_id=13,
+        tut_id=6
+    )
+    comment31 = Comment(
+        comment="It makes perfect sense!",
+        user_id=16,
+        tut_id=6
+    )
+    comment32 = Comment(
+        comment="Underrated series! Such a fantastic teacher!",
+        user_id=11,
+        tut_id=13
+    )
+    comment33 = Comment(
+        comment="You're a legend.",
+        user_id=14,
+        tut_id=13
+    )
+    comment34 = Comment(
+        comment="You make such great content. I'll have to buy you a coffee.",
+        user_id=15,
+        tut_id=14
+    )
+    comment35 = Comment(
+        comment="00100000 01010100 01110010 01110101 01100101 00100000 01101111 01110010 00100000 01000110 01100001 01101100 01110011 01100101 00101100 00100000 01110100 01101000 01100001 01110100 00100000 01101001 01110011 00100000 01110100 01101000 01100101 00100000 01110001 01110101 01100101 01110011 01110100 01101001 01101111 01101110 00101110 00100000 00001010 01010111 01101000 01100101 01110100 01101000 01100101 01110010 00100000 00100111 01110100 01101001 01110011 00100000 01101110 01101111 01100010 01101100 01100101 01110010 00100000 01101001 01101110 00100000 01110100 01101000 01100101 00100000 01101101 01101001 01101110 01100100 00100000 01110100 01101111 00100000 01110011 01110101 01100110 01100110 01100101 01110010 00001010 01010100 01101000 01100101 00100000 01110011 01101100 01101001 01101110 01100111 01110011 00100000 01100001 01101110 01100100 00100000 01100001 01110010 01110010 01101111 01110111 01110011 00100000 01101111 01100110 00100000 01101111 01110101 01110100 01110010 01100001 01100111 01100101 01101111 01110101 01110011 00100000 01100110 01101111 01110010 01110100 01110101 01101110 01100101 00101100 00001010 01001111 01110010 00100000 01110100 01101111 00100000 01110100 01100001 01101011 01100101 00100000 01100001 01110010 01101101 01110011 00100000 01100001 01100111 01100001 01101001 01101110 01110011 01110100 00100000 01100001 00100000 01110011 01100101 01100001 00100000 01101111 01100110 00100000 01110100 01110010 01101111 01110101 01100010 01101100 01100101 01110011 00001010 01000001 01101110 01100100 00100000 01100010 01111001 00100000 01101111 01110000 01110000 01101111 01110011 01101001 01101110 01100111 00100000 01100101 01101110 01100100 00100000 01110100 01101000 01100101 01101101 00101110",
+        user_id=18,
+        tut_id=16
+    )
+    comment36 = Comment(
+        comment="01010100 01101000 01101001 01110011 00100000 01010100 01110101 01110100 00100000 01101001 01110011 00100000 01110011 01110101 01100110 01100110 01101001 01100011 01101001 01100101 01101110 01110100 00101110 00100000",
+        user_id=18,
+        tut_id=17
     )
 
 
@@ -105,6 +196,7 @@ def seed_comments():
     db.session.add(comment8)
     db.session.add(comment9)
     db.session.add(comment10)
+
     db.session.add(comment11)
     db.session.add(comment12)
     db.session.add(comment13)
@@ -113,6 +205,28 @@ def seed_comments():
     db.session.add(comment16)
     db.session.add(comment17)
     db.session.add(comment18)
+    db.session.add(comment19)
+    db.session.add(comment20)
+
+    db.session.add(comment21)
+    db.session.add(comment22)
+    db.session.add(comment23)
+    db.session.add(comment24)
+    db.session.add(comment25)
+    db.session.add(comment26)
+    db.session.add(comment27)
+    db.session.add(comment28)
+    db.session.add(comment29)
+    db.session.add(comment30)
+
+    db.session.add(comment31)
+    db.session.add(comment32)
+    db.session.add(comment33)
+    db.session.add(comment34)
+    db.session.add(comment35)
+    db.session.add(comment36)
+
+
 
     db.session.commit()
 
