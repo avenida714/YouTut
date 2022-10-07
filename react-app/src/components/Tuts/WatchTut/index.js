@@ -8,6 +8,7 @@ import { getTutComments } from '../../../store/comments'
 
 import { getAllTutsOnYouTut, getOneTutById } from '../../../store/tuts'
 import CommentFeed from '../../Comments'
+import MainFeed from '../../MainFeed'
 import DeleteTut from '../DeleteTut'
 import EditTut from '../EditTut'
 
@@ -104,7 +105,7 @@ const userLoggedIn = useSelector((state) => {
       </div>
       </div>
 <div className='mini-tut-card-feed'>
-        MINI TUT CARD FEED
+       <MainFeed />
       </div>
 
     </div>

@@ -10,7 +10,7 @@
   border:none;
   font-size: large;
   border-bottom: 1px solid darkgrey;
-  overflow-wrap: ;
+  /* overflow-wrap: ; */
 }
 .comment-area-watchTut:focus {
   outline: none !important;
