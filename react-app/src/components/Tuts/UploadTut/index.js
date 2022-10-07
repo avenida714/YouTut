@@ -90,6 +90,7 @@ const UploadTut = () => {
         if (response.ok) {
           await response.json();
           setImageLoading(false);
+          setErrors([])
           // history.push("/")
         }
     }
@@ -130,7 +131,7 @@ const UploadTut = () => {
         } else if (vidFile?.type !== "video/mp4"){
           // console.log(vidFile?.type, "<----- THIS IS THE VIDFILE.TYPE")
           setErrors([...errors, "Only MP4 files will be accepted as your video, please."])
-        } else {
+        } else if (vidFile?.type === "video/mp4"){
           setErrors([])
           setMp4(vidFile)
         }
@@ -151,6 +152,7 @@ const UploadTut = () => {
                   {error}
                 </li>
               ))}
+              {errors.length > 5 ? <li className="easterEgg errors">Your name must be Owen Wilson, because you're a bad actor. Please refresh and try again.</li> : null}
           </ul>
           {/* {setUserHasSubmitted(false)} */}
         </div>
