@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
 import { getTutComments } from "../../store/comments";
 import { getOneTutById } from "../../store/tuts";
 import "./CommentFeed.css";
@@ -11,6 +12,8 @@ import EditComment from "./EditComment";
 
 function CommentFeed({ tut }) {
   const dispatch = useDispatch();
+  const history = useHistory();
+
   let loopMe;
   // console.log("COMMENTS IN THIS TUT --------", tut.comments)
 
@@ -21,14 +24,9 @@ function CommentFeed({ tut }) {
   // console.log("chrono comments ***********", chronologicalComments)
 
   useEffect(() => {
-    dispatch(getTutComments(tut.id))
-    .then(() => {
-    dispatch(getOneTutById(tut.id))
-    .then(() => setIsLoaded(true)
-    )
-    })
-
-
+    dispatch(getTutComments(tut.id)).then(() => {
+      dispatch(getOneTutById(tut.id)).then(() => setIsLoaded(true));
+    });
   }, [dispatch]);
 
   let comments = Object.values(tut.comments);
@@ -48,7 +46,13 @@ function CommentFeed({ tut }) {
 
             {chronologicalComments.map((comment) => (
               <div className="comment_line" key={comment.id}>
-                <div className="user-icon-watchTut-comment">
+                <div
+                  className="user-icon-watchTut-comment"
+                  onClick={() => {
+                    let path = `/users/${comment.user_id}`;
+                    history.push(path);
+                  }}
+                >
                   <img
                     alt="profile-pic"
                     className="left-side-comment"
@@ -56,7 +60,10 @@ function CommentFeed({ tut }) {
                   />
                 </div>
                 <div className="right-side-comment">
-                  <div className="user-name">{comment.user.username}</div>
+                  <div className="user-name" onClick={() => {
+                    let path = `/users/${comment.user_id}`;
+                    history.push(path);
+                  }}>{comment.user.username}</div>
                   <div className="comment-content"> {comment.comment}</div>
                 </div>
 
@@ -68,7 +75,7 @@ function CommentFeed({ tut }) {
                         oldComment={comment.comment}
                         commentId={comment.id}
                       />
-                      <DeleteComment commentId={comment.id} tutId={tut.id}/>
+                      <DeleteComment commentId={comment.id} tutId={tut.id} />
                     </div>
                   )}
                 </div>

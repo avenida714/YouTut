@@ -6,7 +6,7 @@ def seed_comments():
     comment1 = Comment(
         comment="I really love this video!",
         user_id=2,
-        tut_id=1
+        tut_id=11
     )
     comment2 = Comment(
         comment="Interesting. I never knew that before.",
@@ -49,9 +49,9 @@ def seed_comments():
         tut_id=4
     )
     comment10 = Comment(
-        comment="I think this video is underrated.",
+        comment="It's great to see content like this. Great job!",
         user_id=4,
-        tut_id=5
+        tut_id=11
     )
     comment11 = Comment(
         comment="I never knew that before, thank you for your explanation.",
@@ -100,9 +100,9 @@ def seed_comments():
         tut_id=13
     )
     comment20 = Comment(
-        comment="I never knew that before, thank you for your explanation.",
-        user_id=6,
-        tut_id=5
+        comment="Perfect timing.",
+        user_id=13,
+        tut_id=14
     )
     comment21 = Comment(
         comment="The final rose goes to you! Great job!",
@@ -120,7 +120,7 @@ def seed_comments():
         tut_id=12
     )
     comment24 = Comment(
-        comment="You're a natural!",
+        comment="Great topic, fantastic teacher.",
         user_id=3,
         tut_id=12
     )
@@ -145,9 +145,9 @@ def seed_comments():
         tut_id=4
     )
     comment29 = Comment(
-        comment="I never knew that before, thank you for your explanation.",
+        comment="This is a fantastic video!",
         user_id=6,
-        tut_id=5
+        tut_id=12
     )
     comment30 = Comment(
         comment="Great sound. Great video. Thanks.",
