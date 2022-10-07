@@ -26,7 +26,7 @@ def seed_tuts():
     )
 
     tut4 = Tut(
-        thumbnail_pic="https://i.ytimg.com/an_webp/1L6oncFUu10/mqdefault_6s.webp?du=3000&sqp=CNrD2ZkG&rs=AOn4CLBi0jcCnjiBq-dfhnI5N5WEoRYX1Q",
+        thumbnail_pic="https://youtut.s3.us-west-1.amazonaws.com/traversy.png",
         tut_description="In this video, Brad will introduce the application we will build which is a CRUD application for recipes built with Node.js and the PostgreSQL relational database. ",
         tut_title="Recipe App Using Node.js & PostgreSQL - Part 1",
         user_id=4,
@@ -50,7 +50,7 @@ def seed_tuts():
     )
 
     tut7 = Tut(
-        thumbnail_pic="https://i.ytimg.com/an_webp/vDQ9GZsJkms/mqdefault_6s.webp?du=3000&sqp=CM3K2ZkG&rs=AOn4CLAt04GF9O9DjLuc7deZBCUSjhPVaw",
+        thumbnail_pic="https://youtut.s3.us-west-1.amazonaws.com/jonas.png",
         tut_description="Preview of the upcoming update of my complete JavaScript course on Udemy. Will be ready around October 21st!",
         tut_title=" I'm updating my JavaScript course! Here is a preview!",
         user_id=7,
@@ -58,7 +58,7 @@ def seed_tuts():
     )
 
     tut8 = Tut(
-        thumbnail_pic="https://i.ytimg.com/an_webp/2ReR1YJrNOM/mqdefault_6s.webp?du=3000&sqp=CK3R2ZkG&rs=AOn4CLDtIn6LmDtESU4sXfGWLcuTbkDl_w",
+        thumbnail_pic="https://youtut.s3.us-west-1.amazonaws.com/what-is-git.png",
         tut_description="This short video explains what Git is and why it's a critical skill for every software & DevOps engineer. ",
         tut_title="What is Git? Explained in 2 Minutes!",
         user_id=8,
@@ -66,7 +66,7 @@ def seed_tuts():
     )
 
     tut9 = Tut(
-        thumbnail_pic="https://i.ytimg.com/an_webp/OCg4DJyVGk0/mqdefault_6s.webp?du=3000&sqp=CM3F2ZkG&rs=AOn4CLDSTgee7SxRZtJJGo4IT2svkerHZA",
+        thumbnail_pic="https://youtut.s3.us-west-1.amazonaws.com/async-requests.png",
         tut_description="We dump the data file and instead learn how to load the Pokemon data via a web request using React's useEffect hook and fetch.",
         tut_title=" Introduction to React #6 | Asynchronous Requests",
         user_id=9,
@@ -74,7 +74,7 @@ def seed_tuts():
     )
 
     tut10 = Tut(
-        thumbnail_pic="https://i.ytimg.com/an_webp/8mvNzU7DpO4/mqdefault_6s.webp?du=3000&sqp=CO6k2ZkG&rs=AOn4CLCww9gwwuEyjZhljEQIqAoqEOYEUg",
+        thumbnail_pic="https://youtut.s3.us-west-1.amazonaws.com/what-is-short-circuiting.png",
         tut_description="Don't short a circuit, learn about short circuiting here.",
         tut_title="If You Don't Understand Short Circuiting Your App Will Break",
         user_id=10,
