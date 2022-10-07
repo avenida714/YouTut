@@ -42,9 +42,7 @@ const UploadTut = () => {
     //   setErrors(errors);
     // }, [title, description]);
 
-    useEffect(() => {
 
-    })
 
 
     const handleSubmit = async (e) => {
@@ -73,7 +71,7 @@ const UploadTut = () => {
 
 
         const response = await dispatch(uploadTut(formData))
-        console.log("this is the response from the upload tut dispatch ******************",response, "<---RES OK->>",response.ok, "Res NOT OK *****>", !response.ok)
+        // console.log("this is the response from the upload tut dispatch ******************",response, "<---RES OK->>",response.ok, "Res NOT OK *****>", !response.ok)
 
 
          if (!response.ok){
@@ -83,10 +81,10 @@ const UploadTut = () => {
           setImageLoading(false)
           setErrors(arrOfErrors)
 
-          if (errors[0] === "[object Object]" ) {
-            console.log(errors[0])
-            setErrors("Upload Successful!")
-          }
+          // if (errors[0] === "[object Object]" ) {
+          //   console.log(errors[0])
+          //   setErrors("Upload Successful!")
+          // }
 
         }
         // else {
