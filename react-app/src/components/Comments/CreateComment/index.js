@@ -28,6 +28,12 @@ function CreateComment({tut}) {
     } else {
       setDisabled(false)
     }
+
+    if (e.target.value.length > 300) {
+      setDisabled(true);
+    } else {
+      setDisabled(false)
+    }
   }
 
   const handleSubmit = async (e) => {
