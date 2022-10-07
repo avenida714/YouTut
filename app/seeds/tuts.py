@@ -81,61 +81,61 @@ def seed_tuts():
         tut_video="https://www.youtube.com/watch?v=8mvNzU7DpO4"
     )
 
-    # tut11 = Tut(
-    #     thumbnail_pic="",
-    #     tut_description="Borgir",
-    #     tut_title="USA",
-    #     user_id=6,
-    #     tut_video=""
-    # )
+    tut11 = Tut(
+        thumbnail_pic="https://youtut.s3.us-west-1.amazonaws.com/priyanka-ai-machinelearning.jpg",
+        tut_description="In this video I explain the difference between ML, AI and Deep Learning.",
+        tut_title="Ai vs Machine Learning vs Deep Learning",
+        user_id=11,
+        tut_video="https://www.youtube.com/watch?v=eBLbbpO5VQg"
+    )
 
-    # tut12 = Tut(
-    #     thumbnail_pic="",
-    #     tut_description="Wing Wednesdays!",
-    #     tut_title="Wing Stop",
-    #     user_id=6,
-    #     tut_video=""
-    # )
+    tut12 = Tut(
+        thumbnail_pic="https://youtut.s3.us-west-1.amazonaws.com/leon.jpg",
+        tut_description="Help folx launch a new career in software engineering with a focus on web development!",
+        tut_title="Easy Intro to Node, Promises, & Async / Await!",
+        user_id=12,
+        tut_video="https://www.youtube.com/watch?v=IUCnAhr61pg"
+    )
 
-    # tut13 = Tut(
-    #     thumbnail_pic="",
-    #     tut_description="Cakin'",
-    #     tut_title="USA",
-    #     user_id=7,
-    #     tut_video=""
-    # )
+    tut13 = Tut(
+        thumbnail_pic="https://youtut.s3.us-west-1.amazonaws.com/kenny.jpg",
+        tut_description="WELCOMETOANOTHERONEOFMYTUTORIALS.",
+        tut_title="How to Watch My REAPER Videos",
+        user_id=13,
+        tut_video="https://www.youtube.com/watch?v=DIuNcKfWx1o"
+    )
 
-    # tut14 = Tut(
-    #     thumbnail_pic="",
-    #     tut_description="Pizza pizza!",
-    #     tut_title="USA",
-    #     user_id=7,
-    #     tut_video=""
-    # )
+    tut14 = Tut(
+        thumbnail_pic="https://youtut.s3.us-west-1.amazonaws.com/jtidy.jpg",
+        tut_description="How to make an audio click track (metronome) in Reaper.",
+        tut_title="Making a Click Track in Reaper",
+        user_id=14,
+        tut_video="https://www.youtube.com/watch?v=GnEFzM4zJsM"
+    )
 
-    # tut15 = Tut(
-    #     thumbnail_pic="",
-    #     tut_description="useEfork",
-    #     tut_title="App Academy",
-    #     user_id=8,
-    #     tut_video=""
-    # )
+    tut15 = Tut(
+        thumbnail_pic="https://youtut.s3.us-west-1.amazonaws.com/myk.jpg",
+        tut_description="It doesn't happen often, but sometimes...",
+        tut_title=" Recovering a Crashed REAPER Project ",
+        user_id=15,
+        tut_video="https://www.youtube.com/watch?v=aXvPTmfOVFQ"
+    )
 
-    # tut16 = Tut(
-    #     thumbnail_pic="",
-    #     tut_description="Spammin'",
-    #     tut_title="USA",
-    #     user_id=8,
-    #     tut_video=""
-    # )
+    tut16 = Tut(
+        thumbnail_pic="https://youtut.s3.us-west-1.amazonaws.com/sparky.jpg",
+        tut_description="Summary and Analysis",
+        tut_title="Macbeth (Shakespeare) - Thug Notes",
+        user_id=16,
+        tut_video="https://www.youtube.com/watch?v=T-PKotyoxys"
+    )
 
-    # tut17 = Tut(
-    #     thumbnail_pic="",
-    #     tut_description="Fish Filet",
-    #     tut_title="USA",
-    #     user_id=9,
-    #     tut_video=""
-    # )
+    tut17 = Tut(
+        thumbnail_pic="https://youtut.s3.us-west-1.amazonaws.com/rachel.jpg",
+        tut_description="Improve your American Accent / spoken English at Rachel's English with video-based lessons and exercises",
+        tut_title="Welcome to Rachel's English!",
+        user_id=17,
+        tut_video="https://www.youtube.com/watch?v=RUuwZEzMJNM"
+    )
 
     # tut18 = Tut(
     #     thumbnail_pic="",
@@ -192,26 +192,26 @@ def seed_tuts():
     db.session.add(tut10)
     db.session.commit()
 
-    # db.session.add(tut11)
-    # db.session.commit()
+    db.session.add(tut11)
+    db.session.commit()
 
-    # db.session.add(tut12)
-    # db.session.commit()
+    db.session.add(tut12)
+    db.session.commit()
 
-    # db.session.add(tut13)
-    # db.session.commit()
+    db.session.add(tut13)
+    db.session.commit()
 
-    # db.session.add(tut14)
-    # db.session.commit()
+    db.session.add(tut14)
+    db.session.commit()
 
-    # db.session.add(tut15)
-    # db.session.commit()
+    db.session.add(tut15)
+    db.session.commit()
 
-    # db.session.add(tut16)
-    # db.session.commit()
+    db.session.add(tut16)
+    db.session.commit()
 
-    # db.session.add(tut17)
-    # db.session.commit()
+    db.session.add(tut17)
+    db.session.commit()
 
     # db.session.add(tut18)
     # db.session.commit()
