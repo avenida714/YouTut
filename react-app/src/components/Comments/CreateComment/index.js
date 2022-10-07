@@ -61,7 +61,8 @@ function CreateComment({tut}) {
       <div className='create-comment-profile-pic-div'>
         <img src={userLoggedIn.profile_img} alt="profile-pic" className='create-comment-profile-pic'/>
 
-      <textarea
+      <input
+        type="text"
         rows='1'
         required
         className="comment-area-watchTut"
