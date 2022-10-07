@@ -78,6 +78,11 @@ const UploadTut = () => {
           setImageLoading(false)
           setErrors(arrOfErrors)
 
+          if (errors[0] === "[object Object]" ) {
+            console.log(errors[0])
+            setErrors("Upload Successful!")
+          }
+
         }
         // else {
         //     setImageLoading(false);

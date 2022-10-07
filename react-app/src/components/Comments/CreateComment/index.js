@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { createComment, getTutComments } from '../../../store/comments';
 import { getOneTutById } from '../../../store/tuts';
 
+import "./CreateComment.css"
+
 function CreateComment({tut}) {
   const dispatch = useDispatch()
 
@@ -55,7 +57,10 @@ function CreateComment({tut}) {
 
   return (
     <div className="leave-comment-watchTut" /* comment text area */>
-    <form className="comment-form" onSubmit={handleSubmit}>
+    <form className="create-comment-form" onSubmit={handleSubmit}>
+      <div className='create-comment-profile-pic-div'>
+        <img src={userLoggedIn.profile_img} alt="profile-pic" className='create-comment-profile-pic'/>
+
       <textarea
         rows='1'
         required
@@ -65,11 +70,12 @@ function CreateComment({tut}) {
         onChange={handleChange}
       />
       <button
-        className={errors.length ? 'gray_out' : "button-post-comment-watchTut"} // css to hide the button
-        disabled={ disabled }
+        className={disabled ? 'gray_out' : "button-post-comment-watchTut"} // css to hide the button
+        disabled={disabled}
       >
         Comment
       </button>
+      </div>
     </form>
   </div>
   )
