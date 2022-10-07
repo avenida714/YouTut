@@ -22,7 +22,41 @@ function MainFeed() {
 
   const tutsObj = useSelector((state) => state.tuts);
   const tuts = Object.values(tutsObj)
-  tuts.reverse() //will put in reverse chron order, newest first
+  // tuts.reverse() //will put in reverse chron order, newest first
+
+
+  // //Fisher-Yates (Knuth) Shuffle
+  // function shuffle(array) {
+  //   let currentIndex = array.length,  randomIndex;
+
+  //   // While there remain elements to shuffle.
+  //   while (currentIndex != 0) {
+
+  //     // Pick a remaining element.
+  //     randomIndex = Math.floor(Math.random() * currentIndex);
+  //     currentIndex--;
+
+  //     // And swap it with the current element.
+  //     [array[currentIndex], array[randomIndex]] = [
+  //       array[randomIndex], array[currentIndex]];
+  //   }
+
+  //   return array;
+  // }
+
+  //Durstenfeld Shuffle
+  function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1));
+        let temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
+}
+  //SHUFFLE IT UP
+  shuffle(tuts)
+
+
 
   const userLoggedIn = useSelector((state) => {
     return state.session.user;
@@ -30,7 +64,7 @@ function MainFeed() {
 
 
 
-
+  //Map out all the Tuts, now shuffled
   const displayTuts = tuts.map((tut, i) => (
     <div>
     <TutCard key={i} tut={tut} />

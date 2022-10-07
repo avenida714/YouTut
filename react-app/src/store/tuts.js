@@ -110,13 +110,14 @@ export const uploadTut = (tut) => async (dispatch) => {
     method:'POST',
     body: tut
   })
-  const data = await response.json()
+
   if (response.ok) {
+    const data = await response.json()
     dispatch(addATut(data.tut))
-    return data
+    return response   // make sure we return response, and not data for response.ok
   } else {
     // console.log("DID WE MAKE IT HERE??? ****************")
-    return data.errors
+    return response
   }
 
 }

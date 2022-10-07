@@ -1,0 +1,42 @@
+.leave-comment-watchTut{
+  /* border: 2px solid purple; */
+}
+
+.comment-area-watchTut{
+  /* border: 2px solid blue; */
+  width: 93%;
+  /* border-bottom: 2px solid lightgray; */
+  outline: none;
+  border:none;
+  font-size: large;
+  border-bottom: 1px solid darkgrey;
+  /* overflow-wrap: ; */
+}
+.comment-area-watchTut:focus {
+  outline: none !important;
+  border-bottom: 2px solid whitesmoke;
+}
+
+.create-comment-profile-pic-div{
+  display: flex;
+  flex-direction: row;
+  margin: 16px;
+  align-items: center;
+}
+
+.create-comment-profile-pic {
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  margin: 8px;
+  cursor: pointer;
+}
+
+.gray_out {
+  background-color: darkgray;
+  transform: none;
+  color: rgb(59, 59, 59);
+}
+.gray_out:hover {
+  background-color: darkgray;
+}

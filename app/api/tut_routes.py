@@ -106,12 +106,16 @@ def upload_tut():
 
     # validating the thumbnail
     # if xyz not in request.files
+    if "thumbnail_pic" not in request.files:
+        return {"errors": "Image File Required"}, 400
+
     thumbnail_pic = request.files["thumbnail_pic"]
 
     if not allowed_file(thumbnail_pic.filename):
         return {"errors": "This file type is not permitted (Please use pdf, png, jpg, jpeg, or gif)."}, 400
 
     thumbnail_pic.filename = get_unique_filename(thumbnail_pic.filename)
+
     thumbnail_upload = upload_file_to_s3(thumbnail_pic)
 
 
@@ -161,49 +165,49 @@ def delete_tut(id):
 def update_tut(id):
     tut = Tut.query.get(id) #get tut already in the database
 
-    print("this IS THE TUT, FROM ID IN UPDATE", tut)
+    # print("this IS THE TUT, FROM ID IN UPDATE", tut)
 
     form = TutForm()
     form['csrf_token'].data = request.cookies['csrf_token']
 
-    print("THIS IS HTE REQUEST.FILES IN UPDATETUT *******", request.files)
+    # print("THIS IS HTE REQUEST.FILES IN UPDATETUT *******", request.files)
 
     # tut_vid AWS
-    if "tut_video" not in request.files:
-        return {"errors": "Video File Required"}, 400
-    tut_video = request.files["tut_video"]
-    if not allowed_file(tut_video.filename):
-        return {"errors": "This file type is not permitted (MP4 works best for videos; use jpeg, pdf, jpg, or gif for images)."}, 400
+    # if "tut_video" not in request.files:
+    #     return {"errors": "Video File Required"}, 400
+    # tut_video = request.files["tut_video"]
+    # if not allowed_file(tut_video.filename):
+    #     return {"errors": "This file type is not permitted (MP4 works best for videos; use jpeg, pdf, jpg, or gif for images)."}, 400
 
-    tut_video.filename = get_unique_filename(tut_video.filename)
-    video_upload = upload_file_to_s3(tut_video)
+    # tut_video.filename = get_unique_filename(tut_video.filename)
+    # video_upload = upload_file_to_s3(tut_video)
 
-    if "url" not in video_upload:
-        return video_upload, 400
+    # if "url" not in video_upload:
+    #     return video_upload, 400
 
-    tut_video_aws_url = video_upload["url"]
+    # tut_video_aws_url = video_upload["url"]
 
-    #tumbnail_pic AWS
-    thumbnail_pic = request.files["thumbnail_pic"]
+    # #tumbnail_pic AWS
+    # thumbnail_pic = request.files["thumbnail_pic"]
 
-    if not allowed_file(thumbnail_pic.filename):
-        return {"errors": "This file type is not permitted (Please use pdf, png, jpg, jpeg, or gif)."}, 400
+    # if not allowed_file(thumbnail_pic.filename):
+    #     return {"errors": "This file type is not permitted (Please use pdf, png, jpg, jpeg, or gif)."}, 400
 
-    thumbnail_pic.filename = get_unique_filename(thumbnail_pic.filename)
-    thumbnail_upload = upload_file_to_s3(thumbnail_pic)
+    # thumbnail_pic.filename = get_unique_filename(thumbnail_pic.filename)
+    # thumbnail_upload = upload_file_to_s3(thumbnail_pic)
 
-    if "url" not in thumbnail_upload:
-        return thumbnail_upload, 400
+    # if "url" not in thumbnail_upload:
+    #     return thumbnail_upload, 400
 
-    tut_thumbnail_aws_url = thumbnail_upload["url"]
+    # tut_thumbnail_aws_url = thumbnail_upload["url"]
 
 
     #make final form
     if form.validate_on_submit():
         tut.tut_title = form.data['tut_title']
         tut.tut_description = form.data['tut_description']
-        tut.tut_video = tut_video_aws_url
-        tut.thumbnail_pic = tut_thumbnail_aws_url
+        # tut.tut_video = tut_video_aws_url
+        # tut.thumbnail_pic = tut_thumbnail_aws_url
         # tut.user_id = current_user.id
 
         #space above in case we need to update AWS vid and pic

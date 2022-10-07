@@ -44,6 +44,7 @@ const UploadTut = () => {
 
 
 
+
     const handleSubmit = async (e) => {
         setUserHasSubmitted(false)
 
@@ -70,16 +71,20 @@ const UploadTut = () => {
 
 
         const response = await dispatch(uploadTut(formData))
-        console.log("this is the response from the upload tut dispatch ******************",response, "<---RES ERRORS->>",response.errors)
+        // console.log("this is the response from the upload tut dispatch ******************",response, "<---RES OK->>",response.ok, "Res NOT OK *****>", !response.ok)
 
-        if (response && response.errors === undefined) {
-            // await response.json();
-            setImageLoading(false);
-            history.push("/");
-        }
-        else if (response.errors){
-          arrOfErrors.push(response.errors)
+
+         if (!response.ok){
+          const body = await response.json()
+          console.log("THIS IS THE BODY ***********", body)
+          arrOfErrors.push(body.errors)
           setImageLoading(false)
+          setErrors(arrOfErrors)
+
+          // if (errors[0] === "[object Object]" ) {
+          //   console.log(errors[0])
+          //   setErrors("Upload Successful!")
+          // }
 
         }
         // else {
@@ -89,16 +94,13 @@ const UploadTut = () => {
         //     console.log("error");
         //     // setErrors(response) for more advanced error handling later
         // }
-        if (arrOfErrors.length) {
-          setErrors(arrOfErrors)
-          setImageLoading(false)
 
-        }
-        if (response.ok) {
-          await response.json();
-          setImageLoading(false);
-          // history.push("/")
-        }
+        // if (response.ok) {
+        //   await response.json();
+        //   setImageLoading(false);
+        //   setErrors([])
+        //   // history.push("/")
+        // }
     }
 
     const preventDragHandler = (e) => {
@@ -106,10 +108,24 @@ const UploadTut = () => {
     }
 
     const updateThumbnail = (e) => {
+        setUserHasSubmitted(true)
+
         const thumbFile = e.target.files[0];
+
+        // console.log("THIS IS THE thumb FILE ****************", thumbFile?.type)
+
+        if (thumbFile?.type !== "image/jpeg" &&
+        thumbFile?.type !== "image/jpg" &&
+        thumbFile?.type !== "image/png" &&
+        thumbFile?.type !== "image/gif") {
+
+          setErrors([...errors, "Only jpeg, jpg, png, or gif files will be accepted as thumbnails, please."])
         // console.log("THIS IS THE THUMB FILE ************",thumbFile)
+      } else {
+        setErrors([])
         setThumbnail(thumbFile);
-    }
+      }
+  }
 
     const updateTutVideo = (e) => {
         setUserHasSubmitted(true)
@@ -120,11 +136,11 @@ const UploadTut = () => {
 
         if (vidFile?.size > 30 * 1000 * 1000) {
             setErrors([...errors, "Your Tut is too long. Please choose an MP4 smaller than 30MB."])
-            return alert("Cannot Submit")
         } else if (vidFile?.type !== "video/mp4"){
-          console.log(vidFile?.type, "<----- THIS IS THE VIDFILE.TYPE")
-          setErrors([...errors, "You must only upload an MP4 file, please."])
-        } else {
+          // console.log(vidFile?.type, "<----- THIS IS THE VIDFILE.TYPE")
+          setErrors([...errors, "Only MP4 files will be accepted as your video, please."])
+        } else if (vidFile?.type === "video/mp4"){
+          setErrors([])
           setMp4(vidFile)
         }
 
@@ -144,6 +160,7 @@ const UploadTut = () => {
                   {error}
                 </li>
               ))}
+              {errors.length > 5 ? <li className="easterEgg errors">Your name must be Owen Wilson, because you're a bad actor. Please refresh and try again.</li> : null}
           </ul>
           {/* {setUserHasSubmitted(false)} */}
         </div>

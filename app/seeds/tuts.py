@@ -26,7 +26,7 @@ def seed_tuts():
     )
 
     tut4 = Tut(
-        thumbnail_pic="https://i.ytimg.com/an_webp/1L6oncFUu10/mqdefault_6s.webp?du=3000&sqp=CNrD2ZkG&rs=AOn4CLBi0jcCnjiBq-dfhnI5N5WEoRYX1Q",
+        thumbnail_pic="https://youtut.s3.us-west-1.amazonaws.com/traversy.jpg",
         tut_description="In this video, Brad will introduce the application we will build which is a CRUD application for recipes built with Node.js and the PostgreSQL relational database. ",
         tut_title="Recipe App Using Node.js & PostgreSQL - Part 1",
         user_id=4,
@@ -50,7 +50,7 @@ def seed_tuts():
     )
 
     tut7 = Tut(
-        thumbnail_pic="https://i.ytimg.com/an_webp/vDQ9GZsJkms/mqdefault_6s.webp?du=3000&sqp=CM3K2ZkG&rs=AOn4CLAt04GF9O9DjLuc7deZBCUSjhPVaw",
+        thumbnail_pic="https://youtut.s3.us-west-1.amazonaws.com/jonas.jpg",
         tut_description="Preview of the upcoming update of my complete JavaScript course on Udemy. Will be ready around October 21st!",
         tut_title=" I'm updating my JavaScript course! Here is a preview!",
         user_id=7,
@@ -58,7 +58,7 @@ def seed_tuts():
     )
 
     tut8 = Tut(
-        thumbnail_pic="https://i.ytimg.com/an_webp/2ReR1YJrNOM/mqdefault_6s.webp?du=3000&sqp=CK3R2ZkG&rs=AOn4CLDtIn6LmDtESU4sXfGWLcuTbkDl_w",
+        thumbnail_pic="https://youtut.s3.us-west-1.amazonaws.com/what-is-git.jpg",
         tut_description="This short video explains what Git is and why it's a critical skill for every software & DevOps engineer. ",
         tut_title="What is Git? Explained in 2 Minutes!",
         user_id=8,
@@ -66,7 +66,7 @@ def seed_tuts():
     )
 
     tut9 = Tut(
-        thumbnail_pic="https://i.ytimg.com/an_webp/OCg4DJyVGk0/mqdefault_6s.webp?du=3000&sqp=CM3F2ZkG&rs=AOn4CLDSTgee7SxRZtJJGo4IT2svkerHZA",
+        thumbnail_pic="https://youtut.s3.us-west-1.amazonaws.com/async-requests.jpg",
         tut_description="We dump the data file and instead learn how to load the Pokemon data via a web request using React's useEffect hook and fetch.",
         tut_title=" Introduction to React #6 | Asynchronous Requests",
         user_id=9,
@@ -74,68 +74,68 @@ def seed_tuts():
     )
 
     tut10 = Tut(
-        thumbnail_pic="https://i.ytimg.com/an_webp/8mvNzU7DpO4/mqdefault_6s.webp?du=3000&sqp=CO6k2ZkG&rs=AOn4CLCww9gwwuEyjZhljEQIqAoqEOYEUg",
+        thumbnail_pic="https://youtut.s3.us-west-1.amazonaws.com/what-is-short-circuiting.jpg",
         tut_description="Don't short a circuit, learn about short circuiting here.",
         tut_title="If You Don't Understand Short Circuiting Your App Will Break",
         user_id=10,
         tut_video="https://www.youtube.com/watch?v=8mvNzU7DpO4"
     )
 
-    # tut11 = Tut(
-    #     thumbnail_pic="",
-    #     tut_description="Borgir",
-    #     tut_title="USA",
-    #     user_id=6,
-    #     tut_video=""
-    # )
+    tut11 = Tut(
+        thumbnail_pic="https://youtut.s3.us-west-1.amazonaws.com/priyanka-ai-machinelearning.jpg",
+        tut_description="In this video I explain the difference between ML, AI and Deep Learning.",
+        tut_title="Ai vs Machine Learning vs Deep Learning",
+        user_id=11,
+        tut_video="https://www.youtube.com/watch?v=eBLbbpO5VQg"
+    )
 
-    # tut12 = Tut(
-    #     thumbnail_pic="",
-    #     tut_description="Wing Wednesdays!",
-    #     tut_title="Wing Stop",
-    #     user_id=6,
-    #     tut_video=""
-    # )
+    tut12 = Tut(
+        thumbnail_pic="https://youtut.s3.us-west-1.amazonaws.com/leon.jpg",
+        tut_description="Help folx launch a new career in software engineering with a focus on web development!",
+        tut_title="Easy Intro to Node, Promises, & Async / Await!",
+        user_id=12,
+        tut_video="https://www.youtube.com/watch?v=IUCnAhr61pg"
+    )
 
-    # tut13 = Tut(
-    #     thumbnail_pic="",
-    #     tut_description="Cakin'",
-    #     tut_title="USA",
-    #     user_id=7,
-    #     tut_video=""
-    # )
+    tut13 = Tut(
+        thumbnail_pic="https://youtut.s3.us-west-1.amazonaws.com/kenny.jpg",
+        tut_description="WELCOMETOANOTHERONEOFMYTUTORIALS.",
+        tut_title="How to Watch My REAPER Videos",
+        user_id=13,
+        tut_video="https://www.youtube.com/watch?v=DIuNcKfWx1o"
+    )
 
-    # tut14 = Tut(
-    #     thumbnail_pic="",
-    #     tut_description="Pizza pizza!",
-    #     tut_title="USA",
-    #     user_id=7,
-    #     tut_video=""
-    # )
+    tut14 = Tut(
+        thumbnail_pic="https://youtut.s3.us-west-1.amazonaws.com/jtidy.jpg",
+        tut_description="How to make an audio click track (metronome) in Reaper.",
+        tut_title="Making a Click Track in Reaper",
+        user_id=14,
+        tut_video="https://www.youtube.com/watch?v=GnEFzM4zJsM"
+    )
 
-    # tut15 = Tut(
-    #     thumbnail_pic="",
-    #     tut_description="useEfork",
-    #     tut_title="App Academy",
-    #     user_id=8,
-    #     tut_video=""
-    # )
+    tut15 = Tut(
+        thumbnail_pic="https://youtut.s3.us-west-1.amazonaws.com/myk.jpg",
+        tut_description="It doesn't happen often, but sometimes...",
+        tut_title=" Recovering a Crashed REAPER Project ",
+        user_id=15,
+        tut_video="https://www.youtube.com/watch?v=aXvPTmfOVFQ"
+    )
 
-    # tut16 = Tut(
-    #     thumbnail_pic="",
-    #     tut_description="Spammin'",
-    #     tut_title="USA",
-    #     user_id=8,
-    #     tut_video=""
-    # )
+    tut16 = Tut(
+        thumbnail_pic="https://youtut.s3.us-west-1.amazonaws.com/sparky.jpg",
+        tut_description="Summary and Analysis",
+        tut_title="Macbeth (Shakespeare) - Thug Notes",
+        user_id=16,
+        tut_video="https://www.youtube.com/watch?v=T-PKotyoxys"
+    )
 
-    # tut17 = Tut(
-    #     thumbnail_pic="",
-    #     tut_description="Fish Filet",
-    #     tut_title="USA",
-    #     user_id=9,
-    #     tut_video=""
-    # )
+    tut17 = Tut(
+        thumbnail_pic="https://youtut.s3.us-west-1.amazonaws.com/rachel.jpg",
+        tut_description="Improve your American Accent / spoken English at Rachel's English with video-based lessons and exercises",
+        tut_title="Welcome to Rachel's English!",
+        user_id=17,
+        tut_video="https://www.youtube.com/watch?v=RUuwZEzMJNM"
+    )
 
     # tut18 = Tut(
     #     thumbnail_pic="",
@@ -192,26 +192,26 @@ def seed_tuts():
     db.session.add(tut10)
     db.session.commit()
 
-    # db.session.add(tut11)
-    # db.session.commit()
+    db.session.add(tut11)
+    db.session.commit()
 
-    # db.session.add(tut12)
-    # db.session.commit()
+    db.session.add(tut12)
+    db.session.commit()
 
-    # db.session.add(tut13)
-    # db.session.commit()
+    db.session.add(tut13)
+    db.session.commit()
 
-    # db.session.add(tut14)
-    # db.session.commit()
+    db.session.add(tut14)
+    db.session.commit()
 
-    # db.session.add(tut15)
-    # db.session.commit()
+    db.session.add(tut15)
+    db.session.commit()
 
-    # db.session.add(tut16)
-    # db.session.commit()
+    db.session.add(tut16)
+    db.session.commit()
 
-    # db.session.add(tut17)
-    # db.session.commit()
+    db.session.add(tut17)
+    db.session.commit()
 
     # db.session.add(tut18)
     # db.session.commit()

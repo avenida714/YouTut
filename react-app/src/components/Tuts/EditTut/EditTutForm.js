@@ -65,9 +65,9 @@ function EditTutForm({ tut, tutId, oldTitle, oldDescription }) {
 
     console.log("THIS IS THE FORM DATA BEING DISPATCHED *********", formData)
 
-    for (let key of formData.entries()) {
-      console.log("stackoverflow", key[0] + ', ' + key[1]);
-  }
+  //   for (let key of formData.entries()) {
+  //     console.log("stackoverflow", key[0] + ', ' + key[1]);
+  // }
 
   //
 
@@ -130,12 +130,12 @@ function EditTutForm({ tut, tutId, oldTitle, oldDescription }) {
           value={title}
           onChange={(e) => setTitle(e.target.value)}
         />
-        <label>Upload your File (mp4 only please)</label>
-        <input required type="file" accept=".mp4"  onChange={updateTutVideo} />
+        {/* <label>Upload your File (mp4 only please)</label>
+        <input required type="file" accept=".mp4"  onChange={updateTutVideo} /> */}
         <label>Description - tell us about this Tut!</label>
         <input required type="text" value={description} onChange={(e) => setDescription(e.target.value)} />
-        <label>Thumbnail</label>
-        <input required type="file" accept="image/*"  onChange={updateThumbnail} />
+        {/* <label>Thumbnail</label>
+        <input required type="file" accept="image/*"  onChange={updateThumbnail} /> */}
         <button type="submit">Submit</button>
         {imageLoading && <p>Loading...</p>}
       </form>
