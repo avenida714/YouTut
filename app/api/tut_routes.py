@@ -108,12 +108,14 @@ def upload_tut():
     # if xyz not in request.files
     if "thumbnail_pic" not in request.files:
         return {"errors": "Image File Required"}, 400
+
     thumbnail_pic = request.files["thumbnail_pic"]
 
     if not allowed_file(thumbnail_pic.filename):
         return {"errors": "This file type is not permitted (Please use pdf, png, jpg, jpeg, or gif)."}, 400
 
     thumbnail_pic.filename = get_unique_filename(thumbnail_pic.filename)
+
     thumbnail_upload = upload_file_to_s3(thumbnail_pic)
 
 
