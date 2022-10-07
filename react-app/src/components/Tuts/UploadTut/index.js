@@ -42,6 +42,9 @@ const UploadTut = () => {
     //   setErrors(errors);
     // }, [title, description]);
 
+    useEffect(() => {
+
+    })
 
 
     const handleSubmit = async (e) => {
@@ -74,7 +77,9 @@ const UploadTut = () => {
 
 
          if (!response.ok){
-          arrOfErrors.push(response.toString())
+          const body = await response.json()
+          console.log("THIS IS THE BODY ***********", body)
+          arrOfErrors.push(body.errors)
           setImageLoading(false)
           setErrors(arrOfErrors)
 
@@ -92,12 +97,12 @@ const UploadTut = () => {
         //     // setErrors(response) for more advanced error handling later
         // }
 
-        if (response.ok) {
-          await response.json();
-          setImageLoading(false);
-          setErrors([])
-          // history.push("/")
-        }
+        // if (response.ok) {
+        //   await response.json();
+        //   setImageLoading(false);
+        //   setErrors([])
+        //   // history.push("/")
+        // }
     }
 
     const preventDragHandler = (e) => {
