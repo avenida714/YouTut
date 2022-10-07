@@ -26,7 +26,7 @@ def seed_tuts():
     )
 
     tut4 = Tut(
-        thumbnail_pic="https://youtut.s3.us-west-1.amazonaws.com/traversy.png",
+        thumbnail_pic="https://youtut.s3.us-west-1.amazonaws.com/traversy.jpg",
         tut_description="In this video, Brad will introduce the application we will build which is a CRUD application for recipes built with Node.js and the PostgreSQL relational database. ",
         tut_title="Recipe App Using Node.js & PostgreSQL - Part 1",
         user_id=4,
@@ -50,7 +50,7 @@ def seed_tuts():
     )
 
     tut7 = Tut(
-        thumbnail_pic="https://youtut.s3.us-west-1.amazonaws.com/jonas.png",
+        thumbnail_pic="https://youtut.s3.us-west-1.amazonaws.com/jonas.jpg",
         tut_description="Preview of the upcoming update of my complete JavaScript course on Udemy. Will be ready around October 21st!",
         tut_title=" I'm updating my JavaScript course! Here is a preview!",
         user_id=7,
@@ -58,7 +58,7 @@ def seed_tuts():
     )
 
     tut8 = Tut(
-        thumbnail_pic="https://youtut.s3.us-west-1.amazonaws.com/what-is-git.png",
+        thumbnail_pic="https://youtut.s3.us-west-1.amazonaws.com/what-is-git.jpg",
         tut_description="This short video explains what Git is and why it's a critical skill for every software & DevOps engineer. ",
         tut_title="What is Git? Explained in 2 Minutes!",
         user_id=8,
@@ -66,7 +66,7 @@ def seed_tuts():
     )
 
     tut9 = Tut(
-        thumbnail_pic="https://youtut.s3.us-west-1.amazonaws.com/async-requests.png",
+        thumbnail_pic="https://youtut.s3.us-west-1.amazonaws.com/async-requests.jpg",
         tut_description="We dump the data file and instead learn how to load the Pokemon data via a web request using React's useEffect hook and fetch.",
         tut_title=" Introduction to React #6 | Asynchronous Requests",
         user_id=9,
@@ -74,7 +74,7 @@ def seed_tuts():
     )
 
     tut10 = Tut(
-        thumbnail_pic="https://youtut.s3.us-west-1.amazonaws.com/what-is-short-circuiting.png",
+        thumbnail_pic="https://youtut.s3.us-west-1.amazonaws.com/what-is-short-circuiting.jpg",
         tut_description="Don't short a circuit, learn about short circuiting here.",
         tut_title="If You Don't Understand Short Circuiting Your App Will Break",
         user_id=10,
