@@ -9,7 +9,9 @@ import EditTut from '../Tuts/EditTut';
 import TutCard from '../Tuts/TutCard';
 import UploadTut from '../Tuts/UploadTut';
 
-// import "./MainFeed.css";
+import "./UserAndFeed.css"
+
+
 
 // import UploadTut from '../Uploadtut';
 
@@ -69,7 +71,7 @@ function UserFeed({userId}) {
 
 
   const displayTuts = tuts.map((tut, i) => (
-    <div>
+    <div className='displayTuts'>
     <TutCard key={i} tut={tut} />
     {thisIsMyTut ? (<div><DeleteTut tutId={tut.id} /> <EditTut tut={tut} tutId={tut.id} oldTitle={tut.title} oldDescription={tut.description}/> </div> ) : null}
     </div>
@@ -81,7 +83,6 @@ function UserFeed({userId}) {
     isLoaded && userLoggedInId && displayTuts &&(
     <div className="outer-most-wrapper">
       <div className='main-feed-display'>
-        {/* {thisIsMyTut ? <UploadTut /> : null} */}
         <div className='display-Tuts'>
         {displayTuts}
         </div>

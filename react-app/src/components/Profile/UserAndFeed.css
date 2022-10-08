@@ -1,0 +1,48 @@
+/* profile pic */
+.profile-pic-user {
+  /* border: 2px solid rgb(254, 115, 254); */
+  height: 140px;
+  width: 140px;
+  border-radius: 50%;
+  margin: 16px;
+  cursor: pointer;
+
+}
+
+.profile-text-wrapper {
+  /* border: 2px solid rgb(24, 209, 147); */
+
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.profile-user-name {
+  padding-left: 3vw;
+  font-size: x-large;
+}
+
+.profile-user-about {
+  padding-left: 3vw;
+  font-size: large;
+  padding-bottom: 3vw;
+}
+
+.share-tut {
+  padding-left: 3vw;
+}
+
+.user-feed {
+
+  padding-top: 20px;
+}
+
+
+.display-Tuts {
+  padding-left: 3vw;
+}
+.displayTuts {
+  /* border: 2px solid rgb(24, 209, 147); */
+
+  padding-top: 15px;
+}

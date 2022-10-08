@@ -4,6 +4,8 @@ import { useParams } from 'react-router-dom';
 import UploadTut from '../Tuts/UploadTut';
 import UserFeed from './UserFeed';
 
+import "./UserAndFeed.css"
+
 function User() {
   const [user, setUser] = useState({});
   let { userId }  = useParams();
@@ -44,7 +46,7 @@ function User() {
   // console.log("userId", userId)
   let iCanUpload;
   if (thisIsMyPage) {
-    iCanUpload = (<div>
+    iCanUpload = (<div className="share-tut">
       <p>HAVE A TUT TO SHARE? UPLOAD BELOW!</p>
       <UploadTut />
       </div>)
@@ -60,13 +62,16 @@ function User() {
     isLoaded && (
     <div>
       <div>
-        <img alt="profile" className='left-side-comment' src={user.profile_img} />
+        <img alt="profile" className='profile-pic-user' src={user.profile_img} />
       </div>
-      <div>
+      <div className='profile-text-wrapper'>
+      <div className='profile-user-name'>
         {user.username}
       </div>
-      <div>
+      <div className='profile-user-about'>
         {user.about}
+      </div>
+
       </div>
 
 
@@ -92,7 +97,7 @@ function User() {
                           )}
     <UserFeed userId={userId}/> */}
     {iCanUpload}
-    <UserFeed userId={userId}/>
+    <UserFeed className="user-feed" userId={userId}/>
     </div>
     )
 
