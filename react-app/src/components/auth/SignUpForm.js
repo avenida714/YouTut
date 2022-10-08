@@ -20,6 +20,7 @@ const SignUpForm = () => {
     e.preventDefault();
     setHasSubmitted(true)
 
+    //necessary to block bad signups
     if (errors.length > 0) {
       return alert("Cannot Submit");
     }
