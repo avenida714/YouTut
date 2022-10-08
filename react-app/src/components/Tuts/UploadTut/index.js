@@ -1,9 +1,11 @@
 //UploadTut
 
-import React, {useEffect, useState} from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { uploadTut } from "../../../store/tuts";
+
+import "./UploadTut.css"
 
 
 const UploadTut = () => {
@@ -148,15 +150,15 @@ const UploadTut = () => {
 
     }
 
-    console.log("THESE ARE THE ERRORS", errors)
+    // console.log("THESE ARE THE ERRORS", errors)
 
     return (
-        <div>
+        <div className="outer-wrapper-upload">
          <div>
-          <ul className="errors">
+          <ul className="upload-errors">
             {userHasSubmitted &&
               errors?.map((error) => (
-                <li className="errors" key={error}>
+                <li className="upload-errors" key={error}>
                   {error}
                 </li>
               ))}
@@ -165,37 +167,37 @@ const UploadTut = () => {
           {/* {setUserHasSubmitted(false)} */}
         </div>
 
-        <form onSubmit={handleSubmit}>
-            <label>Title of your Tut</label>
-            <input
+        <form className="upload-form" onSubmit={handleSubmit}>
+            <label className="upload-label">Title of your Tut</label>
+            <input className="upload-input"
                 required
                 type="text"
                 name="title"
                 onChange={(e) => setTitle(e.target.value)}
             />
-            <label>Upload your File (mp4 only please)</label>
-            <input
+            <label className="upload-label">Upload your File (mp4 only please)</label>
+            <input className="upload-input"
                 required
                 type="file"
                 accept=".mp4"
                 onChange={updateTutVideo}
                 onDragStart={preventDragHandler}
             />
-            <label>Description - tell us about this Tut!</label>
-            <input
+            <label className="upload-label">Description - tell us about this Tut!</label>
+            <input className="upload-input"
                 required
                 type="text"
                 onChange={(e) => setDescription(e.target.value)}
             />
-            <label>Thumbnail</label>
-            <input
+            <label className="upload-label">Thumbnail</label>
+            <input className="upload-input"
               required
               type="file"
               accept="image/*"
               onChange={updateThumbnail}
 
             />
-            <button type="submit">Upload a Tut</button>
+            <button type="submit">Upload!</button>
             {(imageLoading)&& <p>Loading...</p>}
         </form>
 
