@@ -19,6 +19,11 @@ const SignUpForm = () => {
   const onSignUp = async (e) => {
     e.preventDefault();
     setHasSubmitted(true)
+
+    if (errors.length > 0) {
+      return alert("Cannot Submit");
+    }
+
     if (password === repeatPassword) {
       const data = await dispatch(signUp(username, email, password));
       if (data) {
