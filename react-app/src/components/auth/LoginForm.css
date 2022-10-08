@@ -17,11 +17,24 @@
   /* border: 3px solid green; */
   flex-direction: column;
   justify-content: center;
-  background-color: rgba(0, 0, 0, .30);
+  background-color: rgba(0, 0, 0, .80);
   display: flex;
   /* justify-self: start; */
   height: 20vw;
   align-items: center;
+  padding: 15px;
+  margin: 15px;
+  border-radius: 2vw;
+  font-size: x-large;
+}
+
+.login-password-line {
+  /* display: flex; */
+  /* flex-direction: row; */
+  background-color: transparent;
+  font-size: x-large;
+
+
 }
 
 /* this is on the signup form */
@@ -29,5 +42,66 @@
   text-decoration: none;
   color: red;
   font-weight: bold;
+  background-color: transparent;
+
   /* font-family: 'Times New Roman', Times, serif; */
+}
+
+.login-errors {
+  color:yellow;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  text-align: center;
+  background-color: transparent;
+
+}
+
+.login-label {
+  width: 93%;
+  /* border-bottom: 2px solid lightgray; */
+  outline: none;
+  border:none;
+  font-size: large;
+  background-color: transparent;
+  border-bottom: 1px solid darkgrey;
+  color: #f61c0d;
+  font-size: x-large;
+
+}
+
+.login-input {
+  /* border: 2px solid greenyellow; */
+  /* border: 2px solid blue; */
+  width: 93%;
+  /* border-bottom: 2px solid lightgray; */
+  outline: none;
+  /* border:none; */
+  font-size: large;
+  border-bottom: 1px solid darkgrey;
+  /* overflow-wrap: ; */
+  background-color: transparent;
+  background-color: rgba(0, 0, 0, .30);
+
+}
+.login-input:focus {
+  outline: none !important;
+  border-bottom: 2px solid whitesmoke;
+  background-color: rgba(0, 0, 0, .30);
+
+}
+
+.login-text {
+  font-size: x-large;
+  background-color: transparent;
+  margin-top: 20px;
+
+}
+
+.login-button {
+  margin-top: 20px;
+}
+
+.demo-button {
+  margin-top: 20px;
+
 }

@@ -48,42 +48,42 @@ const SignUpForm = () => {
     <div className='outer-wrapper-signup'>
 
     <div className='signup-form'>
-    <form  onSubmit={onSignUp}>
-      <div>
+    <form className='invisible-me' onSubmit={onSignUp}>
+      <div className='invisible-me'>
         {errors.map((error, ind) => (
           <div key={ind}>{error}</div>
         ))}
       </div>
-      <div>
-        <label>User Name</label>
-        <input
+      <div className='invisible-me'>
+        <label className='signup-label'>User Name</label>
+        <input className='signup-input'
           type='text'
           name='username'
           onChange={updateUsername}
           value={username}
         ></input>
       </div>
-      <div>
-        <label>Email</label>
-        <input
+      <div className='invisible-me'>
+        <label className='signup-label'>Email</label>
+        <input className='signup-input'
           type='text'
           name='email'
           onChange={updateEmail}
           value={email}
         ></input>
       </div>
-      <div>
-        <label>Password</label>
-        <input
+      <div className='invisible-me'>
+        <label className='signup-label'>Password</label>
+        <input className='signup-input'
           type='password'
           name='password'
           onChange={updatePassword}
           value={password}
         ></input>
       </div>
-      <div>
-        <label>Repeat Password</label>
-        <input
+      <div className='invisible-me'>
+        <label className='signup-label'>Repeat Password</label>
+        <input className='signup-input'
           type='password'
           name='repeat_password'
           onChange={updateRepeatPassword}
@@ -91,9 +91,11 @@ const SignUpForm = () => {
           required={true}
         ></input>
       </div>
-      <button type='submit'>Tut!</button>
+      <div className='center-me'>
+      <button className='tut-button' type='submit'>Tut!</button>
+      </div>
     </form>
-       <div className="register_signup">
+       <div className="register-signup">
         Already have an account? Log in {" "}
         <NavLink className="login_navlink" to="/login">
           Here

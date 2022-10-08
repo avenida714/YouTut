@@ -17,8 +17,71 @@
   /* border: 3px solid green; */
   flex-direction: column;
   justify-content: center;
-  background-color: rgba(0, 0, 0, .30);
+  background-color: rgba(0, 0, 0, .80);
   display: flex;
   /* justify-self: start; */
   height: 20vw;
+  align-items: center;
+  padding: 15px;
+  margin: 15px;
+  border-radius: 2vw;
+  font-size: x-large;
+}
+
+.signup-label {
+  width: 93%;
+  /* border-bottom: 2px solid lightgray; */
+  outline: none;
+  border:none;
+  font-size: large;
+  background-color: transparent;
+  border-bottom: 1px solid darkgrey;
+  color: #f61c0d;
+  font-size: x-large;
+
+}
+
+.signup-input {
+  /* border: 2px solid greenyellow; */
+  /* border: 2px solid blue; */
+  width: 93%;
+  /* border-bottom: 2px solid lightgray; */
+  outline: none;
+  /* border:none; */
+  font-size: large;
+  border-bottom: 1px solid darkgrey;
+  /* overflow-wrap: ; */
+  background-color: transparent;
+  background-color: rgba(0, 0, 0, .30);
+
+}
+.signup-input:focus {
+  outline: none !important;
+  border-bottom: 2px solid whitesmoke;
+  background-color: rgba(0, 0, 0, .30);
+
+}
+
+.invisible-me {
+  background-color: transparent;
+}
+
+.register-signup {
+  background-color: transparent;
+  padding-top: 20px;
+
+}
+
+.center-me {
+  display:flex;
+  justify-content: center;
+  background-color: transparent;
+  padding-top: 20px;
+}
+
+.tut-button {
+  /* padding-left: 10vw; */
+  /* border: 2px solid yellowgreen; */
+  font-size: x-large;
+
 }
