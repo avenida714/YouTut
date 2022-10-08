@@ -44,7 +44,10 @@ function User() {
   // console.log("userId", userId)
   let iCanUpload;
   if (thisIsMyPage) {
-    iCanUpload = (<UploadTut />)
+    iCanUpload = (<div>
+      <p>HAVE A TUT TO SHARE? UPLOAD BELOW!</p>
+      <UploadTut />
+      </div>)
   } else {
     iCanUpload = null
   }
@@ -88,7 +91,6 @@ function User() {
                             ) && <ToggleFollow profile={profile} />
                           )}
     <UserFeed userId={userId}/> */}
-    <p>HAVE A TUT TO SHARE? UPLOAD BELOW!</p>
     {iCanUpload}
     <UserFeed userId={userId}/>
     </div>
