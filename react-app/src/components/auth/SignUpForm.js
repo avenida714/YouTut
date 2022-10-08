@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 import { NavLink, Redirect } from 'react-router-dom';
 import { signUp } from '../../store/session';
@@ -11,15 +11,18 @@ const SignUpForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [repeatPassword, setRepeatPassword] = useState('');
+  const [hasSubmitted, setHasSubmitted] = useState(false);
+
   const user = useSelector(state => state.session.user);
   const dispatch = useDispatch();
 
   const onSignUp = async (e) => {
     e.preventDefault();
+    setHasSubmitted(true)
     if (password === repeatPassword) {
       const data = await dispatch(signUp(username, email, password));
       if (data) {
-        setErrors(data)
+        setErrors(["Invalid credentials. "])
       }
     }
   };
@@ -40,6 +43,26 @@ const SignUpForm = () => {
     setRepeatPassword(e.target.value);
   };
 
+  useEffect(() => {
+    let errs = [];
+
+    if (username.length > 30 || username.length <= 5) {
+      errs.push("Username must between 6 to 30 characters.");
+    }
+    if (!email.includes("@")) {
+      errs.push("Please provide a valid Email address.");
+    }
+
+    if (password.length <= 5) {
+      errs.push("Password length must be greater than 5 characters.");
+    }
+    if (password !== repeatPassword)
+      errs.push("Password and Confirm password does not match");
+
+
+    setErrors(errs);
+  }, [email, username, password, repeatPassword]);
+
   if (user) {
     return <Redirect to='/' />;
   }
@@ -49,9 +72,9 @@ const SignUpForm = () => {
 
     <div className='signup-form'>
     <form className='invisible-me' onSubmit={onSignUp}>
-      <div className='invisible-me'>
-        {errors.map((error, ind) => (
-          <div key={ind}>{error}</div>
+      <div className='invisible-me errors'>
+        {hasSubmitted && errors.map((error, ind) => (
+          <div className='invisible-me errors' key={ind}>{error}</div>
         ))}
       </div>
       <div className='invisible-me'>
