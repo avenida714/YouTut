@@ -21,6 +21,7 @@ const LoginForm = () => {
     e.preventDefault();
     const data = await dispatch(login(email, password));
     if (data) {
+      console.log(data, "******* this was the data from the errors LOGIN")
       setErrors(data);
     }
   };
@@ -40,14 +41,14 @@ const LoginForm = () => {
   return (
     <div className='outer-wrapper-splash'>
     <form className='login-form' onSubmit={onLogin}>
-      <div>
+      <div className='login-errors'>
         {errors.map((error, ind) => (
           <div key={ind}>{error}</div>
         ))}
       </div>
-      <div>
-        <label htmlFor='email'>Email</label>
-        <input
+      <div className='login-password-line'>
+        <label className="login-label" htmlFor='email'>Email</label>
+        <input className='login-input'
           name='email'
           type='text'
           placeholder='Email'
@@ -55,16 +56,18 @@ const LoginForm = () => {
           onChange={updateEmail}
         />
       </div>
-      <div>
-        <label htmlFor='password'>Password</label>
-        <input
+      <div className='login-password-line'>
+        <label className="login-label" htmlFor='password'>Password</label>
+        <input className='login-input'
           name='password'
           type='password'
           placeholder='Password'
           value={password}
           onChange={updatePassword}
         />
-        <button type='submit'>Login</button>
+        </div>
+        <div className='login-password-line'>
+        <button className="login-button" type='submit'>Login</button>
         {/* <div>
           <UploadTut />
         </div> */}
@@ -77,7 +80,7 @@ const LoginForm = () => {
                 </NavLink>
               </div>
               <button
-                  className="login_button"
+                  className="demo-button"
                   type="submit"
                   onClick={() => {
                     setEmail("demo@aa.io");
