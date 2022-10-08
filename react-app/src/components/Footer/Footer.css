@@ -1,0 +1,40 @@
+.Wrapper {
+  padding: 15px;
+  padding-top: 8px;
+  width: 15vw;
+  background-color: transparent;
+}
+
+.Footer {
+  max-width: 15vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: transparent;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.welcome {
+  background-color: transparent;
+  font-size: medium;
+  text-align: center;
+
+}
+
+.fa-brands {
+  color: red;
+  background-color: white;
+  border-radius: 1vw;
+
+}
+
+.fa-brands:not([disabled]):focus {
+  box-shadow: 0 0 0.25rem rgba(19, 16, 16, 0.5),
+    -0.125rem -0.125rem 1rem black 0.125rem 0.125rem 1rem #fcf9ed;
+}
+
+.fa-brands:not([disabled]):hover {
+  box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem black, .125rem .125rem 1rem rgb(255, 47, 47);
+  color: rgb(255, 47, 47)
+}
