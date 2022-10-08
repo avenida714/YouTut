@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { NavLink, Redirect } from 'react-router-dom';
 import { login } from '../../store/session';
+import Footer from '../Footer';
 import UploadTut from '../Tuts/UploadTut';
 // import UploadTut from '../Uploadtut';
 // import UploadPicture from '../UploadPicture';
@@ -21,8 +22,8 @@ const LoginForm = () => {
     e.preventDefault();
     const data = await dispatch(login(email, password));
     if (data) {
-      console.log(data, "******* this was the data from the errors LOGIN")
-      setErrors(data);
+      // console.log(data, "******* this was the data from the errors LOGIN")
+      setErrors(['Your credentials were invalid.']);
     }
   };
 
@@ -43,7 +44,7 @@ const LoginForm = () => {
     <form className='login-form' onSubmit={onLogin}>
       <div className='login-errors'>
         {errors.map((error, ind) => (
-          <div key={ind}>{error}</div>
+          <div className="login-errors" key={ind}>{error}</div>
         ))}
       </div>
       <div className='login-password-line'>
@@ -78,6 +79,7 @@ const LoginForm = () => {
                   {" "}
                   Here{" "}
                 </NavLink>
+
               </div>
               <button
                   className="demo-button"
@@ -90,7 +92,9 @@ const LoginForm = () => {
                   {" "}
                   Demo{" "}
                 </button>
+                <Footer />
     </form>
+
     </div>
   );
 };
