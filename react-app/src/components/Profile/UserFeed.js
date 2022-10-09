@@ -76,10 +76,13 @@ function UserFeed({userId}) {
     <TutCard key={i} tut={tut} />
     <div className='tut-description'>{tut.tut_description}</div>
       </div>
+    <div className="edit-delete-div">
     {thisIsMyTut ? (<div className='edit-and-delete-buttons'><EditTut tut={tut} tutId={tut.id} oldTitle={tut.title} oldDescription={tut.description}/>
     <DeleteTut tutId={tut.id}/> </div>
      ) : null}
     </div>
+    </div>
+
 
   ))
 

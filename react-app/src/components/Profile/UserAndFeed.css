@@ -64,6 +64,11 @@
   width: 75vw;
 }
 
+.edit-delete-div {
+  width: 70vw;
+
+}
+
 .edit-and-delete-buttons {
   /* border: 2px solid yellowgreen; */
   display: flex;

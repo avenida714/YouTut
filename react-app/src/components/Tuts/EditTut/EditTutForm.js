@@ -127,6 +127,8 @@ function EditTutForm({ tut, tutId, oldTitle, oldDescription }) {
           </ul>
           {/* {setUserHasSubmitted(false)} */}
         </div>
+      <div className="edit-delete-div">
+
 
       <form onSubmit={handleSubmit}>
         <label className=".edit-tut-label">Title of your Tut</label>
@@ -146,6 +148,7 @@ function EditTutForm({ tut, tutId, oldTitle, oldDescription }) {
         <button className="edit-tut-submit" type="submit">Submit</button>
         {imageLoading && <p>Loading...</p>}
       </form>
+      </div>
  </div>
   );
 }
