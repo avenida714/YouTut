@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 import UploadTut from '../Tuts/UploadTut';
 import UserFeed from './UserFeed';
 
@@ -11,6 +11,8 @@ function User() {
   let { userId }  = useParams();
   userId = Number(userId)
   const [isLoaded, setIsLoaded] = useState(false);
+  const [notPressed, setNotPressed] = useState(true)
+  const history = useHistory()
 
   const userLoggedInId = useSelector((state) => {
     return state.session.user.id;
@@ -32,27 +34,33 @@ function User() {
     .then(() => setIsLoaded(true))
     .then(() => {
       if (userLoggedInId === userId) setThisIsMyPage(true)
+      if (history.action === 'POP') {
+        setNotPressed(false)
+      }
       return
     })
 
-  }, [userId, userLoggedInId]);
+  }, [userId, userLoggedInId, history.action]);
 
   if (!user) {
     return null;
   }
 
+
+
+
   // console.log("THIS IS MY PAGE ?????????", thisIsMyPage)
   // console.log("userLoggedInId", userLoggedInId)
   // console.log("userId", userId)
-  let iCanUpload;
-  if (thisIsMyPage) {
-    iCanUpload = (<div className="share-tut">
+
+   const iCanUpload = (<div className="share-tut">
       <p>HAVE A TUT TO SHARE? UPLOAD BELOW!</p>
       <UploadTut />
       </div>)
-  } else {
-    iCanUpload = null
-  }
+
+
+
+
 
 
 
@@ -74,29 +82,7 @@ function User() {
 
       </div>
 
-
-    {/* {userLoggedIn && profile.id === sessionUser.id ? (
-                            <button
-                              className="editProfile"
-                              onClick={(e) => handleEditProfile(e, profile.id)}
-                            >
-                              Edit profile <BiEditAlt />
-                            </button>
-                          ) : (
-                            (
-                              <button
-                                style={hideButton}
-                                className="editProfileButton"
-                                onClick={(e) =>
-                                  handleEditProfile(e, profile.id)
-                                }
-                              >
-                                edit profile
-                              </button>
-                            ) && <ToggleFollow profile={profile} />
-                          )}
-    <UserFeed userId={userId}/> */}
-    {iCanUpload}
+    {notPressed && thisIsMyPage && iCanUpload}
     <UserFeed className="user-feed" userId={userId}/>
     </div>
     )

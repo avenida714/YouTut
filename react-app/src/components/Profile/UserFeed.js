@@ -71,9 +71,14 @@ function UserFeed({userId}) {
 
 
   const displayTuts = tuts.map((tut, i) => (
-    <div className='displayTuts'>
+    <div className='display-Tuts-userFeed'>
+      <div className='card-and-description'>
     <TutCard key={i} tut={tut} />
-    {thisIsMyTut ? (<div><DeleteTut tutId={tut.id} /> <EditTut tut={tut} tutId={tut.id} oldTitle={tut.title} oldDescription={tut.description}/> </div> ) : null}
+    <div className='tut-description'>{tut.tut_description}</div>
+      </div>
+    {thisIsMyTut ? (<div className='edit-and-delete-buttons'><EditTut tut={tut} tutId={tut.id} oldTitle={tut.title} oldDescription={tut.description}/>
+    <DeleteTut tutId={tut.id}/> </div>
+     ) : null}
     </div>
 
   ))
@@ -83,7 +88,7 @@ function UserFeed({userId}) {
     isLoaded && userLoggedInId && displayTuts &&(
     <div className="outer-most-wrapper">
       <div className='main-feed-display'>
-        <div className='display-Tuts'>
+        <div className='display-Tuts-user'>
         {displayTuts}
         </div>
       </div>
