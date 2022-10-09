@@ -44,7 +44,8 @@ function CommentFeed({ tut }) {
     dispatch(getTutComments(tut.id)).then(() => {
       dispatch(getOneTutById(tut.id)).then(() => setIsLoaded(true));
     });
-  }, [dispatch]);
+    setEditEngaged(false)
+  }, [dispatch, tut.id]);
 
   let comments = Object.values(tut.comments);
 
@@ -87,7 +88,7 @@ function CommentFeed({ tut }) {
                 </div>
 
                 <div>
-                  {comment.user.id === userLoggedIn.id ? <button onClick={() => editClick(comment.id)}>
+                  {comment.user.id === userLoggedIn.id ? <button className="pen-button"onClick={() => editClick(comment.id)}>
     <i className="fa-solid fa-pen-to-square"></i>
   </button> : null}
                 </div>

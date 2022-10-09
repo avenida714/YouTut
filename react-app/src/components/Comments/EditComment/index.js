@@ -64,11 +64,11 @@ function EditComment({tut, oldComment, commentId }) {
         <input className="edit-comment-input"
           type="text"
           autoFocus
-          placeholder="Add a comment..."
+          placeholder="Update your comment..."
           value={comment}
           onChange={(e) => setComment(e.target.value)}
         />
-        <button className="tut-comment">
+        <button className="update-button">
           {" "}
           Update
         </button>
