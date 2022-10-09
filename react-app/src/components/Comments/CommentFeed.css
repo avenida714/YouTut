@@ -45,3 +45,10 @@
 .comment-content {
   padding-top: 13px;
 }
+
+.comment-content-test-edit {
+  border: 2px solid rgb(105, 210, 245);
+  display: flex;
+  flex-direction: row;
+
+}

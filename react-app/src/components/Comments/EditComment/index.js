@@ -48,7 +48,7 @@ function EditComment({tut, oldComment, commentId }) {
     setHasSubmitted(false);
   };
   return (
-    <div className="leave-comment-pc" /* comment text area */>
+    <div className="leave-comment-edit-comment" /* comment text area */>
       <form className="comment-form" onSubmit={handleSubmit}>
         <div>
           <ul>
@@ -72,7 +72,6 @@ function EditComment({tut, oldComment, commentId }) {
         <button className="tut-comment">
           {" "}
           <i className="fa-solid fa-pen-to-square"></i>
-          Update
         </button>
       </form>
 

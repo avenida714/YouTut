@@ -19,9 +19,26 @@ function CommentFeed({ tut }) {
 
   const [isLoaded, setIsLoaded] = useState(false);
 
+  const [editEngaged, setEditEngaged] = useState(false);
+  const [editingThisComment, setEditingThiscomment] = useState('')
+
   const userLoggedIn = useSelector((state) => state.session.user);
 
   // console.log("chrono comments ***********", chronologicalComments)
+
+  const editClick = function(id) {
+    setEditEngaged(!editEngaged)
+    let commentId = id;
+
+    console.log('THIS IS THE COMMENT ID AFTER EDIT CLICK', commentId)
+
+    setEditingThiscomment(commentId)
+
+  }
+
+  // const editButton = (<button onClick={() => editClick()}>
+  //   <i className="fa-solid fa-pen-to-square"></i>
+  // </button>)
 
   useEffect(() => {
     dispatch(getTutComments(tut.id)).then(() => {
@@ -64,12 +81,19 @@ function CommentFeed({ tut }) {
                     let path = `/users/${comment.user_id}`;
                     history.push(path);
                   }}>{comment.user.username}</div>
+
                   <div className="comment-content"> {comment.comment}</div>
                 </div>
 
-                <div className="comment_content">
-                  {comment.user.id === userLoggedIn.id && (
-                    <div>
+                <div>
+                  {comment.user.id === userLoggedIn.id ? <button onClick={() => editClick(comment.id)}>
+    <i className="fa-solid fa-pen-to-square"></i>
+  </button> : null}
+                </div>
+
+                <div className="comment-content-test-edit">
+                  {editEngaged && comment.user.id === userLoggedIn.id && editingThisComment === comment.id &&(
+                    <div className="comment-content-test-edit" >
                       <EditComment
                         tut={tut}
                         oldComment={comment.comment}
