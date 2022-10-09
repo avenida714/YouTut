@@ -6,7 +6,7 @@ function Footer() {
   return (
     <div className='Wrapper'>
       <div className='welcome'>
-        Welcome to YouTut, a streaming site dedicated to online tutorials (Tuts).
+        Welcome to YouTut, a streaming site specialized in online tutorials (Tuts).
       </div>
       <div className='welcome'>
         YouTut is a full stack web application by Alec Venida.
@@ -21,7 +21,7 @@ function Footer() {
     </a>
   </div>
       <div className='welcome'>
-        This site is dedicated to teachers everywhere -- thank you for your efforts to helping others grow.
+        This site is dedicated to teachers everywhere -- thank you for your commitment towards helping others grow.
       </div>
   </div>
   )
