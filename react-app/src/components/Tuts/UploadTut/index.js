@@ -172,17 +172,17 @@ const UploadTut = () => {
       // console.log("THIS IS THE THUMB FILE ************",thumbFile)
 
       }
-
+      if (title)
       if (title.length > 100 || title.length < 5) {
         errs.push("Your title must be between 5 and 100 characters long, please.")
       }
-
+      if (description)
       if (description.length > 300 || description.length < 5) {
         errs.push("Your description should be between 5 and 300 characters long.")
       }
 
       if (errs.length > 3) {
-        errs.push("Your name must be Owen Wilson, because youre a bad actor.")
+        errs.push("Your name must be Owen Wilson, because you're a bad actor.")
       }
 
 

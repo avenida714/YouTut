@@ -70,3 +70,7 @@ button:active {
 textarea {
   resize: none;
 }
+
+li {
+  list-style-type:none;
+}
