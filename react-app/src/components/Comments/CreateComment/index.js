@@ -59,7 +59,7 @@ function CreateComment({tut}) {
     }
   };
 
-  console.log(comment)
+  // console.log(comment)
 
   useEffect(() => {
     let errs = [];

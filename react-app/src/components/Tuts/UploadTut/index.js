@@ -1,6 +1,6 @@
 //UploadTut
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { uploadTut } from "../../../store/tuts";
@@ -97,12 +97,11 @@ const UploadTut = () => {
         //     // setErrors(response) for more advanced error handling later
         // }
 
-        // if (response.ok) {
-        //   await response.json();
-        //   setImageLoading(false);
-        //   setErrors([])
-        //   // history.push("/")
-        // }
+        if (response.ok) {
+
+          setImageLoading(false);
+          // history.push("/")
+        }
     }
 
     const preventDragHandler = (e) => {
@@ -114,19 +113,18 @@ const UploadTut = () => {
 
         const thumbFile = e.target.files[0];
 
-        // console.log("THIS IS THE thumb FILE ****************", thumbFile?.type)
+        // // console.log("THIS IS THE thumb FILE ****************", thumbFile?.type)
 
-        if (thumbFile?.type !== "image/jpeg" &&
-        thumbFile?.type !== "image/jpg" &&
-        thumbFile?.type !== "image/png" &&
-        thumbFile?.type !== "image/gif") {
+        // if (thumbFile?.type !== "image/jpeg" &&
+        // thumbFile?.type !== "image/jpg" &&
+        // thumbFile?.type !== "image/png" &&
+        // thumbFile?.type !== "image/gif") {
 
-          setErrors([...errors, "Only jpeg, jpg, png, or gif files will be accepted as thumbnails, please."])
+        //   setErrors([...errors, "Only jpeg, jpg, png, or gif files will be accepted as thumbnails, please."])
         // console.log("THIS IS THE THUMB FILE ************",thumbFile)
-      } else {
-        setErrors([])
+
         setThumbnail(thumbFile);
-      }
+
   }
 
     const updateTutVideo = (e) => {
@@ -136,21 +134,62 @@ const UploadTut = () => {
         // console.log("THIS IS THE VID FILE ****************", vidFile)
         // console.log("THIS IS THE VIDFILE TYPE ******", vidFile.type)
 
-        if (vidFile?.size > 30 * 1000 * 1000) {
-            setErrors([...errors, "Your Tut is too long. Please choose an MP4 smaller than 30MB."])
-        } else if (vidFile?.type !== "video/mp4"){
-          // console.log(vidFile?.type, "<----- THIS IS THE VIDFILE.TYPE")
-          setErrors([...errors, "Only MP4 files will be accepted as your video, please."])
-        } else if (vidFile?.type === "video/mp4"){
-          setErrors([])
+        // if (vidFile?.size > 30 * 1000 * 1000) {
+        //     setErrors([...errors, "Your Tut is too long. Please choose an MP4 smaller than 30MB."])
+        // } else if (vidFile?.type !== "video/mp4"){
+        //   // console.log(vidFile?.type, "<----- THIS IS THE VIDFILE.TYPE")
+        //   setErrors([...errors, "Only MP4 files will be accepted as your video, please."])
+        // } else if (vidFile?.type === "video/mp4"){
+        //   setErrors([])
           setMp4(vidFile)
-        }
+        // }
 
         // console.log("THESE ARE THE FILESSSSSSSS ************", e.target.files)
 
     }
 
     // console.log("THESE ARE THE ERRORS", errors)
+
+    useEffect(() => {
+      let errs = [];
+
+      if (mp4?.size > 30 * 1000 * 1000) {
+        errs.push("Your Tut is too long. Please choose an MP4 smaller than 30MB.")
+
+      }
+
+      if (mp4?.type !== "video/mp4"){
+      // console.log(vidFile?.type, "<----- THIS IS THE VIDFILE.TYPE")
+      errs.push("Only MP4 files will be accepted as your video, please.")
+      }
+
+      if (thumbnail?.type !== "image/jpeg" &&
+      thumbnail?.type !== "image/jpg" &&
+      thumbnail?.type !== "image/png" &&
+      thumbnail?.type !== "image/gif") {
+
+        errs.push( "Only jpeg, jpg, png, or gif files will be accepted as thumbnails, please.")
+      // console.log("THIS IS THE THUMB FILE ************",thumbFile)
+
+      }
+
+      if (title.length > 100 || title.length < 5) {
+        errs.push("Your title must be between 5 and 100 characters long, please.")
+      }
+
+      if (description.length > 300 || description.length < 5) {
+        errs.push("Your description should be between 5 and 300 characters long.")
+      }
+
+      if (errs.length > 3) {
+        errs.push("Your name must be Owen Wilson, because youre a bad actor.")
+      }
+
+
+      setErrors(errs)
+
+    }, [mp4, thumbnail, title, description])
+
 
     return (
         <div className="outer-wrapper-upload">
@@ -162,7 +201,7 @@ const UploadTut = () => {
                   {error}
                 </li>
               ))}
-              {errors.length > 5 ? <li className="easterEgg errors">Your name must be Owen Wilson, because you're a bad actor. Please refresh and try again.</li> : null}
+
           </ul>
           {/* {setUserHasSubmitted(false)} */}
         </div>
@@ -189,7 +228,7 @@ const UploadTut = () => {
                 type="text"
                 onChange={(e) => setDescription(e.target.value)}
             />
-            <label className="upload-label">Thumbnail</label>
+            <label className="upload-label">Thumbnail - include a jpeg, jpg, png, or gif</label>
             <input className="upload-input"
               required
               type="file"
