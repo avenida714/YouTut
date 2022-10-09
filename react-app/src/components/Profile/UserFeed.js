@@ -66,7 +66,7 @@ function UserFeed({userId}) {
       return
     })
 
-  }, [dispatch, userLoggedInId, userId, thisIsMyTut])
+  }, [dispatch, userLoggedInId, userId, thisIsMyTut, history])
 
   // useEffect(() => {
   //   if (userLoggedIn === userId) {

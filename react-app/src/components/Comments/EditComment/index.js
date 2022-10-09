@@ -1,6 +1,6 @@
 //EditComment
 
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { updateAComment } from '../../../store/comments';
@@ -16,16 +16,35 @@ function EditComment({tut, oldComment, commentId }) {
   let id = tut.id;
 
   const [comment, setComment] = useState(oldComment);
-  const [validationErrors, setValidationErrors] = useState([]);
+  const [errors, setErrors] = useState([]);
   const [hasSubmitted, setHasSubmitted] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
+  const [disabled, setDisabled] = useState(true)
+
+
+  const handleChange = (e) => {
+    setComment(e.target.value)
+
+    if (e.target.value.length === 0) {
+      setDisabled(true);
+    } else {
+      setDisabled(false)
+    }
+
+    if (e.target.value.length > 300) {
+      setDisabled(true);
+
+    } else {
+      setDisabled(false)
+    }
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     setHasSubmitted(true);
 
-    if (validationErrors.length > 0) {
+    if (errors.length > 0) {
       return alert("Cannot Submit");
     }
 
@@ -44,17 +63,33 @@ function EditComment({tut, oldComment, commentId }) {
     }
 
     setComment("");
-    setValidationErrors([]);
+    setErrors([]);
     setHasSubmitted(false);
   };
+
+  useEffect(() => {
+    let errs = [];
+
+    // if (comment.length > 300) {
+    //   errs.push("Your comment must be fewer than 300 characters, please.")
+    // }
+
+    if (disabled) {
+      errs.push("Your comment must be fewer than 300 characters, please.")
+    }
+
+    setErrors(errs)
+
+  }, [comment, disabled])
+
   return (
     <div className="leave-comment-edit-comment" /* comment text area */>
       <form className="comment-form" onSubmit={handleSubmit}>
         <div>
           <ul>
-            {hasSubmitted &&
-              validationErrors.map((error) => (
-                <li className="comment_errorsList" key={error}>
+            {
+              errors.map((error) => (
+                <li className="errors" key={error}>
                   {error}
                 </li>
               ))}
@@ -66,9 +101,11 @@ function EditComment({tut, oldComment, commentId }) {
           autoFocus
           placeholder="Update your comment..."
           value={comment}
-          onChange={(e) => setComment(e.target.value)}
+          onChange={handleChange}
         />
-        <button className="update-button">
+        <button className={disabled ? 'gray_out' : "update-button"}
+        disabled={disabled}
+        >
           {" "}
           Update
         </button>
