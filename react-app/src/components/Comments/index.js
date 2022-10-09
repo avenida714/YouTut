@@ -30,7 +30,7 @@ function CommentFeed({ tut }) {
     setEditEngaged(!editEngaged)
     let commentId = id;
 
-    console.log('THIS IS THE COMMENT ID AFTER EDIT CLICK', commentId)
+    // console.log('THIS IS THE COMMENT ID AFTER EDIT CLICK', commentId)
 
     setEditingThiscomment(commentId)
 
@@ -62,7 +62,8 @@ function CommentFeed({ tut }) {
             }
 
             {chronologicalComments.map((comment) => (
-              <div className="comment_line" key={comment.id}>
+               <>
+              <div className="comment-line" key={comment.id}>
                 <div
                   className="user-icon-watchTut-comment"
                   onClick={() => {
@@ -91,7 +92,10 @@ function CommentFeed({ tut }) {
   </button> : null}
                 </div>
 
-                <div className="comment-content-test-edit">
+
+              </div>
+
+              <div className="comment-content-test-edit">
                   {editEngaged && comment.user.id === userLoggedIn.id && editingThisComment === comment.id &&(
                     <div className="comment-content-test-edit" >
                       <EditComment
@@ -103,7 +107,8 @@ function CommentFeed({ tut }) {
                     </div>
                   )}
                 </div>
-              </div>
+               </>
+
             ))}
           </div>
         </div>

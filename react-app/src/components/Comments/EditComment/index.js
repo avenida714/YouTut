@@ -61,8 +61,7 @@ function EditComment({tut, oldComment, commentId }) {
           </ul>
         </div>
 
-        <input
-          className="comment_input"
+        <input className="edit-comment-input"
           type="text"
           autoFocus
           placeholder="Add a comment..."
@@ -71,7 +70,7 @@ function EditComment({tut, oldComment, commentId }) {
         />
         <button className="tut-comment">
           {" "}
-          <i className="fa-solid fa-pen-to-square"></i>
+          Update
         </button>
       </form>
 
