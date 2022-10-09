@@ -62,6 +62,9 @@
   /* position:static; */
   border-bottom: 1px solid darkgray;
   width: 75vw;
+  -ms-word-break: break-all;
+  word-break: break-all;
+
 }
 
 .edit-delete-div {
