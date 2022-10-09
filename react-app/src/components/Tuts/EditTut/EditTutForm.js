@@ -25,25 +25,7 @@ function EditTutForm({ tut, tutId, oldTitle, oldDescription }) {
   const [userHasSubmitted, setUserHasSubmitted] = useState(false);
 
 
-  useEffect(() => {
-    let errors = [];
 
-
-    if (title.length <= 0 || title.length > 50) {
-      errors.push("Please provide a title no longer than 50 characters.");
-    }
-
-    if (description.length <= 0) {
-      errors.push("Please provide a short description of your Tut.");
-    }
-
-    // if (!image_url?.includes("jpg") &&) {
-    //   errors.push("Please use jpg, jpeg or png");
-    // }
-
-
-    setErrors(errors);
-  }, [title, description]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -86,28 +68,51 @@ function EditTutForm({ tut, tutId, oldTitle, oldDescription }) {
     }
   };
 
-  const updateThumbnail = (e) => {
-    const thumbFile = e.target.files[0];
-    // console.log("THIS IS THE THUMB FILE ************",thumbFile)
-    setThumbnail(thumbFile);
-  };
+  // const updateThumbnail = (e) => {
+  //   const thumbFile = e.target.files[0];
+  //   // console.log("THIS IS THE THUMB FILE ************",thumbFile)
+  //   setThumbnail(thumbFile);
+  // };
 
-  const updateTutVideo = (e) => {
-    const vidFile = e.target.files[0];
-    // console.log("THIS IS THE VID FILE ****************", vidFile)
+  // const updateTutVideo = (e) => {
+  //   const vidFile = e.target.files[0];
+  //   // console.log("THIS IS THE VID FILE ****************", vidFile)
 
-    // console.log("THESE ARE THE FILESSSSSSSS ************", e.target.files)
+  //   // console.log("THESE ARE THE FILESSSSSSSS ************", e.target.files)
 
-    if (vidFile.size > 30 * 1000 * 1000) {
-      let errors = [];
-      errors.push("Your Tut is too long. Please choose an MP4 smaller than 30MB.")
-      setErrors(errors)
-      return alert("Cannot Submit")
-  } else {
-    setMp4(vidFile)
-  }
-    setMp4(vidFile);
-  };
+  //   if (vidFile.size > 30 * 1000 * 1000) {
+  //     let errors = [];
+  //     errors.push("Your Tut is too long. Please choose an MP4 smaller than 30MB.")
+  //     setErrors(errors)
+  //     return alert("Cannot Submit")
+  // } else {
+  //   setMp4(vidFile)
+  // }
+  //   setMp4(vidFile);
+  // };
+
+
+  useEffect(() => {
+    let errors = [];
+
+
+    if (title.length <= 0 || title.length > 100) {
+      errors.push("Please provide a title no longer than 100 characters.");
+    }
+
+    if (description.length < 5 || description.length > 300) {
+      errors.push("Please provide a short description of your Tut (between 5 and 300 characters).");
+    }
+
+
+
+    // if (!image_url?.includes("jpg") &&) {
+    //   errors.push("Please use jpg, jpeg or png");
+    // }
+
+
+    setErrors(errors);
+  }, [title, description]);
 
   return (
     <div>
