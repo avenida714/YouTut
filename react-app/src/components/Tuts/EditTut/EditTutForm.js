@@ -5,6 +5,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { editTut } from "../../../store/tuts";
 
+import "./EditTut.css"
+
 function EditTutForm({ tut, tutId, oldTitle, oldDescription }) {
   const history = useHistory();
   const dispatch = useDispatch();
@@ -122,8 +124,8 @@ function EditTutForm({ tut, tutId, oldTitle, oldDescription }) {
         </div>
 
       <form onSubmit={handleSubmit}>
-        <label>Title of your Tut</label>
-        <input
+        <label className=".edit-tut-label">Title of your Tut</label>
+        <input className="edit-tut-input"
           required
           type="text"
           name="title"
@@ -132,11 +134,11 @@ function EditTutForm({ tut, tutId, oldTitle, oldDescription }) {
         />
         {/* <label>Upload your File (mp4 only please)</label>
         <input required type="file" accept=".mp4"  onChange={updateTutVideo} /> */}
-        <label>Description - tell us about this Tut!</label>
-        <input required type="text" value={description} onChange={(e) => setDescription(e.target.value)} />
+        <label className=".edit-tut-label">Description - tell us about this Tut!</label>
+        <input className="edit-tut-input" required type="text" value={description} onChange={(e) => setDescription(e.target.value)} />
         {/* <label>Thumbnail</label>
         <input required type="file" accept="image/*"  onChange={updateThumbnail} /> */}
-        <button type="submit">Submit</button>
+        <button className="edit-tut-submit" type="submit">Submit</button>
         {imageLoading && <p>Loading...</p>}
       </form>
  </div>
