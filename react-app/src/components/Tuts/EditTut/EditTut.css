@@ -1,0 +1,57 @@
+.edit-tut-input {
+  /* border: 2px solid greenyellow; */
+  /* border: 2px solid blue; */
+  width: 93%;
+  /* border-bottom: 2px solid lightgray; */
+  outline: none;
+  /* border:none; */
+  font-size: large;
+  border-bottom: 1px solid darkgrey;
+  /* overflow-wrap: ; */
+  background-color: transparent;
+  background-color: rgba(0, 0, 0, .30);
+
+}
+.edit-tut-input:focus {
+  outline: none !important;
+  border-bottom: 2px solid whitesmoke;
+  background-color: rgba(0, 0, 0, .30);
+
+}
+
+.edit-tut-form {
+  /* border: 3px solid green; */
+  flex-direction: column;
+  justify-content: center;
+  /* background-color: rgba(0, 0, 0, .80); */
+  display: flex;
+  /* justify-self: start; */
+  height: 28vw;
+  align-items: center;
+  padding: 15px;
+  margin: 15px;
+  border-radius: 2vw;
+  font-size: x-large;
+}
+
+.edit-tut-label {
+  width: 93%;
+  /* border-bottom: 2px solid lightgray; */
+  outline: none;
+  border:none;
+  font-size: large;
+  background-color: transparent;
+  border-bottom: 1px solid darkgrey;
+  color: #f61c0d;
+  font-size: x-large;
+
+}
+
+.edit-tut-submit {
+  margin-bottom: 30px;
+}
+
+.delete-button {
+  margin-bottom: 30px;
+
+}

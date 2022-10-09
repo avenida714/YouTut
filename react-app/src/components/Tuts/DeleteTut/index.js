@@ -18,7 +18,7 @@ function DeleteTut({tutId}) {
     const waitForDelete = await dispatch(deleteTut(tutId));
     if (waitForDelete) alert("Tut has been deleted sucessfully");
     // history.push(`/profile/${userLoggedIn.id}`);
-    history.push('/')
+    // history.push('/')
 
     };
 
@@ -29,8 +29,8 @@ function DeleteTut({tutId}) {
     <div>
         <div className="Button_div">
 
-          <button className="delete_Btn" onClick={() => dispatchDeleteTut(tutId)}>
-            <i className="fa-solid fa-trash-can"></i> Delete
+          <button className="delete-button" onClick={() => dispatchDeleteTut(tutId)}>
+            <i className="fa-solid fa-trash-can"></i>
           </button>
 
       </div>

@@ -20,7 +20,7 @@ function DeleteComment({commentId, tutId}) {
 
   return (
     <button className="delete_button_edit_comment" onClick={() => deleteComment(commentId)}>
-    <i className="fa-solid fa-trash-can"></i> Delete
+    <i className="fa-solid fa-trash-can"></i>
   </button>
   )
 }

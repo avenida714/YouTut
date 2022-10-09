@@ -1,0 +1,78 @@
+/* profile pic */
+.profile-pic-user {
+  /* border: 2px solid rgb(254, 115, 254); */
+  height: 140px;
+  width: 140px;
+  border-radius: 50%;
+  margin: 16px;
+  cursor: pointer;
+
+}
+
+.profile-text-wrapper {
+  /* border: 2px solid rgb(24, 209, 147); */
+
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.profile-user-name {
+  padding-left: 3vw;
+  font-size: x-large;
+}
+
+.profile-user-about {
+  padding-left: 3vw;
+  font-size: large;
+  padding-bottom: 3vw;
+}
+
+.share-tut {
+  padding-left: 3vw;
+}
+
+.user-feed {
+
+  padding-top: 20px;
+}
+
+
+.display-Tuts-user {
+  padding-left: 3vw;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.card-and-description{
+  /* border: 2px solid rgb(207, 134, 52); */
+  display: flex;
+
+}
+
+.tut-description {
+  /* z-index: 2; */
+/* border: 2px solid rgb(207, 134, 52); */
+  height: 275px;
+  font-size: x-large;
+  padding-left: 15px;
+  padding-top: 15px;
+  /* padding-bottom: 20px; */
+  /* position:static; */
+  border-bottom: 1px solid darkgray;
+  width: 75vw;
+}
+
+.edit-delete-div {
+  width: 70vw;
+
+}
+
+.edit-and-delete-buttons {
+  /* border: 2px solid yellowgreen; */
+  display: flex;
+  flex-direction: row;
+  padding-left: 5vw;
+  /* margin-bottom: 50px; */
+}

@@ -48,7 +48,7 @@ function EditComment({tut, oldComment, commentId }) {
     setHasSubmitted(false);
   };
   return (
-    <div className="leave-comment-pc" /* comment text area */>
+    <div className="leave-comment-edit-comment" /* comment text area */>
       <form className="comment-form" onSubmit={handleSubmit}>
         <div>
           <ul>
@@ -61,17 +61,15 @@ function EditComment({tut, oldComment, commentId }) {
           </ul>
         </div>
 
-        <input
-          className="comment_input"
+        <input className="edit-comment-input"
           type="text"
           autoFocus
-          placeholder="Add a comment..."
+          placeholder="Update your comment..."
           value={comment}
           onChange={(e) => setComment(e.target.value)}
         />
-        <button className="tut-comment">
+        <button className="update-button">
           {" "}
-          <i className="fa-solid fa-pen-to-square"></i>
           Update
         </button>
       </form>

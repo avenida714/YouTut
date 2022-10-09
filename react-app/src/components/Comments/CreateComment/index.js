@@ -31,6 +31,7 @@ function CreateComment({tut}) {
 
     if (e.target.value.length > 300) {
       setDisabled(true);
+
     } else {
       setDisabled(false)
     }
@@ -58,6 +59,18 @@ function CreateComment({tut}) {
     }
   };
 
+  // console.log(comment)
+
+  useEffect(() => {
+    let errs = [];
+
+    if (comment.length > 300) {
+      errs.push("Your comment must be fewer than 300 characters, please.")
+    }
+
+    setErrors(errs)
+
+  }, [comment])
 
 
 
@@ -84,6 +97,9 @@ function CreateComment({tut}) {
       </button>
       </div>
     </form>
+    <div className='login-errors'>
+        {errors ? <div className='login-errors'>{errors}</div>: null}
+      </div>
   </div>
   )
 }
