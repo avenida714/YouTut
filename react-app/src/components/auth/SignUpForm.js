@@ -29,7 +29,7 @@ const SignUpForm = () => {
     if (password === repeatPassword) {
       const data = await dispatch(signUp(username, email, password));
       if (data) {
-        setErrors(["Invalid credentials. "])
+        setErrors(["Invalid credentials."])
       }
     }
   };
