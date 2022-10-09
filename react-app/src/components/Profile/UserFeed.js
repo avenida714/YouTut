@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { useHistory } from 'react-router-dom';
 import { loadUserRequest } from '../../store/session';
 import { getAllTutsOfOneUser, getAllTutsOnYouTut, getCurrentUserTuts } from '../../store/tuts';
 import DeleteTut from '../Tuts/DeleteTut';
@@ -22,6 +23,8 @@ function UserFeed({userId}) {
   const dispatch = useDispatch()
   const [isLoaded, setIsLoaded] = useState(false);
 
+  const [notPressed, setNotPressed] = useState(true)
+
   const [thisIsMyTut, setThisIsMyTut] = useState(false)
 
   const userLoggedInId = useSelector((state) => {
@@ -31,6 +34,8 @@ function UserFeed({userId}) {
   const tutsObj = useSelector((state) => state.tuts);
   const tuts = Object.values(tutsObj)
   tuts.reverse() //will put in reverse chron order, newest first
+
+  const history = useHistory()
 
 
 
@@ -52,9 +57,12 @@ function UserFeed({userId}) {
     .then(() => setIsLoaded(true))
     .then(() => {
       if (userLoggedInId === userId) setThisIsMyTut(true)
-      console.log(userLoggedInId)
-      console.log(userId)
-      console.log(thisIsMyTut)
+      // console.log(userLoggedInId)
+      // console.log(userId)
+      // console.log(thisIsMyTut)
+      if (history.action === 'POP') {
+        setNotPressed(false)
+      }
       return
     })
 
@@ -77,9 +85,9 @@ function UserFeed({userId}) {
     <div className='tut-description'>{tut.tut_description}</div>
       </div>
     <div className="edit-delete-div">
-    {thisIsMyTut ? (<div className='edit-and-delete-buttons'><EditTut tut={tut} tutId={tut.id} oldTitle={tut.title} oldDescription={tut.description}/>
+    {thisIsMyTut && notPressed && (<div className='edit-and-delete-buttons'><EditTut tut={tut} tutId={tut.id} oldTitle={tut.title} oldDescription={tut.description}/>
     <DeleteTut tutId={tut.id}/> </div>
-     ) : null}
+     )}
     </div>
     </div>
 
