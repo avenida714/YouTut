@@ -21,7 +21,7 @@ function Footer() {
     </a>
   </div>
       <div className='welcome'>
-        This site is dedicated to teachers everywhere -- thank you for your commitment towards helping others grow.
+        This site is dedicated to teachers everywhere—thank you for your commitment towards helping others grow.
       </div>
   </div>
   )
