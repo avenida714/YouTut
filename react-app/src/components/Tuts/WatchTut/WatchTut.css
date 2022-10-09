@@ -37,6 +37,8 @@
 
 .tut-title-WatchTut {
   font-size: x-large;
+  -ms-word-break: break-all;
+  word-break: break-all;
 
 }
 

@@ -44,6 +44,8 @@
 
 .comment-content {
   padding-top: 13px;
+  -ms-word-break: break-all;
+  word-break: break-all;
 }
 
 .comment-content-test-edit {
@@ -53,6 +55,7 @@
   width: 70vw;
   /* height: 40px; */
   /* padding-bottom: 50px; */
+
 
 }
 
