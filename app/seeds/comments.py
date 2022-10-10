@@ -46,7 +46,7 @@ def seed_comments():
     comment9 = Comment(
         comment="This is really great content.",
         user_id=3,
-        tut_id=4
+        tut_id=7
     )
     comment10 = Comment(
         comment="It's great to see content like this. Great job!",
