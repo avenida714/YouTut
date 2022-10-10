@@ -20,6 +20,7 @@ function WatchTut() {
   const history = useHistory()
 
   const tutId = useParams().tutId
+  if (!tutId) history.push("/")
 
   const dispatch = useDispatch();
 
@@ -32,6 +33,7 @@ const userLoggedIn = useSelector((state) => {
   useEffect( () => {
     dispatch(getAllTutsOnYouTut())
     dispatch(getOneTutById(tutId))
+
     // .then(() => dispatch(getTutComments(tutId))
    .then(() => setIsLoaded(true))
 
