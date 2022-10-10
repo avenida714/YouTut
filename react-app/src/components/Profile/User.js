@@ -23,13 +23,20 @@ function User() {
 
 
   useEffect(() => {
+    // console.log("user user user", user)
+    // if (userId === undefined) history.push('/')
     if (!userId) {
-      return;
+      history.push('/');
+      return
     }
     (async () => {
       const response = await fetch(`/api/users/${userId}`);
-      const user = await response.json();
-      setUser(user);
+      if(response.ok) {
+        const user = await response.json();
+        setUser(user);
+      } else {
+        history.push('/');
+      }
     })()
     .then(() => setIsLoaded(true))
     .then(() => {
