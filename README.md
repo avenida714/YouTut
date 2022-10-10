@@ -78,3 +78,9 @@ npm start
 
 7. You should now be able to see the web application in your browser when you navigate to localhost!
 
+
+<img width="1401" alt="Screen Shot 2022-10-10 at 7 37 02 AM" src="https://user-images.githubusercontent.com/97048214/194891968-1860a9a4-7d7b-40ab-848a-99661fe5c73c.png">
+<img width="1401" alt="Screen Shot 2022-10-10 at 7 37 31 AM" src="https://user-images.githubusercontent.com/97048214/194891986-4b727e21-65fd-4355-b4d9-428ec74e0704.png">
+<img width="1489" alt="Screen Shot 2022-10-10 at 7 37 49 AM" src="https://user-images.githubusercontent.com/97048214/194891995-2d76f2f7-9c22-4178-a604-03df082aaa58.png">
+<img width="1489" alt="Screen Shot 2022-10-10 at 7 38 16 AM" src="https://user-images.githubusercontent.com/97048214/194892006-500cf2da-dbd0-43c3-b21d-6877d5500806.png">
+<img width="1489" alt="Screen Shot 2022-10-10 at 7 39 00 AM" src="https://user-images.githubusercontent.com/97048214/194892021-005c7408-0b99-447f-af9a-3054ba379eae.png">
