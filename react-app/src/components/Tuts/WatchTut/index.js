@@ -20,7 +20,7 @@ function WatchTut() {
   const history = useHistory()
 
   const tutId = useParams().tutId
-  if (!tutId) history.push("/")
+  // if (!tutId) history.push("/")
 
   const dispatch = useDispatch();
 
@@ -32,6 +32,8 @@ const userLoggedIn = useSelector((state) => {
 
   useEffect( () => {
     dispatch(getAllTutsOnYouTut())
+    if (tut === undefined) history.push("/")
+
     dispatch(getOneTutById(tutId))
 
     // .then(() => dispatch(getTutComments(tutId))

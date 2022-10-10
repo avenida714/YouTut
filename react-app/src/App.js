@@ -53,6 +53,7 @@ function App() {
         <ProtectedRoute>
           <h1> Page Not Found.</h1>
         </ProtectedRoute>
+
       </Switch>
     </BrowserRouter>
   ) : (
