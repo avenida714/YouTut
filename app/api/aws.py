@@ -4,13 +4,14 @@ import os
 import uuid
 
 #define which extensions are allowed
-ALLOWED_EXTENSIONS = {"pdf", "png", "jpg", "jpeg", "gif", "mp4"} #probably want to remove the other images
+ALLOWED_EXTENSIONS = {"pdf", "png", "jpg", "jpeg", "gif", "mp4"}
 
-#get s3 name from the os environment; should be youtut
 BUCKET_NAME = os.environ.get("S3_BUCKET")
 
 #define the location based on the s3 name
-S3_LOCATION = f"http://{BUCKET_NAME}.s3.amazonaws.com/"
+S3_LOCATION = f"https://{BUCKET_NAME}.s3.amazonaws.com/"
+#can I change this to https?????
+
 
 s3 = boto3.client(
    "s3",

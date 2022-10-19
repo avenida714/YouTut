@@ -101,6 +101,7 @@ def upload_tut():
         return video_upload, 400
 
     tut_video_aws_url = video_upload["url"]
+    print("this is the URL", tut_video_aws_url)
     # flask_login allows us to get the current user from the request
 
 
@@ -111,6 +112,7 @@ def upload_tut():
 
     thumbnail_pic = request.files["thumbnail_pic"]
 
+#can probably move this up with the other validations toward the top
     if not allowed_file(thumbnail_pic.filename):
         return {"errors": "This file type is not permitted (Please use pdf, png, jpg, jpeg, or gif)."}, 400
 
@@ -136,7 +138,7 @@ def upload_tut():
             tut_title=request.form.get('tut_title'),
             thumbnail_pic=tut_thumbnail_aws_url,
             )
-    print("this isthe new tut ***********", new_tut)
+    # print("this isthe new tut ***********", new_tut)
     db.session.add(new_tut)
     db.session.commit()
     return {"tut": new_tut.to_dict()}
