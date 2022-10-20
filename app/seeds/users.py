@@ -8,7 +8,7 @@ def seed_users():
         email='demo@aa.io',
         password='password',
         about="I am the Demo User. Thank you visiting YouTut! To learn more about me, please check out my linkedin and github links from the splash page! -Alec Venida",
-        profile_img="https://media-exp1.licdn.com/dms/image/C5603AQELs8a5wWY6gA/profile-displayphoto-shrink_200_200/0/1647834795808?e=1669852800&v=beta&t=hrh5pP_WJYfLWxjFxeggYndQq4HUf2U6SNYnI06ev8c"
+        profile_img="https://youtut.s3.us-west-1.amazonaws.com/msFrizzle.jpg"
     )# 1
 
     rose = User(
