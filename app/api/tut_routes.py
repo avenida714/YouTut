@@ -101,7 +101,7 @@ def upload_tut():
         return video_upload, 400
 
     tut_video_aws_url = video_upload["url"]
-    print("this is the URL", tut_video_aws_url)
+    # print("this is the URL", tut_video_aws_url)
     # flask_login allows us to get the current user from the request
 
 

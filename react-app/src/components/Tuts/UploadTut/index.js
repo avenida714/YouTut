@@ -78,24 +78,14 @@ const UploadTut = () => {
 
          if (!response.ok){
           const body = await response.json()
-          console.log("THIS IS THE BODY ***********", body)
+          // console.log("THIS IS THE BODY ***********", body)
           arrOfErrors.push(body.errors)
           setImageLoading(false)
           setErrors(arrOfErrors)
 
-          // if (errors[0] === "[object Object]" ) {
-          //   console.log(errors[0])
-          //   setErrors("Upload Successful!")
-          // }
 
         }
-        // else {
-        //     setImageLoading(false);
-        //     // a real app would probably use more advanced
-        //     // error handling
-        //     console.log("error");
-        //     // setErrors(response) for more advanced error handling later
-        // }
+
 
         if (response.ok) {
 
