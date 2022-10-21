@@ -118,6 +118,7 @@
 .profile-pic-nav {
   border-radius: 50%;
   height: 100%;
+  width: 55px;
   background-color: transparent;
 }
 
