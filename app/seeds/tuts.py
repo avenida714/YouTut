@@ -200,14 +200,14 @@ def seed_tuts():
 
 # leon 12
     tut22 = Tut(
-        thumbnail_pic="",
+        thumbnail_pic="https://youtut.s3.us-west-1.amazonaws.com/leon-Mongo.jpg",
         tut_description="Let's talk about MongoDB",
         tut_title="What is MongoDB? CRUD Apps For Beginners! (class 40)",
         user_id=12,
         tut_video="https://www.youtube.com/watch?v=3eafTTnEfMw"
     )
     tut23 = Tut(
-        thumbnail_pic="",
+        thumbnail_pic="https://youtut.s3.us-west-1.amazonaws.com/leon-polymorph.jpg",
         tut_description="Are you down with OOP?",
         tut_title="What Is Inheritance & Polymorphism? (JavaScript) Free Bootcamp! (class 31)",
         user_id=12,
