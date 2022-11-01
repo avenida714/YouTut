@@ -4,6 +4,7 @@ from app.models.user import User
 from app.models.comment import Comment
 from .db import db
 from datetime import datetime
+from .likes import likes
 from sqlalchemy.sql import func
 
 #from .likes import likes      #Likes-todo
@@ -28,7 +29,7 @@ class Tut(db.Model):
 
   comments = db.relationship("Comment", back_populates="Tuts", cascade="all, delete-orphan") #Comments-todo
 
-  # likes = db.relationship("User", secondary=likes, back_populates='liked_tuts')  #Likes-todo
+  likes = db.relationship("User", secondary=likes, back_populates='liked_tuts')  #Likes-todo
   # dislikes = db.relationship("User", secondary=dislikes, back_populates='disliked_tuts')
 
 
@@ -64,7 +65,7 @@ class Tut(db.Model):
       'updated_at': self.updated_at,
       'thumbnail_pic': self.thumbnail_pic,
       'user': fetched_user,
-      # "likes": [user.id for user in self.likes],
+      "likes": [user.id for user in self.likes],
       # "dislikes": [user.id for user in self.dislikes],
       "comments": [c.to_dict() for c in self.comments]
     }
