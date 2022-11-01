@@ -234,14 +234,14 @@ def seed_tuts():
 
     # mosh 8
     tut25 = Tut(
-        thumbnail_pic="",
+        thumbnail_pic="https://youtut.s3.us-west-1.amazonaws.com/mosh-let-const-var.jpg",
         tut_description="JavaScript Let vs Var vs Constant",
         tut_title=" JavaScript Let vs Var vs Constant | Mosh",
         user_id=8,
         tut_video="https://www.youtube.com/watch?v=XgSjoHgy3Rk"
     )
     tut26 = Tut(
-        thumbnail_pic="",
+        thumbnail_pic="https://youtut.s3.us-west-1.amazonaws.com/mosh-node.jpg",
         tut_description="Node.js Tutorial for Beginners: Learn Node in 1 Hour",
         tut_title="Node.js Tutorial for Beginners: Learn Node in 1 Hour",
         user_id=8,
