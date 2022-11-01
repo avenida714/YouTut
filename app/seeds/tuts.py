@@ -162,7 +162,7 @@ def seed_tuts():
 
 #Socratica 18
     tut20 = Tut(
-        thumbnail_pic="",
+        thumbnail_pic="https://youtut.s3.us-west-1.amazonaws.com/socratica-views.jpg",
         tut_description="In SQL, a VIEW is a virtual table.  It lets you package a complex query into a single table.  We will discuss several queries in increasing difficulty to show how VIEWs can greatly simplify your work.  In our examples we will introduce CROSS JOINs, Unions, the CONCAT() function, and the COALESCE() function.",
         tut_title="SQL VIEWS + Complex Queries, Cross Joins, Unions, and more! |¦| SQL Tutorial",
         user_id=18,
@@ -170,7 +170,7 @@ def seed_tuts():
     )
 
     tut21 = Tut(
-        thumbnail_pic="",
+        thumbnail_pic="https://youtut.s3.us-west-1.amazonaws.com/socratica-whichDB.jpg",
         tut_description="When learning SQL, you first need a database.  In this video, we help you make your choice. There are many free, open-source options: MySQL, PostgreSQL, MariaDB, Sqlite, and many others.  You can also choose an established commercial option like Oracle, SQL Server, or DB2.  Better still, you can run the database on your own server or in the cloud!",
         tut_title="Relational Databases - How to Choose |¦| SQL Tutorial |¦| SQL for Beginners",
         user_id=18,
