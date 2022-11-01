@@ -182,7 +182,7 @@ def seed_tuts():
 
 # colt steele 5
     tut22 = Tut(
-        thumbnail_pic="",
+        thumbnail_pic="https://youtut.s3.us-west-1.amazonaws.com/git-stash-colt.jpg",
         tut_description="Let's learn how to use git stash!",
         tut_title="Git Stash In 5 Minutes",
         user_id=5,
@@ -190,7 +190,7 @@ def seed_tuts():
     )
 
     tut20 = Tut(
-        thumbnail_pic="",
+        thumbnail_pic="https://youtut.s3.us-west-1.amazonaws.com/TS-w-express-colt.jpg",
         tut_description="Let's learn TypeScript with Express and Node!",
         tut_title="How To Use TypeScript With Express & Node",
         user_id=5,
