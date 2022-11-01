@@ -136,11 +136,16 @@ def seed_tuts():
         user_id=17,
         tut_video="https://www.youtube.com/watch?v=RUuwZEzMJNM"
     )
+
+
+
+
+
     # 1 - demo; 2 rose; 3 alvin; 4 brad; 5 Colt; 6 Ania; 7 Jonas; 8 mosh; 9 jack; 10 kevin; 11 priyanka; 12 leon; 13 kenny; 14 jon; 15 myk; 16 sparky; 17 rachel; 18 socratica
 
 # Alvin 3
     tut18 = Tut(
-        thumbnail_pic="",
+        thumbnail_pic="https://youtut.s3.us-west-1.amazonaws.com/AoCode-day15.jpg",
         tut_description="This problem is from the Advent of Code 2020 Day 15: Rambunctious Recitation",
         tut_title="Advent of code 2020 Day 15",
         user_id=3,
@@ -148,20 +153,120 @@ def seed_tuts():
     )
 
     tut19 = Tut(
-        thumbnail_pic="",
+        thumbnail_pic="https://youtut.s3.us-west-1.amazonaws.com/AoCode-day7.jpg",
         tut_description="This is a walkthrough of day 7 of the 2020 advent of code, including a JavaScript implementation.",
         tut_title="Advent of code 2020 Day 7",
         user_id=3,
         tut_video="https://www.youtube.com/watch?v=8qjS-h6ybdo"
     )
 
-    # tut20 = Tut(
-    #     thumbnail_pic="",
-    #     tut_description="Twinning",
-    #     tut_title="USA",
-    #     user_id=10,
-    #     tut_video=""
-    # )
+#Socratica 18
+    tut20 = Tut(
+        thumbnail_pic="",
+        tut_description="In SQL, a VIEW is a virtual table.  It lets you package a complex query into a single table.  We will discuss several queries in increasing difficulty to show how VIEWs can greatly simplify your work.  In our examples we will introduce CROSS JOINs, Unions, the CONCAT() function, and the COALESCE() function.",
+        tut_title="SQL VIEWS + Complex Queries, Cross Joins, Unions, and more! |¦| SQL Tutorial",
+        user_id=18,
+        tut_video="https://www.youtube.com/watch?v=8jU8SrAPn9c"
+    )
+
+    tut21 = Tut(
+        thumbnail_pic="",
+        tut_description="When learning SQL, you first need a database.  In this video, we help you make your choice. There are many free, open-source options: MySQL, PostgreSQL, MariaDB, Sqlite, and many others.  You can also choose an established commercial option like Oracle, SQL Server, or DB2.  Better still, you can run the database on your own server or in the cloud!",
+        tut_title="Relational Databases - How to Choose |¦| SQL Tutorial |¦| SQL for Beginners",
+        user_id=18,
+        tut_video="https://www.youtube.com/watch?v=WzfDLqt-WIg"
+    )
+
+
+
+
+# colt steele 5
+    tut22 = Tut(
+        thumbnail_pic="",
+        tut_description="Let's learn how to use git stash!",
+        tut_title="Git Stash In 5 Minutes",
+        user_id=5,
+        tut_video="https://www.youtube.com/watch?v=lH3ZkwbVp5E"
+    )
+
+    tut20 = Tut(
+        thumbnail_pic="",
+        tut_description="Let's learn TypeScript with Express and Node!",
+        tut_title="How To Use TypeScript With Express & Node",
+        user_id=5,
+        tut_video="https://www.youtube.com/watch?v=qy8PxD3alWw"
+    )
+
+
+# leon 12
+    tut22 = Tut(
+        thumbnail_pic="",
+        tut_description="Let's talk about MongoDB",
+        tut_title="What is MongoDB? CRUD Apps For Beginners! (class 40)",
+        user_id=12,
+        tut_video="https://www.youtube.com/watch?v=3eafTTnEfMw"
+    )
+    tut23 = Tut(
+        thumbnail_pic="",
+        tut_description="Are you down with OOP?",
+        tut_title="What Is Inheritance & Polymorphism? (JavaScript) Free Bootcamp! (class 31)",
+        user_id=12,
+        tut_video="https://www.youtube.com/watch?v=PD-dx92RJtg"
+    )
+
+    #priyanka 11
+    tut24 = Tut(
+        thumbnail_pic="",
+        tut_description="DNS Domain Name System is the backbone of the internet. What is DNS? How does DNS work? This is a DNS explained tutorial I show you what a DNS server is and how it works.  It explains the different levels of DNS, such as the resolver, root server, domain server, and authoritative name server.",
+        tut_title="What is DNS? | How a DNS Server (Domain Name System) works | DNS Explained",
+        user_id=11,
+        tut_video="https://www.youtube.com/watch?v=g6R9gRWIIK8"
+    )
+
+    # mosh
+    tut25 = Tut(
+        thumbnail_pic="",
+        tut_description="Which database is right for your application? SQL or NoSQL? Are you confused between relational and non relational databases? Want to know how they SQL and NoSQL databases are different? ",
+        tut_title="The battle of relational and non-relational databases | SQL vs NoSQL Explained",
+        user_id=11,
+        tut_video="https://www.youtube.com/watch?v=ORxMMo7it_Y"
+    )
+    tut25 = Tut(
+        thumbnail_pic="",
+        tut_description="Which database is right for your application? SQL or NoSQL? Are you confused between relational and non relational databases? Want to know how they SQL and NoSQL databases are different? ",
+        tut_title="The battle of relational and non-relational databases | SQL vs NoSQL Explained",
+        user_id=11,
+        tut_video="https://www.youtube.com/watch?v=ORxMMo7it_Y"
+    )
+    tut25 = Tut(
+        thumbnail_pic="",
+        tut_description="Which database is right for your application? SQL or NoSQL? Are you confused between relational and non relational databases? Want to know how they SQL and NoSQL databases are different? ",
+        tut_title="The battle of relational and non-relational databases | SQL vs NoSQL Explained",
+        user_id=11,
+        tut_video="https://www.youtube.com/watch?v=ORxMMo7it_Y"
+    )
+    tut25 = Tut(
+        thumbnail_pic="",
+        tut_description="Which database is right for your application? SQL or NoSQL? Are you confused between relational and non relational databases? Want to know how they SQL and NoSQL databases are different? ",
+        tut_title="The battle of relational and non-relational databases | SQL vs NoSQL Explained",
+        user_id=11,
+        tut_video="https://www.youtube.com/watch?v=ORxMMo7it_Y"
+    )
+    tut25 = Tut(
+        thumbnail_pic="",
+        tut_description="Which database is right for your application? SQL or NoSQL? Are you confused between relational and non relational databases? Want to know how they SQL and NoSQL databases are different? ",
+        tut_title="The battle of relational and non-relational databases | SQL vs NoSQL Explained",
+        user_id=11,
+        tut_video="https://www.youtube.com/watch?v=ORxMMo7it_Y"
+    )
+    tut25 = Tut(
+        thumbnail_pic="",
+        tut_description="Which database is right for your application? SQL or NoSQL? Are you confused between relational and non relational databases? Want to know how they SQL and NoSQL databases are different? ",
+        tut_title="The battle of relational and non-relational databases | SQL vs NoSQL Explained",
+        user_id=11,
+        tut_video="https://www.youtube.com/watch?v=ORxMMo7it_Y"
+    )
+
 
 
     db.session.add(tut1)
