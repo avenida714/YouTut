@@ -250,28 +250,31 @@ def seed_tuts():
 
     #traversy 4
     tut27 = Tut(
-        thumbnail_pic="",
+        thumbnail_pic="https://youtut.s3.us-west-1.amazonaws.com/traversy-language.jpg",
         tut_description="This is NOT another annoying top 10 programming language video. We will talk about how programming languages work including low-level & high-level, compiled, interpreted, etc. We will also talk about some of the popular languages and what they are good for.",
         tut_title=" The Programming Language Guide",
         user_id=4,
         tut_video="https://www.youtube.com/watch?v=2lVDktWK-pc"
     )
     tut28 = Tut(
-        thumbnail_pic="",
+        thumbnail_pic="https://youtut.s3.us-west-1.amazonaws.com/traversy-clean.jpg",
         tut_description="Let's talk about the phrase 'clean code' and how it can be pretty subjective and a lot of it comes down to preference.",
         tut_title="Clean Code vs Preference",
         user_id=4,
         tut_video="https://www.youtube.com/watch?v=ou6x2qcLOLI"
     )
 
-    tut25 = Tut(
-        thumbnail_pic="",
-        tut_description="Which database is right for your application? SQL or NoSQL? Are you confused between relational and non relational databases? Want to know how they SQL and NoSQL databases are different? ",
-        tut_title="The battle of relational and non-relational databases | SQL vs NoSQL Explained",
-        user_id=11,
-        tut_video="https://www.youtube.com/watch?v=ORxMMo7it_Y"
+#rose 2
+    tut29 = Tut(
+        thumbnail_pic="https://youtut.s3.us-west-1.amazonaws.com/rose-docker.jpg",
+        tut_description="Rose teaches us about Docker!",
+        tut_title="docker_containers",
+        user_id=2,
+        tut_video="https://vimeo.com/324339043"
     )
-    tut25 = Tut(
+
+
+    tut30 = Tut(
         thumbnail_pic="",
         tut_description="Which database is right for your application? SQL or NoSQL? Are you confused between relational and non relational databases? Want to know how they SQL and NoSQL databases are different? ",
         tut_title="The battle of relational and non-relational databases | SQL vs NoSQL Explained",
