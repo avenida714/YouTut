@@ -273,13 +273,39 @@ def seed_tuts():
         tut_video="https://vimeo.com/324339043"
     )
 
+#jonas 7
+    tut30 = Tut(
+        thumbnail_pic="https://youtut.s3.us-west-1.amazonaws.com/jonas-basics.jpg",
+        tut_description="A fun 3-hour course to get you started with the basics of JavaScript.You're gonna learn the fundamentals of JavaScript and programming: variables, data types, control flow, functions, objects, arrays and many other things. Share with your friends!",
+        tut_title="Up and Running with JavaScript: Free JavaScript Mini-Course — Lecture 2",
+        user_id=7,
+        tut_video="https://www.youtube.com/watch?v=pUEWP7RPjRc"
+    )
+
+    #jack 9
+    tut30 = Tut(
+        thumbnail_pic="https://youtut.s3.us-west-1.amazonaws.com/jack-use-hook.jpg",
+        tut_description="Jack talks about the new React 'use' hook",
+        tut_title="Is the new React use hook a footgun?",
+        user_id=9,
+        tut_video="https://www.youtube.com/watch?v=ytXM05PVcFU"
+    )
+
+    tut31 = Tut(
+        thumbnail_pic="https://youtut.s3.us-west-1.amazonaws.com/jack-fast.jpg",
+        tut_description="Let's make context as fast as any state manager out there by only using the hooks baked right into React.",
+        tut_title="Making React Context FAST!",
+        user_id=9,
+        tut_video="https://www.youtube.com/watch?v=ZKlXqrcBx88"
+    )
+
 
     tut30 = Tut(
-        thumbnail_pic="",
-        tut_description="Which database is right for your application? SQL or NoSQL? Are you confused between relational and non relational databases? Want to know how they SQL and NoSQL databases are different? ",
-        tut_title="The battle of relational and non-relational databases | SQL vs NoSQL Explained",
-        user_id=11,
-        tut_video="https://www.youtube.com/watch?v=ORxMMo7it_Y"
+        thumbnail_pic="https://youtut.s3.us-west-1.amazonaws.com/jonas-basics.jpg",
+        tut_description="A fun 3-hour course to get you started with the basics of JavaScript.You're gonna learn the fundamentals of JavaScript and programming: variables, data types, control flow, functions, objects, arrays and many other things. Share with your friends!",
+        tut_title="Up and Running with JavaScript: Free JavaScript Mini-Course — Lecture 2",
+        user_id=7,
+        tut_video="https://www.youtube.com/watch?v=pUEWP7RPjRc"
     )
 
 
