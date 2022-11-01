@@ -223,35 +223,38 @@ def seed_tuts():
         tut_video="https://www.youtube.com/watch?v=g6R9gRWIIK8"
     )
 
-    # mosh
+    # mosh 8
     tut25 = Tut(
         thumbnail_pic="",
-        tut_description="Which database is right for your application? SQL or NoSQL? Are you confused between relational and non relational databases? Want to know how they SQL and NoSQL databases are different? ",
-        tut_title="The battle of relational and non-relational databases | SQL vs NoSQL Explained",
-        user_id=11,
-        tut_video="https://www.youtube.com/watch?v=ORxMMo7it_Y"
+        tut_description="JavaScript Let vs Var vs Constant",
+        tut_title=" JavaScript Let vs Var vs Constant | Mosh",
+        user_id=8,
+        tut_video="https://www.youtube.com/watch?v=XgSjoHgy3Rk"
+    )
+    tut26 = Tut(
+        thumbnail_pic="",
+        tut_description="Node.js Tutorial for Beginners: Learn Node in 1 Hour",
+        tut_title="Node.js Tutorial for Beginners: Learn Node in 1 Hour",
+        user_id=8,
+        tut_video="https://www.youtube.com/watch?v=TlB_eWDSMt4"
+    )
+
+    #traversy 4
+    tut27 = Tut(
+        thumbnail_pic="",
+        tut_description="This is NOT another annoying top 10 programming language video. We will talk about how programming languages work including low-level & high-level, compiled, interpreted, etc. We will also talk about some of the popular languages and what they are good for.",
+        tut_title=" The Programming Language Guide",
+        user_id=4,
+        tut_video="https://www.youtube.com/watch?v=2lVDktWK-pc"
     )
     tut25 = Tut(
         thumbnail_pic="",
-        tut_description="Which database is right for your application? SQL or NoSQL? Are you confused between relational and non relational databases? Want to know how they SQL and NoSQL databases are different? ",
-        tut_title="The battle of relational and non-relational databases | SQL vs NoSQL Explained",
-        user_id=11,
-        tut_video="https://www.youtube.com/watch?v=ORxMMo7it_Y"
+        tut_description="Let's talk about the phrase 'clean code' and how it can be pretty subjective and a lot of it comes down to preference.",
+        tut_title="Clean Code vs Preference",
+        user_id=4,
+        tut_video="https://www.youtube.com/watch?v=ou6x2qcLOLI"
     )
-    tut25 = Tut(
-        thumbnail_pic="",
-        tut_description="Which database is right for your application? SQL or NoSQL? Are you confused between relational and non relational databases? Want to know how they SQL and NoSQL databases are different? ",
-        tut_title="The battle of relational and non-relational databases | SQL vs NoSQL Explained",
-        user_id=11,
-        tut_video="https://www.youtube.com/watch?v=ORxMMo7it_Y"
-    )
-    tut25 = Tut(
-        thumbnail_pic="",
-        tut_description="Which database is right for your application? SQL or NoSQL? Are you confused between relational and non relational databases? Want to know how they SQL and NoSQL databases are different? ",
-        tut_title="The battle of relational and non-relational databases | SQL vs NoSQL Explained",
-        user_id=11,
-        tut_video="https://www.youtube.com/watch?v=ORxMMo7it_Y"
-    )
+
     tut25 = Tut(
         thumbnail_pic="",
         tut_description="Which database is right for your application? SQL or NoSQL? Are you confused between relational and non relational databases? Want to know how they SQL and NoSQL databases are different? ",
