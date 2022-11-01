@@ -136,22 +136,24 @@ def seed_tuts():
         user_id=17,
         tut_video="https://www.youtube.com/watch?v=RUuwZEzMJNM"
     )
+    # 1 - demo; 2 rose; 3 alvin; 4 brad; 5 Colt; 6 Ania; 7 Jonas; 8 mosh; 9 jack; 10 kevin; 11 priyanka; 12 leon; 13 kenny; 14 jon; 15 myk; 16 sparky; 17 rachel; 18 socratica
 
-    # tut18 = Tut(
-    #     thumbnail_pic="",
-    #     tut_description="Meeaaattt...",
-    #     tut_title="USA",
-    #     user_id=9,
-    #     tut_video=""
-    # )
+# Alvin 3
+    tut18 = Tut(
+        thumbnail_pic="",
+        tut_description="This problem is from the Advent of Code 2020 Day 15: Rambunctious Recitation",
+        tut_title="Advent of code 2020 Day 15",
+        user_id=3,
+        tut_video="https://www.youtube.com/watch?v=p-IsG6Ybo2U"
+    )
 
-    # tut19 = Tut(
-    #     thumbnail_pic="",
-    #     tut_description="Itadakimasu",
-    #     tut_title="USA",
-    #     user_id=10,
-    #     tut_video=""
-    # )
+    tut19 = Tut(
+        thumbnail_pic="",
+        tut_description="This is a walkthrough of day 7 of the 2020 advent of code, including a JavaScript implementation.",
+        tut_title="Advent of code 2020 Day 7",
+        user_id=3,
+        tut_video="https://www.youtube.com/watch?v=8qjS-h6ybdo"
+    )
 
     # tut20 = Tut(
     #     thumbnail_pic="",
