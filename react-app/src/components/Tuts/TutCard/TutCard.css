@@ -30,6 +30,7 @@
   cursor: pointer;
   image-rendering: optimizeQuality;
   object-fit: cover;
+  border-radius: 10px;
 
 
 }
