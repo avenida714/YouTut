@@ -216,11 +216,20 @@ def seed_tuts():
 
     #priyanka 11
     tut24 = Tut(
-        thumbnail_pic="",
+        thumbnail_pic="https://youtut.s3.us-west-1.amazonaws.com/priyanka-dns.jpg",
         tut_description="DNS Domain Name System is the backbone of the internet. What is DNS? How does DNS work? This is a DNS explained tutorial I show you what a DNS server is and how it works.  It explains the different levels of DNS, such as the resolver, root server, domain server, and authoritative name server.",
         tut_title="What is DNS? | How a DNS Server (Domain Name System) works | DNS Explained",
         user_id=11,
         tut_video="https://www.youtube.com/watch?v=g6R9gRWIIK8"
+    )
+
+     #priyanka
+    tut24b = Tut(
+        thumbnail_pic="https://youtut.s3.us-west-1.amazonaws.com/priyanka-sql-nosql.jpg",
+        tut_description="Which database is right for your application? SQL or NoSQL? Are you confused between relational and non relational databases? Want to know how they SQL and NoSQL databases are different?",
+        tut_title="The battle of relational and non-relational databases | SQL vs NoSQL Explained",
+        user_id=11,
+        tut_video="https://www.youtube.com/watch?v=ORxMMo7it_Y"
     )
 
     # mosh 8
@@ -247,7 +256,7 @@ def seed_tuts():
         user_id=4,
         tut_video="https://www.youtube.com/watch?v=2lVDktWK-pc"
     )
-    tut25 = Tut(
+    tut28 = Tut(
         thumbnail_pic="",
         tut_description="Let's talk about the phrase 'clean code' and how it can be pretty subjective and a lot of it comes down to preference.",
         tut_title="Clean Code vs Preference",
@@ -331,6 +340,8 @@ def seed_tuts():
 
     # db.session.add(tut20)
     # db.session.commit()
+
+    #24 and 24b because forgot
 
 
 # Uses a raw SQL query to TRUNCATE the posts table.
