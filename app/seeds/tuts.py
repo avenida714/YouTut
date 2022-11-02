@@ -283,7 +283,7 @@ def seed_tuts():
     )
 
     #jack 9
-    tut30 = Tut(
+    tut31 = Tut(
         thumbnail_pic="https://youtut.s3.us-west-1.amazonaws.com/jack-use-hook.jpg",
         tut_description="Jack talks about the new React 'use' hook",
         tut_title="Is the new React use hook a footgun?",
@@ -291,7 +291,7 @@ def seed_tuts():
         tut_video="https://www.youtube.com/watch?v=ytXM05PVcFU"
     )
 
-    tut31 = Tut(
+    tut32 = Tut(
         thumbnail_pic="https://youtut.s3.us-west-1.amazonaws.com/jack-fast.jpg",
         tut_description="Let's make context as fast as any state manager out there by only using the hooks baked right into React.",
         tut_title="Making React Context FAST!",
@@ -299,13 +299,20 @@ def seed_tuts():
         tut_video="https://www.youtube.com/watch?v=ZKlXqrcBx88"
     )
 
-
-    tut30 = Tut(
-        thumbnail_pic="https://youtut.s3.us-west-1.amazonaws.com/jonas-basics.jpg",
-        tut_description="A fun 3-hour course to get you started with the basics of JavaScript.You're gonna learn the fundamentals of JavaScript and programming: variables, data types, control flow, functions, objects, arrays and many other things. Share with your friends!",
-        tut_title="Up and Running with JavaScript: Free JavaScript Mini-Course — Lecture 2",
-        user_id=7,
-        tut_video="https://www.youtube.com/watch?v=pUEWP7RPjRc"
+#wds kyle 10
+    tut33 = Tut(
+        thumbnail_pic="https://youtut.s3.us-west-1.amazonaws.com/wds-type.jpg",
+        tut_description="It is finally time that I create a full TypeScript project. In this video I show you how to create an entire TODO list application in TypeScript. I also show you how to get started with TypeScript in both a basic and advanced way.",
+        tut_title="How To Build Your First TypeScript Project - TODO List Application",
+        user_id=10,
+        tut_video="https://www.youtube.com/watch?v=jBmrduvKl5w"
+    )
+    tut34 = Tut(
+        thumbnail_pic="https://youtut.s3.us-west-1.amazonaws.com/wds-search.jpg",
+        tut_description="A search bar is something that nearly every application needs at some point, and luckily creating one is surprisingly easy. In this tutorial I will show you how to create a search bar and also how to avoid the common pitfalls of a search bar.",
+        tut_title="How To Create A Search Bar In JavaScript",
+        user_id=10,
+        tut_video="https://www.youtube.com/watch?v=TlP5WIxVirU"
     )
 
 
