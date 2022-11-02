@@ -211,6 +211,9 @@ def seed_users():
     db.session.add(socratica)
     db.session.commit()
 
+    db.session.add(tim)
+    db.session.commit()
+
 
 
 
