@@ -147,7 +147,13 @@ def seed_users():
         profile_img="https://yt3.ggpht.com/ytc/AMLnZu_kUznlQuvS6vodM4JATh65nMsQSNQAqPFfvDS_SQ=s88-c-k-c0x00ffffff-no-rj"
     ) # 18
 
-
+    tim = User(
+        username="Tim_Nienhuis",
+        email="t9house@gmail.com",
+        password="password",
+        about="Tim makes amazing content on youtube. Please check them out here: https://www.youtube.com/c/tim9house/about",
+        profile_img="https://yt3.ggpht.com/ytc/AMLnZu-yLVwhB70kQmjN8VCsb1zMT-U-lScUBuSsF12RTA=s88-c-k-c0x00ffffff-no-rj"
+    ) # 19
 
 
 

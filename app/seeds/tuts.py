@@ -323,6 +323,50 @@ def seed_tuts():
         tut_video="https://www.youtube.com/watch?v=lvBH9Hj5gxk"
     )
 
+    #ania 6
+
+    tut36 = Tut(
+        thumbnail_pic="https://youtut.s3.us-west-1.amazonaws.com/ania-jeopardy.jpg",
+        tut_description="A game of Jeopardy using JavaScript.",
+        tut_title="Let's code Jeopardy in JavaScript!",
+        user_id=6,
+        tut_video="https://www.youtube.com/watch?v=I8BRAgMrxXM"
+    )
+
+    #mosh 8
+    tut37 = Tut(
+        thumbnail_pic="https://youtut.s3.us-west-1.amazonaws.com/mosh-docker.jpg",
+        tut_description="Docker Tutorial for Beginners - Learn Docker for a career in software or DevOps engineering. This Docker tutorial teaches you everything you need to get started.",
+        tut_title="Docker Tutorial for Beginners",
+        user_id=8,
+        tut_video="https://www.youtube.com/watch?v=pTFZFxd4hOI"
+    )
+
+     #tim 19
+    tut38 = Tut(
+        thumbnail_pic="https://youtut.s3.us-west-1.amazonaws.com/tim-mic.jpg",
+        tut_description="Pencil mics are great for recording acoustic guitars. Here is a comparison I did with my buddy Scott Harrah at his home studio. Let us know which one you like best.",
+        tut_title="ACOUSTIC GUITAR MIC SHOOTOUT! Neumann KM184 - Shure SM81 - AKG 451 - Shure KSM137 - Rode NT5",
+        user_id=19,
+        tut_video="https://www.youtube.com/watch?v=B2oYbEIw9hg"
+    )
+
+    #kenny 13
+    tut39 = Tut(
+        thumbnail_pic="https://youtut.s3.us-west-1.amazonaws.com/kenny-looptempo.jpg",
+        tut_description="Quickly Find the Tempo of Any Loop in REAPER",
+        tut_title="Quickly Find the Tempo of Any Loop in REAPER",
+        user_id=13,
+        tut_video="https://www.youtube.com/watch?v=TMAWV__4jQc"
+    )
+    tut40 = Tut(
+        thumbnail_pic="https://youtut.s3.us-west-1.amazonaws.com/jontidy-shotgunmic.jpg",
+        tut_description="Godox sent me their new VDS-M2 short shotgun microphone to review and today I'm using it as a boom mic for a typical indoor tutorial video setup. You'll also hear it connected to an iPad as a usb mic.",
+        tut_title="Using REAPER fx for processing a shotgun mic + Godox VDS-M2 review",
+        user_id=14,
+        tut_video="https://www.youtube.com/watch?v=tkZKPUwqp3o"
+    )
+
 
 
 
@@ -433,6 +477,21 @@ def seed_tuts():
     db.session.commit()
 
     db.session.add(tut35)
+    db.session.commit()
+
+    db.session.add(tut36)
+    db.session.commit()
+
+    db.session.add(tut37)
+    db.session.commit()
+
+    db.session.add(tut38)
+    db.session.commit()
+
+    db.session.add(tut39)
+    db.session.commit()
+
+    db.session.add(tut40)
     db.session.commit()
 
 
