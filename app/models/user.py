@@ -3,6 +3,9 @@ from .db import db
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
 
+from .likes import likes
+
+
 
 class User(db.Model, UserMixin):
     __tablename__ = 'users'
@@ -49,5 +52,5 @@ class User(db.Model, UserMixin):
 
     comments = db.relationship("Comment", back_populates="user", cascade="all, delete-orphan")
 
-    # liked_tuts = db.relationship('Tut', secondary=likes, back_populates='likes')  todo-Likes
+    liked_tuts = db.relationship('Tut', secondary=likes, back_populates='likes')  #todo-Likes
     # disliked_tuts = db.relationship('Tut', secondary=dislikes, back_populates='dislikes')

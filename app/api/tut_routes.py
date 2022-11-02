@@ -252,3 +252,19 @@ def create_comment(id):
         return comment.to_dict()
     else:
         raise Exception("Unauthorized user")
+
+
+@tut_routes.route('/<int:tut_id>/tut_likes', methods = ["POST"])
+@login_required
+def like_unlike_a_tut(tut_id):
+
+    tut = Tut.query.get_or_404(tut_id)
+
+    if current_user not in tut.likes:
+        tut.likes.append(current_user)
+        db.session.commit()
+    else:
+        tut.likes.remove(current_user)
+        db.session.commit()
+
+    return {'post': tut.to_dict()}
