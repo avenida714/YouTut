@@ -1,4 +1,9 @@
 /* profile pic */
+
+.profile-wrapper {
+  padding-top: 60px;
+}
+
 .profile-pic-user {
   /* border: 2px solid rgb(254, 115, 254); */
   height: 140px;

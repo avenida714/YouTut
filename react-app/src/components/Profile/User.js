@@ -76,7 +76,7 @@ function User() {
   return (
     isLoaded && (
     <div>
-      <div>
+      <div className='profile-wrapper'>
         <img alt="profile" className='profile-pic-user' src={user.profile_img} />
       </div>
       <div className='profile-text-wrapper'>
