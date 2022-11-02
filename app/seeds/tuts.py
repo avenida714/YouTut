@@ -368,16 +368,60 @@ def seed_tuts():
     db.session.add(tut17)
     db.session.commit()
 
-    # db.session.add(tut18)
-    # db.session.commit()
+    db.session.add(tut18)
+    db.session.commit()
 
-    # db.session.add(tut19)
-    # db.session.commit()
+    db.session.add(tut19)
+    db.session.commit()
 
-    # db.session.add(tut20)
-    # db.session.commit()
+    db.session.add(tut20)
+    db.session.commit()
 
-    #24 and 24b because forgot
+    db.session.add(tut21)
+    db.session.commit()
+
+    db.session.add(tut22)
+    db.session.commit()
+
+    db.session.add(tut23)
+    db.session.commit()
+
+    db.session.add(tut24)
+    db.session.commit()
+
+    db.session.add(tut24b)
+    db.session.commit()
+
+    db.session.add(tut25)
+    db.session.commit()
+
+    db.session.add(tut26)
+    db.session.commit()
+
+    db.session.add(tut27)
+    db.session.commit()
+
+    db.session.add(tut28)
+    db.session.commit()
+
+    db.session.add(tut29)
+    db.session.commit()
+
+    db.session.add(tut30)
+    db.session.commit()
+
+    db.session.add(tut31)
+    db.session.commit()
+
+    db.session.add(tut32)
+    db.session.commit()
+
+    db.session.add(tut33)
+    db.session.commit()
+
+    db.session.add(tut34)
+    db.session.commit()
+
 
 
 # Uses a raw SQL query to TRUNCATE the posts table.
