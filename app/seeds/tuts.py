@@ -315,6 +315,16 @@ def seed_tuts():
         tut_video="https://www.youtube.com/watch?v=TlP5WIxVirU"
     )
 
+    tut35 = Tut(
+        thumbnail_pic="https://youtut.s3.us-west-1.amazonaws.com/alvin-30min.jpg",
+        tut_description="Can I build a complete fullstack MERN application in 30 minutes? Let's find out.",
+        tut_title="30 Minute App Challenge | MERN Stack Coding Challenge",
+        user_id=3,
+        tut_video="https://www.youtube.com/watch?v=lvBH9Hj5gxk"
+    )
+
+
+
 
 
     db.session.add(tut1)
@@ -420,6 +430,9 @@ def seed_tuts():
     db.session.commit()
 
     db.session.add(tut34)
+    db.session.commit()
+
+    db.session.add(tut35)
     db.session.commit()
 
 
