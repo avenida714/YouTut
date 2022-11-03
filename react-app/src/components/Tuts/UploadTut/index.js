@@ -227,7 +227,7 @@ const UploadTut = () => {
 
             />
             <button type="submit">Upload!</button>
-            {(imageLoading)&& <p>Loading...</p>}
+            {(imageLoading)&& <div className="spinner"></div>}
         </form>
 
         </div>
