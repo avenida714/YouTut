@@ -10,6 +10,7 @@
   /* border: 2px solid blue; */
   display:flex;
   flex-direction: column;
+  padding-top: 60px;
 }
 
 .watch-tut-player {
@@ -87,4 +88,8 @@
   color:#969696;
   font-size:small;
   padding-top: 8px;
+}
+
+#player {
+  padding-top: 60px;
 }
