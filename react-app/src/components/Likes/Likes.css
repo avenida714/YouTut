@@ -1,5 +1,5 @@
 .likes-container {
-border: 2px solid green;
+/* border: 2px solid green; */
 display: flex;
 align-items: center;
 width: max-content;
@@ -13,4 +13,10 @@ padding-left: 28vw;
 .fa-thumbs-up {
   color: #f61c0d;
   cursor: pointer;
+}
+
+.likes-count {
+  /* border: 2px solid green; */
+  padding-left: 1vw;
+
 }

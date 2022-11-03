@@ -63,9 +63,9 @@
 .profile-pic-WatchTut {
   border-radius: 50%;
   /* border: 1px solid blue; */
-  height: 45px;
-  width: 45px;
-  padding:8px;
+  height: 70px;
+  width: 70px;
+  padding: 8px;
   cursor: pointer;
 }
 
@@ -81,7 +81,7 @@
 .tut-username-WatchTut{
   /* border: 2px solid sienna; */
   padding-top: 0px;
-  font-size: large;
+  font-size: x-large;
   padding-top: 8px;
 }
 
