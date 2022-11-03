@@ -1,0 +1,25 @@
+.likes-container {
+/* border: 2px solid green; */
+display: flex;
+align-items: center;
+width: max-content;
+height: 50px;
+font-size: 30px;
+padding-left: 28vw;
+
+
+}
+
+.fa-thumbs-up {
+  cursor:pointer
+}
+
+#red-color{
+  color: #f61c0d;
+}
+
+.likes-count {
+  /* border: 2px solid green; */
+  padding-left: 1vw;
+
+}

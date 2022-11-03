@@ -101,10 +101,28 @@
 
 }
 
+.upload-and-profile-pic {
+    /* border: 2px solid red; */
+    display: flex;
+    height: 60px;
+    width: 100%;
+    align-items: center;
+
+
+}
+
+.fa-upload {
+  color: #f61c0d;
+  /* height: 100%; */
+  font-size: 40px;
+  padding: 5px;
+  background-color: transparent;
+}
+
 .Profile-Photo {
   border-radius: 50%;
   /* border: 2px solid red; */
-  height: 60px;
+  height: 100%;
 }
 
 .user-icon-wrapper {
@@ -118,8 +136,9 @@
 .profile-pic-nav {
   border-radius: 50%;
   height: 100%;
-  width: 55px;
+  width: 60px;
   background-color: transparent;
+  padding: 5px;
 }
 
 .center {

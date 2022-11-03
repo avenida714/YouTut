@@ -44,7 +44,11 @@ const NavBar = () => {
             // activeClassName="active"
             // className="icon"
           >
+            <div className='upload-and-profile-pic'>
+              <i className='fa-solid fa-upload'></i>
             <img className="profile-pic-nav" alt="profile-thumbnail" src={userLoggedIn.profile_img} />
+            </div>
+
           </NavLink>
         </div>
 

@@ -9,6 +9,8 @@ const CREATE_TUT = "tuts/addATut"
 
 const DELETE_TUT = "tuts/deleteATut"
 
+const LIKE_TUT = "tuts/likeTut";
+
 
 
 //~~~~~~~~~~~ACTION CREATORS~~~~~~~~~~~~~~~~
@@ -48,7 +50,13 @@ const destroyTutAC = (tutId) => {
   }
 }
 
-
+//Like a tut
+const actionLikeTut = (tut) => {
+  return {
+    type: LIKE_TUT,
+    tut,
+  };
+};
 
 
 //~~~~~~~~~~~THUNKS~~~~~~~~~~~~~~~~
@@ -161,6 +169,17 @@ export const deleteTut = (tutId) => async (dispatch) => {
 }
 
 
+//LIKE A TUT
+export const likeATut = (tut) => async (dispatch) => {
+  const response = await fetch(`/api/tuts/${tut.id}/tut_likes`, {
+    method: "POST",
+  });
+  if (response.ok) {
+    dispatch(actionLikeTut(tut));
+  }
+};
+
+
 //~~~~~~~~~~~REDUCER~~~~~~~~~~~~~~~~
 
 //Initial State:
@@ -194,6 +213,11 @@ const tutsReducer = (state = initialState, action) => {
       const newState = {...state}
       delete newState[action.tutId]
       return newState
+    }
+    case LIKE_TUT: {
+      newState = { ...state };
+      newState[action.tut.id] = action.tut;
+      return newState;
     }
 
 
