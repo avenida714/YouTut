@@ -11,8 +11,11 @@ padding-left: 28vw;
 }
 
 .fa-thumbs-up {
+  cursor:pointer
+}
+
+#red-color{
   color: #f61c0d;
-  cursor: pointer;
 }
 
 .likes-count {

@@ -40,6 +40,8 @@ function Likes({tut}) {
                 {isLikedByUser ? (
                   <i
                     className="fa-solid fa-thumbs-up"
+                    id="red-color"
+
                     onClick={() => {
                       likeTut(tut);
                     }}
