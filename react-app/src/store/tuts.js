@@ -214,6 +214,12 @@ const tutsReducer = (state = initialState, action) => {
       delete newState[action.tutId]
       return newState
     }
+    case LIKE_TUT: {
+      newState = { ...state };
+      newState[action.tut.id] = action.tut;
+      //   console.log(newState[action.post.id]);
+      return newState;
+    }
 
 
     default:
