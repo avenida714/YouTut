@@ -169,6 +169,17 @@ export const deleteTut = (tutId) => async (dispatch) => {
 }
 
 
+//LIKE A TUT
+export const likeATut = (tut) => async (dispatch) => {
+  const response = await fetch(`/api/tuts/${tut.id}/tut_likes`, {
+    method: "POST",
+  });
+  if (response.ok) {
+    dispatch(actionLikeTut(tut));
+  }
+};
+
+
 //~~~~~~~~~~~REDUCER~~~~~~~~~~~~~~~~
 
 //Initial State:
