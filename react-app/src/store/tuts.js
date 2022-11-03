@@ -9,6 +9,8 @@ const CREATE_TUT = "tuts/addATut"
 
 const DELETE_TUT = "tuts/deleteATut"
 
+const LIKE_TUT = "tuts/likeTut";
+
 
 
 //~~~~~~~~~~~ACTION CREATORS~~~~~~~~~~~~~~~~
@@ -48,7 +50,13 @@ const destroyTutAC = (tutId) => {
   }
 }
 
-
+//Like a tut
+const actionLikeTut = (tut) => {
+  return {
+    type: LIKE_TUT,
+    tut,
+  };
+};
 
 
 //~~~~~~~~~~~THUNKS~~~~~~~~~~~~~~~~
