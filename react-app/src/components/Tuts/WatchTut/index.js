@@ -8,6 +8,7 @@ import { getTutComments } from "../../../store/comments";
 
 import { getAllTutsOnYouTut, getOneTutById } from "../../../store/tuts";
 import CommentFeed from "../../Comments";
+import Likes from "../../Likes";
 import MainFeed from "../../MainFeed";
 import DeleteTut from "../DeleteTut";
 import EditTut from "../EditTut";
@@ -100,7 +101,9 @@ function WatchTut() {
             </div>
             <div className="Username-WatchTut">
               <div className="tut-username-WatchTut">{tut.user.username}</div>
-              <div className="likes-div">LIKES</div>
+              <div className="likes-div">
+                <Likes tut={tut} />
+              </div>
               <div className="tut-about-WatchTut">{tut.tut_description}</div>
             </div>
           </div>

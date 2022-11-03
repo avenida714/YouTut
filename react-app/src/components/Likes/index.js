@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { likeATut } from '../../store/tuts';
 
-import { TiHeartFullOutline, TiHeartOutline } from "react-icons/ti";
+// import { TiHeartFullOutline, TiHeartOutline } from "react-icons/ti";
 
 
 function Likes({tut}) {
@@ -36,15 +36,15 @@ function Likes({tut}) {
     <div>
           <div className="likes padding sp-likes">
                 {isLikedByUser ? (
-                  <TiHeartFullOutline
-                    className="heart-pc-fill"
+                  <i
+                    className="fa-solid fa-thumbs-up"
                     onClick={() => {
                       likeTut(tut);
                     }}
                   />
                 ) : (
-                  <TiHeartOutline
-                    className="heart-pc"
+                  <i
+                    className="fa-regular fa-thumbs-up"
                     onClick={() => {
                       likeTut(tut);
                     }}
