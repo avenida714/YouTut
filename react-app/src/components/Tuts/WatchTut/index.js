@@ -38,39 +38,12 @@ function WatchTut() {
       .then(() => setIsLoaded(true));
   }, [dispatch]);
 
-  const tuts = useSelector((state) => state.tuts);
-
   const tut = useSelector((state) => state.tuts[tutId]);
-
-  const currentlyWatchingThisTut = tuts[tutId];
-
-  console.log("CURRENTLY WATCHING THIS TUT", currentlyWatchingThisTut);
-
-  // console.log("THIS IS THE TUTURL ****", tutUrl)
-
-  // const tut = getOneTutById(tutId)
-
-  // console.log("TUUUUUUUUUT", tut)
-
-  // console.log("use params of .tutId", tut)
 
   const usersProfilePage = () => {
     let path = `/users/${tut.user_id}`;
     history.push(path);
   };
-
-  // let editAndDelete
-
-  // if (isLoaded) {
-  //   if (userLoggedIn.id === tut.user_id) {
-  //     editAndDelete = (<>
-  //     <EditTut tut={tut} tutId={tut.id} oldTitle={tut.title} oldDescription={tut.description}/>
-  //   <DeleteTut tutId={tut.id} />
-  //   </>)
-  //   }else {
-  //   editAndDelete = null
-  // }
-  // }
 
   return (
     isLoaded &&
@@ -104,9 +77,9 @@ function WatchTut() {
               <div className="likes-div">
                 <Likes tut={tut} />
               </div>
-              <div className="tut-about-WatchTut">{tut.tut_description}</div>
             </div>
           </div>
+          <div className="tut-about-WatchTut">{tut.tut_description}</div>
 
           <div className="comments-div">
             <CommentFeed tut={tut} />

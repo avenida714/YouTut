@@ -50,6 +50,8 @@
   height: fit-content;
   width: -webkit-fill-available;
   padding:5px;
+  align-items: stretch;
+
 }
 .profile-pic-div-WatchTut{
   /* border: 2px solid purple; */
@@ -69,7 +71,7 @@
 
 .Username-WatchTut{
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: flex-start;
   /* border: 2px solid orange; */
   /* height: fit-content; */

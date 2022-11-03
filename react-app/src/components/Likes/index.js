@@ -19,7 +19,7 @@ function Likes({tut}) {
 
 
   const likeTut = (tut) => {
-    console.log(tut);
+    // console.log(tut);
     dispatch(likeATut(tut));
     // dispatch(getAllPosts());
     // await dispatch(getOnePostById(post.id));
@@ -36,7 +36,7 @@ function Likes({tut}) {
 
   return (
     <div>
-          <div className="likes padding sp-likes">
+          <div className="likes-container">
                 {isLikedByUser ? (
                   <i
                     className="fa-solid fa-thumbs-up"
