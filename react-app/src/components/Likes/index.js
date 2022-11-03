@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { likeATut } from '../../store/tuts';
 
+import "./Likes.css"
+
 // import { TiHeartFullOutline, TiHeartOutline } from "react-icons/ti";
 
 
