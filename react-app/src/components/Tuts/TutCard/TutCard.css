@@ -73,8 +73,8 @@
   font-size: large;
   padding-top: 8px;
   cursor: pointer;
-  -ms-word-break: break-all;
-  word-break: break-all;
+  -ms-word-break: break-word;
+  word-break: break-word;
 }
 
 .tut-username {
