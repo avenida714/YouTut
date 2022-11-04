@@ -18,7 +18,7 @@ from .config import Config
 app = Flask(__name__)
 
 # protect against large uploads  AWS
-app.config['MAX_CONTENT_LENGTH'] = 30 * 1000 * 1000
+app.config['MAX_CONTENT_LENGTH'] = 40 * 1000 * 1000
 
 # Setup login manager
 login = LoginManager(app)
