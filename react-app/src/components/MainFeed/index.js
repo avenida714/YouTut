@@ -64,7 +64,7 @@ function MainFeed() {
 
 
 // Search bar logic
-//      const searchTutsResults = tuts.filter(tut => tut.tut_title.includes(searchText.toLowerCase()) || tut.user.includes(searchText.toLowerCase()))
+//      const searchTutsResults = tuts.filter(tut => tut.tut_title.includes(searchText.toLowerCase()) || tut.user.username.includes(searchText.toLowerCase()) || tut.tut_description.includes(searchText.toLowerCase()))
 
 /*
 
