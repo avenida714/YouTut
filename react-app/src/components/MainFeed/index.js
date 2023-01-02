@@ -78,7 +78,7 @@ function MainFeed() {
           placeholder="Search"
           onChange={(e) => handleChange(e.target.value)}
           value={searchWords}
-        >
+        />
 
 
         useEffect()

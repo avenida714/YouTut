@@ -1,5 +1,5 @@
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, NavLink } from 'react-router-dom';
 import { loadUserRequest } from '../../store/session';
@@ -16,12 +16,19 @@ import playImage from "./youtut-icon.png"
 const NavBar = () => {
 
   const dispatch = useDispatch();
+  const [searchText, setSearchText] = useState('');
+
 
   const userLoggedIn = useSelector((state) => state.session.user)
 
   useEffect(() => {
     dispatch(loadUserRequest(userLoggedIn.id))
+
   }, [dispatch])
+
+  useEffect(() => {
+     console.log("text:", searchText)
+  }, [searchText])
 
   return (
     <div className='navbar-wrapper'>
@@ -36,6 +43,13 @@ const NavBar = () => {
            {" "}
             YouTut{" "}
           </Link>
+        </div>
+        <div>
+        <input
+          placeholder="Search"
+          onChange={(e) => setSearchText(e.target.value)}
+          value={searchText}
+        />
         </div>
         <div className="user-icon-wrapper">
         <NavLink
