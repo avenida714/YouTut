@@ -44,13 +44,15 @@ const NavBar = () => {
             YouTut{" "}
           </Link>
         </div>
-        <div>
+        <form>
         <input
           placeholder="Search"
+          onSubmit={console.log("hello")}
           onChange={(e) => setSearchText(e.target.value)}
           value={searchText}
         />
-        </div>
+        <button type="submit">Search</button>
+        </form>
         <div className="user-icon-wrapper">
         <NavLink
             to={`/users/${userLoggedIn.id}`}
