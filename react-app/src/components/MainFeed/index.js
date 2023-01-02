@@ -77,8 +77,12 @@ function MainFeed() {
         <input
           placeholder="Search"
           onChange={(e) => handleChange(e.target.value)}
-          value={searchText}
+          value={searchWords}
         >
+
+
+        useEffect()
+          setSearchText(searchWords)
 */
 
 
