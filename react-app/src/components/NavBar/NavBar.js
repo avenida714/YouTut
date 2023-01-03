@@ -51,7 +51,7 @@ const NavBar = () => {
           onChange={(e) => setSearchText(e.target.value)}
           value={searchText}
         />
-        <button type="submit">Search</button>
+        <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
         </form>
         <div className="user-icon-wrapper">
         <NavLink
