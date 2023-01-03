@@ -44,15 +44,18 @@ const NavBar = () => {
             YouTut{" "}
           </Link>
         </div>
-        <form>
+        <div className='search-div' >
+          <form>
         <input
           placeholder="Search"
           onSubmit={console.log("hello")}
           onChange={(e) => setSearchText(e.target.value)}
           value={searchText}
         />
-        <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+        <button type="submit" className='search-button' ><i class="fa-solid fa-magnifying-glass"></i></button>
         </form>
+        </div>
+
         <div className="user-icon-wrapper">
         <NavLink
             to={`/users/${userLoggedIn.id}`}
