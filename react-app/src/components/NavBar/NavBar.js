@@ -11,6 +11,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import "./NavBar.css"
 
 import playImage from "./youtut-icon.png"
+import SearchBar from '../Search/SearchBar';
 
 
 const NavBar = () => {
@@ -47,7 +48,9 @@ const NavBar = () => {
           </Link>
         </div>
 
-
+        <div className='search-bar-div'>
+          <SearchBar />
+        </div>
 
         <div className="user-icon-wrapper">
         <NavLink

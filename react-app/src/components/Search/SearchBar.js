@@ -20,16 +20,15 @@ function SearchBar() {
 
   return (
     <div className='search-div' >
-    <div>
+    <form>
   <input
     placeholder="Search"
     type="text"
-    onChange={searchMeFunc}
-    value={searchText}
+    onSubmit={searchMeFunc}
   />
-  <button type="submit" className='search-button' onClick={history.push(searchText)}
+  <button type="submit" className='search-button' onSubmit={history.push(`/search/${searchText}`)}
 ><i class="fa-solid fa-magnifying-glass"></i></button>
-  </div>
+  </form>
   </div>
   )
 }
