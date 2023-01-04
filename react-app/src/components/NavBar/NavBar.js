@@ -16,7 +16,17 @@ import playImage from "./youtut-icon.png"
 const NavBar = () => {
 
   const dispatch = useDispatch();
-  const [searchText, setSearchText] = useState('');
+  // const [searchText, setSearchText] = useState('');
+
+
+  //Search Props
+  const [searchText, setSearchText] = useState('')
+
+  const searchMeFunc = (e) => {
+    e.preventDefault();
+    setSearchText(e.target.value)
+  }
+
 
 
   const userLoggedIn = useSelector((state) => state.session.user)
@@ -29,6 +39,8 @@ const NavBar = () => {
   useEffect(() => {
      console.log("text:", searchText)
   }, [searchText])
+
+  // console.log("text:", searchText)
 
   return (
     <div className='navbar-wrapper'>
@@ -44,17 +56,19 @@ const NavBar = () => {
             YouTut{" "}
           </Link>
         </div>
-        <div className='search-div' >
-          <form>
+
+        {/* <div className='search-div' >
+          <div>
         <input
           placeholder="Search"
-          onSubmit={console.log("hello")}
-          onChange={(e) => setSearchText(e.target.value)}
+          type="text"
+          onChange={searchMeFunc}
           value={searchText}
         />
-        <button type="submit" className='search-button' ><i class="fa-solid fa-magnifying-glass"></i></button>
-        </form>
+        <button type="submit" className='search-button' onClick={(e) => searchMeFunc()}
+><i class="fa-solid fa-magnifying-glass"></i></button>
         </div>
+        </div> */}
 
         <div className="user-icon-wrapper">
         <NavLink
