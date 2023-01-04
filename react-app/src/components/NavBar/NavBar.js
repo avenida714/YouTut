@@ -57,7 +57,7 @@ const NavBar = () => {
           </Link>
         </div>
 
-        {/* <div className='search-div' >
+        <div className='search-div' >
           <div>
         <input
           placeholder="Search"
@@ -68,7 +68,7 @@ const NavBar = () => {
         <button type="submit" className='search-button' onClick={(e) => searchMeFunc()}
 ><i class="fa-solid fa-magnifying-glass"></i></button>
         </div>
-        </div> */}
+        </div>
 
         <div className="user-icon-wrapper">
         <NavLink
