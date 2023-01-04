@@ -1,5 +1,5 @@
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, NavLink } from 'react-router-dom';
 import { loadUserRequest } from '../../store/session';
@@ -16,12 +16,31 @@ import playImage from "./youtut-icon.png"
 const NavBar = () => {
 
   const dispatch = useDispatch();
+  // const [searchText, setSearchText] = useState('');
+
+
+  //Search Props
+  const [searchText, setSearchText] = useState('')
+
+  const searchMeFunc = (e) => {
+    e.preventDefault();
+    setSearchText(e.target.value)
+  }
+
+
 
   const userLoggedIn = useSelector((state) => state.session.user)
 
   useEffect(() => {
     dispatch(loadUserRequest(userLoggedIn.id))
+
   }, [dispatch])
+
+  useEffect(() => {
+     console.log("text:", searchText)
+  }, [searchText])
+
+  // console.log("text:", searchText)
 
   return (
     <div className='navbar-wrapper'>
@@ -37,6 +56,20 @@ const NavBar = () => {
             YouTut{" "}
           </Link>
         </div>
+
+        {/* <div className='search-div' >
+          <div>
+        <input
+          placeholder="Search"
+          type="text"
+          onChange={searchMeFunc}
+          value={searchText}
+        />
+        <button type="submit" className='search-button' onClick={(e) => searchMeFunc()}
+><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+        </div> */}
+
         <div className="user-icon-wrapper">
         <NavLink
             to={`/users/${userLoggedIn.id}`}

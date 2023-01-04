@@ -13,6 +13,11 @@ import MainFeed from './components/MainFeed';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
+
+
+
+
+
   const dispatch = useDispatch();
 
   const user = useSelector((state) => state.session.user)
@@ -38,14 +43,11 @@ function App() {
         <Route path='/sign-up' exact={true}>
           <SignUpForm />
         </Route>
-        {/* <ProtectedRoute path='/users' exact={true} >
-          <UsersList/>
-        </ProtectedRoute> */}
         <ProtectedRoute path='/users/:userId' exact={true} >
           <User />
         </ProtectedRoute>
         <ProtectedRoute path='/' exact={true} >
-          <MainFeed />
+          <MainFeed  />
         </ProtectedRoute>
         <ProtectedRoute exact path="/tuts/:tutId">
           <WatchTut />

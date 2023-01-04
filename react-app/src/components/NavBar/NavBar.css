@@ -147,3 +147,17 @@
   justify-content: center;
   padding-bottom: 8px;
 }
+
+.search-div {
+  display: flex;
+  width: 90vw;
+  /* border: 2px solid red; */
+}
+
+.fa-solid {
+  background-color: transparent;
+}
+
+.search-button {
+  max-width: 30px;
+}
