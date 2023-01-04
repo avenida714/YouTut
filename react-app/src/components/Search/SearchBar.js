@@ -12,6 +12,12 @@ function SearchBar() {
     setSearchText(e.target.value)
   }
 
+  const submitMe = () => {
+    searchMeFunc()
+    history.push(`/search/${searchText}`)
+    console.log("SUBMIT ME FUNC", searchText)
+  }
+
 //   useEffect(() => {
 //     console.log("text:", searchText)
 //  }, [searchText])
@@ -24,9 +30,9 @@ function SearchBar() {
   <input
     placeholder="Search"
     type="text"
-    onSubmit={searchMeFunc}
+    onSubmit={console.log("HELLO")}
   />
-  <button type="submit" className='search-button' onSubmit={history.push(`/search/${searchText}`)}
+  <button type="submit" className='search-button' onSubmit={console.log("HI MAN")}
 ><i class="fa-solid fa-magnifying-glass"></i></button>
   </form>
   </div>
