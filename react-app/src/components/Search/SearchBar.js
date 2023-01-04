@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
+import { useHistory } from 'react-router-dom';
 
 function SearchBar() {
 
-
+  const history = useHistory()
   //Search Props
   const [searchText, setSearchText] = useState('')
 
@@ -10,6 +11,12 @@ function SearchBar() {
     e.preventDefault();
     setSearchText(e.target.value)
   }
+
+//   useEffect(() => {
+//     console.log("text:", searchText)
+//  }, [searchText])
+
+//  // console.log("text:", searchText)
 
   return (
     <div className='search-div' >
@@ -20,7 +27,7 @@ function SearchBar() {
     onChange={searchMeFunc}
     value={searchText}
   />
-  <button type="submit" className='search-button' onClick={(e) => searchMeFunc()}
+  <button type="submit" className='search-button' onClick={history.push(searchText)}
 ><i class="fa-solid fa-magnifying-glass"></i></button>
   </div>
   </div>

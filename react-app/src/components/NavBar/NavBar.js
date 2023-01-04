@@ -30,11 +30,7 @@ const NavBar = () => {
 
   }, [dispatch])
 
-  useEffect(() => {
-     console.log("text:", searchText)
-  }, [searchText])
 
-  // console.log("text:", searchText)
 
   return (
     <div className='navbar-wrapper'>
