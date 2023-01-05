@@ -1,21 +1,57 @@
-import React from 'react'
-import { useSelector } from 'react-redux';
+import React, { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
+import { loadUserRequest } from '../../store/session';
+import { getAllTutsOnYouTut } from '../../store/tuts';
+import TutCard from '../Tuts/TutCard';
 
 function SearchFeed() {
+
+  const dispatch = useDispatch()
+
+  const [isLoaded, setIsLoaded] = useState(false);
+
 
   const tutsObj = useSelector((state) => state.tuts);
   const tuts = Object.values(tutsObj)
 
   const {searchText} = useParams();
 
+  const userLoggedIn = useSelector((state) => {
+    return state.session.user;
+  })
 
-  // tuts.filter(tut => tut.tut_title.toLowerCase().includes(searchText.toLowerCase()) || tut.user.username.toLowerCase().includes(searchText.toLowerCase()) || tut.tut_description.toLowerCase().includes(searchText.toLowerCase()))
+
+  const searchResults = tuts.filter(tut => tut.tut_title.toLowerCase().includes(searchText.toLowerCase()) || tut.user.username.toLowerCase().includes(searchText.toLowerCase()) || tut.tut_description.toLowerCase().includes(searchText.toLowerCase()))
+
+
+  const displayTuts = searchResults.map((tut, i) => (
+    <div>
+    <TutCard key={i} tut={tut} />
+    </div>
+
+  ))
+
+  useEffect(() => {
+    dispatch(getAllTutsOnYouTut())
+    .then(() =>  dispatch(loadUserRequest(userLoggedIn.id)))
+    .then(() => setIsLoaded(true)
+    )
+  }, [dispatch, userLoggedIn.id])
 
 
   return (
-    <div>SearchFeed</div>
+    isLoaded && (
+    <div className="outer-most-wrapper">
+    <div className='main-feed-display'>
+      <div className='display-Tuts'>
+        search results
+      {displayTuts}
+      </div>
+    </div>
+  </div>
   )
+  );
 }
 
 export default SearchFeed
