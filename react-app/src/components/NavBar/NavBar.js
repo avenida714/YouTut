@@ -11,6 +11,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import "./NavBar.css"
 
 import playImage from "./youtut-icon.png"
+import SearchBar from '../Search/SearchBar';
 
 
 const NavBar = () => {
@@ -19,13 +20,7 @@ const NavBar = () => {
   // const [searchText, setSearchText] = useState('');
 
 
-  //Search Props
-  const [searchText, setSearchText] = useState('')
 
-  const searchMeFunc = (e) => {
-    e.preventDefault();
-    setSearchText(e.target.value)
-  }
 
 
 
@@ -36,11 +31,7 @@ const NavBar = () => {
 
   }, [dispatch])
 
-  useEffect(() => {
-     console.log("text:", searchText)
-  }, [searchText])
 
-  // console.log("text:", searchText)
 
   return (
     <div className='navbar-wrapper'>
@@ -57,18 +48,9 @@ const NavBar = () => {
           </Link>
         </div>
 
-        {/* <div className='search-div' >
-          <div>
-        <input
-          placeholder="Search"
-          type="text"
-          onChange={searchMeFunc}
-          value={searchText}
-        />
-        <button type="submit" className='search-button' onClick={(e) => searchMeFunc()}
-><i class="fa-solid fa-magnifying-glass"></i></button>
+        <div className='search-bar-div'>
+          <SearchBar />
         </div>
-        </div> */}
 
         <div className="user-icon-wrapper">
         <NavLink

@@ -13,7 +13,7 @@ import "./MainFeed.css";
 
 // import UploadTut from '../Uploadtut';
 
-function MainFeed({searchText}) {
+function MainFeed({}) {
 
   const history = useHistory()
 
@@ -54,8 +54,8 @@ function MainFeed({searchText}) {
     }
 }
   //SHUFFLE IT UP
-  if(!searchText) shuffle(tuts)
-  else tuts.filter(tut => tut.tut_title.toLowerCase().includes(searchText.toLowerCase()) || tut.user.username.toLowerCase().includes(searchText.toLowerCase()) || tut.tut_description.toLowerCase().includes(searchText.toLowerCase()))
+   shuffle(tuts)
+  // else tuts.filter(tut => tut.tut_title.toLowerCase().includes(searchText.toLowerCase()) || tut.user.username.toLowerCase().includes(searchText.toLowerCase()) || tut.tut_description.toLowerCase().includes(searchText.toLowerCase()))
 
 
 
