@@ -10,6 +10,7 @@ import User from './components/Profile/User';
 import { authenticate } from './store/session';
 import WatchTut from './components/Tuts/WatchTut';
 import MainFeed from './components/MainFeed';
+import SearchFeed from './components/Search/SearchFeed';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -48,6 +49,9 @@ function App() {
         </ProtectedRoute>
         <ProtectedRoute path='/' exact={true} >
           <MainFeed  />
+        </ProtectedRoute>
+        <ProtectedRoute path='/search/:searchText' exact={true} >
+          <SearchFeed  />
         </ProtectedRoute>
         <ProtectedRoute exact path="/tuts/:tutId">
           <WatchTut />
