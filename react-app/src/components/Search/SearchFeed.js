@@ -26,11 +26,13 @@ function SearchFeed() {
 
 
   const displayTuts = searchResults.map((tut, i) => (
-    <div>
+    <div className='display-Tuts-userFeed'>
+      <div className='card-and-description'>
     <TutCard key={i} tut={tut} />
-    </div>
-
-  ))
+    <div className='tut-description'>{tut.tut_description}</div>
+      </div>
+      </div>
+      ))
 
   useEffect(() => {
     dispatch(getAllTutsOnYouTut())
