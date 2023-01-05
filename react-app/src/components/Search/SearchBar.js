@@ -30,7 +30,7 @@ function SearchBar() {
 
   return (
     <div className='search-div' >
-    <form>
+    <div>
   <input
 
     placeholder="Search"
@@ -38,9 +38,9 @@ function SearchBar() {
     onChange={searchMeFunc}
     value={searchText}
   />
-  <button type="submit" className='search-button' onSubmit={submitMe}
+  <button type="submit" className='search-button' onClick={submitMe}
 ><i class="fa-solid fa-magnifying-glass"></i></button>
-  </form>
+  </div>
   </div>
   )
 }
