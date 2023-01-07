@@ -1,7 +1,6 @@
 
 .search-bar-div {
   max-width: 100%;
-  /* border: 2px solid red; */
   width: 1000px;
   display: flex;
 }
@@ -15,4 +14,12 @@
   outline: none;
   color: white;
   padding-right: 5px;
+}
+
+.no-results {
+  font-size: 5vw;
+  /* border: 2px solid red; */
+  margin-top: 8px;
+  margin-left: 15px;
+
 }

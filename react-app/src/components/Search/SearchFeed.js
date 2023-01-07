@@ -41,13 +41,15 @@ function SearchFeed() {
     )
   }, [dispatch, userLoggedIn.id])
 
+  const noResults = (<div className='no-results'> No Results Found D: </div>)
+
 
   return (
     isLoaded && (
     <div className="outer-most-wrapper">
     <div className='main-feed-display'>
       <div className='display-Tuts'>
-      {displayTuts}
+      {displayTuts.length ? displayTuts : noResults}
       </div>
     </div>
   </div>
