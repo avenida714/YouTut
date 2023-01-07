@@ -41,7 +41,7 @@ function SearchFeed() {
     )
   }, [dispatch, userLoggedIn.id])
 
-  const noResults = (<div className='no-results'> No Results Found D: </div>)
+  const noResults = (<div className='no-results'> No Results Were Found 😭</div>)
 
 
   return (
