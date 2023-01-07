@@ -47,7 +47,6 @@ function SearchFeed() {
     <div className="outer-most-wrapper">
     <div className='main-feed-display'>
       <div className='display-Tuts'>
-        search results
       {displayTuts}
       </div>
     </div>
