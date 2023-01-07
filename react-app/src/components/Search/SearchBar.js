@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom';
 
+import "./SearchBar.css"
+
+
 function SearchBar() {
 
   const history = useHistory()
@@ -32,7 +35,7 @@ function SearchBar() {
     <div className='search-div' >
     <form>
   <input
-
+    className='search-input'
     placeholder="Search"
     type="text"
     onChange={searchMeFunc}
