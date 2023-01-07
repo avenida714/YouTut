@@ -1,7 +1,13 @@
 .display-Tuts {
-  /* border: 1px solid red; */
   display:flex;
   flex-wrap: wrap;
   padding-top: 60px;
+
+}
+
+.main-feed-display {
+  /* border: 1px solid red; */
+  margin-top: 75px;
+  margin-left:15px
 
 }
