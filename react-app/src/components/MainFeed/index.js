@@ -64,27 +64,7 @@ function MainFeed({}) {
   })
 
 
-// Search bar logic
-//      const searchTutsResults = tuts.filter(tut => tut.tut_title.toLowerCase().includes(searchText.toLowerCase()) || tut.user.username.toLowerCase().includes(searchText.toLowerCase()) || tut.tut_description.toLowerCase().includes(searchText.toLowerCase()))
 
-/*
-
-  const [searchText, setSearchText] = useState('');
-
- <div className="search-field">
-        {!searchText &&
-          <Search className="search-icon" />
-        }
-        <input
-          placeholder="Search"
-          onChange={(e) => handleChange(e.target.value)}
-          value={searchWords}
-        />
-
-
-        useEffect()
-          setSearchText(searchWords)
-*/
 
 
   //Map out all the Tuts, now shuffled
