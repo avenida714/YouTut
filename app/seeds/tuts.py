@@ -11,7 +11,7 @@ def seed_tuts():
         tut_video="https://www.youtube.com/watch?v=nWyyDHhTxYU&list=PLi01XoE8jYojRqM4qGBF1U90Ee1Ecb5tt&index=1"
     )
     tut2 = Tut(
-        thumbnail_pic="https://media-exp1.licdn.com/dms/image/C5603AQECaeulDgv6KQ/profile-displayphoto-shrink_200_200/0/1659374183810?e=1669852800&v=beta&t=fDIm4R8RMsBqcfAOC-ZJaPl0M0ylITfuu1pOEW3sX1Y",
+        thumbnail_pic="https://youtut.s3.us-west-1.amazonaws.com/rose-profile-pic.jpg",
         tut_description="Rose teaches how to utilize the Apollo Cache with mutations that update data.",
         tut_title="Update Mutations in Apollo",
         user_id=2,
