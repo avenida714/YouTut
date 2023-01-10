@@ -68,10 +68,10 @@ def seed_users():
     )# 8
 
     jack = User(
-        username='Jack_Harrington',
-        email="jharrington@gmail.com",
+        username='Jack_Herrington',
+        email="jherrington@gmail.com",
         password="password",
-        about="Jack Harrington makes amazing content on youtube. Please check them out here: https://www.youtube.com/c/JackHerrington",
+        about="Jack Herrington makes amazing content on youtube. Please check them out here: https://www.youtube.com/c/JackHerrington",
         profile_img="https://yt3.ggpht.com/ytc/AMLnZu_Ke9uBu9p_kow4b3gtr4sA6DKxCPoX-5MaktO2zg=s88-c-k-c0x00ffffff-no-rj"
     )# 9
 
