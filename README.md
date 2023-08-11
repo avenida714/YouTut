@@ -1,6 +1,6 @@
 # YouTut
 
-## Welcome to YouTut, my capstone project through App Academy.
+## Welcome to YouTut!
 
 ## About
 
